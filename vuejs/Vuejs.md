@@ -978,15 +978,23 @@ Vue.use(VueLazyload,{
 <img v-lazy="'./img/1.jpg'"/>
 ```
 
-
-
 ## crumbs
 
 awesome 技术名称 方便在 github 中查找别人收集好的资源
 
 例如 vue awesome 就有别人收集好的
 
+v-for 多层数据 再套用 v-for
 
+ 字符串转html
+
+```html
+<div class="item" v-for="item in socialArray"> 
+ <dl v-html="item.content"> 
+  {{item.content}} 
+ </dl> 
+</div>
+```
 
 
 

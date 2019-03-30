@@ -25,3 +25,31 @@ vue init webpack-simple domo5 # 简单模板
 vue init webpack domo6
 ```
 
+## 引入 bootstrap 和 jQuery
+
+安装：
+
+```shell
+npm install bootstrap --save
+npm install jquery --save
+```
+
+配置：
+
+```javascript
+// vue.config.js
+const webpack = require('webpack')
+configureWebpack: {
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "windows.jQuery": "jquery"
+        })
+    ]
+}
+// main.js
+import '../node_modules/_bootstrap@3.3.6@bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/_jquery@2.1.4@jquery/dist/jquery.js'
+import '../node_modules/_bootstrap@3.3.6@bootstrap/dist/js/bootstrap.js'
+```
