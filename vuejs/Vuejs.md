@@ -996,6 +996,23 @@ v-for 多层数据 再套用 v-for
 </div>
 ```
 
+methods 中一个方法调用另一个方法
+
+```javascript
+methods: {
+    test1:function(){
+        alert(this.test)
+    },
+        test2:function(){
+            alert("this is test2")
+            alert(this.test) //test3调用时弹出undefined
+        },
+            test3:function(){
+                this.$options.methods.test2();//在test3中调用test2的方法
+            }
+}
+```
+
 
 
 8-1
