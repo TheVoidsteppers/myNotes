@@ -112,3 +112,37 @@ axios({
 ```
 
 原文：<https://blog.csdn.net/csdn_yudong/article/details/79668655>
+
+`jQuery.ajax`的`post`提交默认的请求头的`Content-Type: application/x-www-form-urlencoded`
+而`axios.post`提交的请求头是`Content-Type: application/json`。
+
+`application/json`是一个趋势，但是如果改一个旧项目，把`jQuery.ajax`全部换成`axios.post`时，需要对请求做一些配置
+
+```javascript
+// 原来的代码 没有指定请求头的content-type
+var data = {age: 18};
+$.ajax({
+    url: '',
+    type: 'POST',
+    data: data
+    dataType: 'json',
+    success: function(result) {
+        // do something
+    }
+})
+// 使用 axios 的代码
+import axios from 'axios';
+import qs from 'qs';
+
+var data = {age: 18};
+var url = '';
+
+axios.post(
+    url, 
+    qs.stringify(data), 
+    {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
+).then(result => {
+    // do something
+})
+```
+
