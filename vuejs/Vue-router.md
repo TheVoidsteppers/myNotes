@@ -144,9 +144,25 @@ router.push({ name: 'user', params: { userId: 123 }})
 </script>
 ```
 
+## 默认子路由
 
-
-
+```javascript
+// router.js
+export default new Router({
+    model: 'history',
+    routes: [{
+        path: '/task_manage',
+        name: 'home',
+        component: Home,
+        redirect: '/task_manage/index',// 路由重定向
+        children: [{
+            path: '/task_manage/index',
+            name: 'index',
+            component: BoxMiddle,
+        }]
+    }]
+})
+```
 
 ## crumbs
 
