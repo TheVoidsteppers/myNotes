@@ -109,6 +109,31 @@ axios({
 	url: '/api/lockServer/search',
 	data: param
 })
+// 发送 get
+function sendGetAxios(url,params,fun) {
+    axios({
+        method:'get',
+        url: url,
+        params: params
+    }).then(function (res) {
+        fun && fun(res)
+    })
+}
+// 发送 post
+function sendPostAxios(url,params,fun) {
+    let data = new URLSearchParams()
+    for (para in params) {
+        data.append(para, params[para])
+    }
+    axios({
+        method:'post',
+        url: url,
+        data: data,
+        headers: {"Content-type": "application/x-www-form-urlencoded"}
+    }).then(function (res) {
+        fun && fun(res)
+    })
+}
 ```
 
 原文：<https://blog.csdn.net/csdn_yudong/article/details/79668655>
@@ -143,6 +168,28 @@ axios.post(
     {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
 ).then(result => {
     // do something
+})
+```
+
+## 下载文件
+
+```javascript
+axios({
+    method:'post',
+    url: downloadFileUrl,
+    data: data,
+    headers: {"Content-type": "application/x-www-form-urlencoded"},
+    responseType:'blob'
+}).then( (res) =>{
+    let blob = new Blob([res.data])
+    let downloadElement = document.createElement('a')
+    let href = window.URL.createObjectURL(blob); //创建下载的链接
+    downloadElement.href = href;
+    downloadElement.download = `商品列表.xls`; //下载后文件名
+    document.body.appendChild(downloadElement);
+    downloadElement.click(); //点击下载
+    document.body.removeChild(downloadElement); //下载完成移除元素
+    window.URL.revokeObjectURL(href); //释放blob对象
 })
 ```
 

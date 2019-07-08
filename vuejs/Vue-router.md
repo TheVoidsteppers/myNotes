@@ -134,6 +134,33 @@ export default {
 };
 ```
 
+## beforeRouteLeave
+
+```javascript
+// 路由跳转前 在子组件内 判断跳转到其他路由前
+window.ApiAdd = {
+    template,
+    data:function () {
+        return {}
+    },
+    // 判断是否有 api_id
+    beforeRouteLeave (to, from, next) {
+        if(this.api_id){
+            var query = to.query // 需要声明一个 query 对象 
+            query.api_id = this.api_id
+            next({
+                query: query
+            })
+        }else{
+            layer.msg('请先添加完接口')
+            next(false)
+        }
+    }
+}
+```
+
+
+
 ## 路由传参
 
 ```html
@@ -144,25 +171,9 @@ router.push({ name: 'user', params: { userId: 123 }})
 </script>
 ```
 
-## 默认子路由
 
-```javascript
-// router.js
-export default new Router({
-    model: 'history',
-    routes: [{
-        path: '/task_manage',
-        name: 'home',
-        component: Home,
-        redirect: '/task_manage/index',// 路由重定向
-        children: [{
-            path: '/task_manage/index',
-            name: 'index',
-            component: BoxMiddle,
-        }]
-    }]
-})
-```
+
+
 
 ## crumbs
 

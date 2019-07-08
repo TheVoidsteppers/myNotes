@@ -358,6 +358,29 @@ method:{
 
 - 选择列表
 
+### 普通元素模拟数据双向绑定
+
+```html
+<div contenteditable="true" v-text="content" @input="handleInput"></div>
+```
+
+```javascript
+export default {
+    data() {
+        return {
+            content: ''
+        }
+    },
+    methods: {
+        handleInput($event){
+            this.content = $event.target.innerText;
+            // 拓展 如果想要只需要前100位数据
+            this.content = this.content.substring(0,100)
+        }
+    }
+}
+```
+
 ## 组件
 
 ### 组件概念
@@ -619,7 +642,7 @@ Vue.component('my-component', {
         methods: {
             counter() {
                 this.count += 1
-                return this.$emit('counter')
+                return this.$emit('counter',this.count1,this.count2)
                 // 通过给父组件传递 已触发 counter自定义事件 来传递数据
             }
         }
@@ -716,7 +739,7 @@ Vue.component('my-component', {
 ```
 
 - [v-cloak](https://cn.vuejs.org/v2/api/#v-cloak)
-  + 在头部加载一个特殊样式：`[v-cloak] {display: none;}` 
+  + 需在头部加载一个特殊样式：`[v-cloak] {display: none;}` 
   + 然后在被 Vue 管理的模板入口节点上作用 ： `v-cloak` 指令
   + 原理：默认一开始被 Vue 管理的模板是隐藏的，当 Vue 解析处理完 Vue 模板之后，会自动把这个样式去除，然后就显示出来
 - [v-once](https://cn.vuejs.org/v2/api/#v-once)
@@ -831,158 +854,8 @@ Vue.directive('focus',  function (el) {
 - [errorCaptured](https://cn.vuejs.org/v2/api/#errorCaptured) 
   + 捕获组件中发生的错误
 
-## 使用 `json-server` 来模拟数据接口
-
-> 参考文档：[json-server](https://github.com/typicode/json-server)
->
-> 该工具默认启动的服务自带跨域能力
-> 这个工具已经在服务端处理了跨域问题，你直接来请求即可
-
-安装：
-
-```shell
-npm i -g json-server 
-```
-
-使用：
-
-创建一个 `db.json` ，写入以下内容：
-
-```json
-{
-    "list":[{
-        "id":1,
-        "name":"jack",
-        "age":18
-    },{
-        "id":2,
-        "name":"jack",
-        "age":18
-    },{
-        "id":3,
-        "name":"jack",
-        "age":18
-    }]
-}
-```
-
-启动接口服务(该服务默认占用 3000 端口)：
-
-```shell
-json-server --watch db.json
-```
-
-增删改查：
-
-- GET /list 查询所有
-- GET /list/id 查询单个
-- POST /list 添加
-- DELETE /list/id 根据 id 删除
-- PATCH /list/id 根据 id 修改
-
-## 接口测试工具： `postman`
-
-## http-server
-
-安装：
-
-```shell
-npm i http-server
-```
-
-查看使用帮助：
-
-```shell
-hs -h
-```
-
-基本使用：
-
-```shell
-# 默认占用 8080 端口启动一个服务器，直接打开浏览器
-hs -o
-# 指定端口
-hs -p 3000 -o
-# 不启用缓存开启
-hs -c-1 -p 3000 -o
-```
-
-## lodash
-
-> lodash 第三方 JavaScript 工具函数库：提供 函数节流、函数防抖 等辅助函数
->
-> 官网： [loadsh](https://www.lodashjs.com/) 
-
-安装：
-
-```shell
-npm i --save lodash
-```
-
-使用：
-
-```html
-<script scr="../node_modules/lodash/lodash.js"></script>
-<script>
-    // 自动添加对象 _ ，使用时 直接 _.函数名
-	console.log(_)
-</script>
-```
-
-## element ui
-
->  官网 [elelment ui](http://element-cn.eleme.io/#/zh-CN/component/installation)
-
-安装：
-
-````shell
-npm i element-ui -S
-````
-
-配置：
-
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-<!-- 引入组件库 -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-```
-
-## 图片懒加载
-
-主要用于一屏页面比较多时，没滚到时，图片不显示，当滚到特定页面自动加载
-
-安装
-
-```shel
-npm i vue-lazyload
-```
-
-配置：
-
-```javascript
-// main.js
-import VueLazyload from 'vue-lazyload'
-Vue.use(VueLazyload,{
-    loading:".static/loading-svg/loading-bars.svg"
-    //图片在static文件夹，就可以直接写路径了
-    loading: require('../public/loading-svg/loading-bars.svg')
-	//图片在assets文件夹，就需要使用require（）进行引入
-})
-// vue-lazyload是在 main.js 文件中引入，不会被 webpack 进行编译，src 中的文件会被 webpack 编译，包括 assets ，assets 文件夹中的图片地址，会在编译过程中改变。因此 vue-lazyload 无法正确获得图片地址，就不能显示图片了。
-```
-
-使用：
-
-```html
-<img v-lazy="'./img/1.jpg'"/>
-```
 
 ## crumbs
-
-awesome 技术名称 方便在 github 中查找别人收集好的资源
-
-例如 vue awesome 就有别人收集好的
 
 v-for 多层数据 再套用 v-for
 
@@ -1013,6 +886,30 @@ methods: {
 }
 ```
 
+```shell
+# 项目结构
+.
+├── index.html
+├── main.js
+├── api
+│   ├── ...	#抽取出 API 请求
+├── components
+	├── index.js		# 我们组装模块并导出 store 的地方
+	├── action.js		# 根级别的 action	
+	├── mutations.js	# 根级别的 mutation
+	└── modules
+		├── cart.js		# 购物车模块
+		└── products.js # 产品模块
+```
+
+```javascript
+// vue渲染完成
+this.$nextTick(()=>{
+    this.show = false
+})
+```
 
 
-9-2
+
+
+

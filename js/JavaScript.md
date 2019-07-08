@@ -1147,7 +1147,7 @@ str.startswith('http://');//true|false,以什么开头
 str.endsWith('http://');//true|false,以什么结尾
 str.lastIndexOf(string[,给定位置的索引]);//从后往前找，索引
 str.replace(替换字符,被替换字符);//将str里的字符替换成别的，返回新的字符串
-str.spilt(""[,3]);//将str以空格分割[3次]，返回数组
+str.split(""[,3]);//将str以空格分割[3次]，返回数组
 str.slice(5[,10]);//截取从索引5开始到[10的前一个]结束[5,10)，返回截取的字符串；允许负数，可以从后往前数
 str.substr(5[,5]);//截取从序列5开始，截取到后面长度为5的字符串
 str.substring(5[,10]);//截取从序列为5开始，到序列为10前[5,10)，取两者最小值为start，负数自动转为0，并为start

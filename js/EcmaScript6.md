@@ -72,6 +72,18 @@ var greeting = `
 `
 ```
 
+## 数组的扩展
+
+### includes
+
+```javascript
+var arr = ['a', 'b', 'c'];
+var arr1 = ['a',, 'c'];
+arr.includes('c', 3);   //false
+arr.includes('c', 100); // false
+arr.includes(); // true 判读 是否有空元素
+```
+
 ## 解构赋值
 
 本质属于 模式匹配

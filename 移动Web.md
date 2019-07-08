@@ -122,11 +122,149 @@ targetTouches，touches 在离开屏幕的时候无法记录触摸点
 4.4 screenX screenY      基于屏幕
 ```
 
+### 手势事件 --- 基于 touch 事件
+
+```javascript
+/*1. 理解移动端的手势事件*/
+/*2. swipe swipeLeft  swipeRight swipeUp swipeDown */
+/*3. 左滑和右滑手势怎么实现*/
+var bindSwipeEvent = function (dom,leftCallback,rightCallback) {
+    /*手势的条件*/
+    /*1.必须滑动过*/
+    /*2.滑动的距离50px*/
+    var isMove = false;
+    var startX = 0;
+    var distanceX = 0;
+    dom.addEventListener('touchstart',function (e) {
+        startX = e.touches[0].clientX;
+    });
+    dom.addEventListener('touchmove',function (e) {
+        isMove = true;
+        var moveX = e.touches[0].clientX;
+        distanceX = moveX - startX;
+    });
+    dom.addEventListener('touchend',function (e) {
+        /*滑动结束*/
+        if(isMove && Math.abs(distanceX) > 50){
+            if(distanceX > 0){
+                rightCallback && rightCallback.call(this,e);
+            }else{
+                leftCallback && leftCallback.call(this,e);
+            }
+        }
+        /*重置参数*/
+        isMove = false;
+        startX = 0;
+        distanceX = 0;
+    });
+}
+bindSwipeEvent(document.querySelector('.box'),function (e) {
+    console.log(this);
+    console.log(e);
+    console.log('左滑手势');
+},function (e) {
+    console.log(this);
+    console.log(e);
+    console.log('右滑手势');
+});
+```
+
+### tap 事件 --- 基于 touch 事件
+
+
+
+```html
+<!--
+1. tap事件  轻击 轻触  （响应速度快）
+2. 移动端也有click事件 （在移动为了区分是滑动还是点击，click点击延时300ms）
+3. 影响用户体验 响应太慢了。
+4. 解决方案：
+4.1 使用tap事件（不是移动端原生事件，通过touch相关事件衍生过来） （zepto.js tap事件）了解其原理
+4.2 使用一个叫：fastclick.js 提高移动端click响应速度的
+4.2.1 下载：https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js
+4.2.2 使用：
+-->
+<script>
+    /*当页面的dom元素加载完成*/
+    document.addEventListener('DOMContentLoaded', function() {
+        /*初始化方法*/
+        FastClick.attach(document.body);
+    }, false);
+    /*正常使用click事件就可以了*/
+</script>
+<script>
+    /*使用tap事件*/
+    /*1. 响应的速度比click要快   150ms */
+    /*2. 不能滑动*/
+    var bindTapEvent = function (dom, callback) {
+        /*事件的执行顺序*/
+        /*在谷歌浏览器模拟看不到300ms的效果*/
+        /*在真机上面才能看看到延时效果*/
+        var startTime = 0;
+        var isMove = false;
+        dom.addEventListener('touchstart', function () {
+            //console.log('touchstart');
+            startTime = Date.now();
+            /*Date.now();*/
+        });
+        dom.addEventListener('touchmove', function () {
+            //console.log('touchmove');
+            isMove = true;
+        });
+        dom.addEventListener('touchend', function (e) {
+            //console.log('touchend');
+            console.log((Date.now() - startTime));
+            if ((Date.now() - startTime) < 150 && !isMove) {
+                callback && callback.call(this, e);
+            }
+
+            startTime = 0;
+            isMove = false;
+        });
+        /*dom.addEventListener('click',function () {
+             //console.log('click');
+             });*/
+    }
+
+    bindTapEvent(document.querySelector('.box'), function (e) {
+        console.log(this);
+        console.log(e);
+        console.log('tap事件')
+    });
+</script>
+```
+
+iscroll  区域滚动插件
+
+超小屏  <768px
+小屏 768px-992px
+中屏 992px-1200px
+宽屏  >1200px
+
+## normalize.css 与 reset.css 的区别
+
+```html
+<!--
+共同点：都是重置样式库，增强浏览器的表现一致性
+不同点：
+举个例子：ul
+reset.css   list-style:none ---因为需求
+normalize.css 不会重置ul样式 ---本身已经在每个浏览器表现一致的元素
+
+一句话：都是增强浏览器的表现一致性但是normalize不会重置已经一致的元素
+-->
+```
 
 
 
 
-day2
+
+
+
+
+
+
+day 4-7
 
 移动Web：6
 vue2.0：5
@@ -141,5 +279,7 @@ php的局部变量也是存储在数据段全局区吗；是
 应看到--- 12/28 vuejs 6
 
 bootstrap 小程序 学习
+
+webpack 从入门到
 
 项目！！！
