@@ -223,3 +223,33 @@ hidden-xs
 </div>
 ```
 
+### 轮播图自适应
+
+```html
+<!--原理： 根据屏幕大小显示或隐藏 hidden-md -->
+<style>
+    .pc_imgBox{
+        display: block;
+        height: 400px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .m_imgBox{
+        display: block;
+        width: 100%;
+    }
+    .m_imgBox img{
+        display: block;
+        width: 100%;
+    }
+</style>
+<div class="carousel-inner">
+    <div class="item active">
+        <a href="#" class="pc_imgBox hidden-xs" style="background-image: url(../images/slide_01_2000x410.jpg)"></a>
+        <a href="#" class="m_imgBox hidden-lg hidden-md hidden-sm"><img src="../images/slide_01_640x340.jpg" alt=""></a>
+    </div>
+</div>
+```
+
