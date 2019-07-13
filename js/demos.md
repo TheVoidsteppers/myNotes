@@ -136,3 +136,25 @@ document.addEventListener("WeixinJSBridgeReady", function () {
 </script>
 ```
 
+## 导出 excel
+
+### JavaScript生成 CSV 文件 
+
+```
+data:[<mediatype>][;base64],<data>
+```
+
+- `data:`是前缀
+- `mediatype`: 文件的MIME类型，比如`image/jpge`对应JPGE文件，默认值为`text/plain;charset=US-ASCII`
+- `base64`: 文件内容是否base64格式的
+- `data`: 文件的正文内容
+
+```javascript
+// \uFEFF 解决中文乱码问题
+// download 自定义文件名 H5
+var a = document.createElement('a');
+a.href=`data:text/csv;charset=utf-8,\uFEFF${encodeURI('姓名,年龄\nMofei,18')}`;
+a.download="Mofei的CSV.csv";
+a.click();
+```
+

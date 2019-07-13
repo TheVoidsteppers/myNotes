@@ -25,7 +25,7 @@ const counter ={
     }
 }
 const store = new Vuex.Store({
-    state:{
+    state:{ // 定义状态，相当于 data
         count:10,
         name:'jack'
     },
@@ -34,7 +34,7 @@ const store = new Vuex.Store({
             return state.name + ',Hello'
         }
     },
-    mutations:{
+    mutations:{ // 更改 state 内的值，只能同步操作
         increment(state,num){
             state.count = num
         },
@@ -42,7 +42,7 @@ const store = new Vuex.Store({
             state.name = userName
         }
     },
-    actions:{
+    actions:{ // 触发 mutations 的函数，可异步操作
         incrementAction(context,num){
             context.commit('increment',num)
         }
@@ -56,8 +56,8 @@ new Vue({
     },
     methods:{
         add(){
-            this.$store.commit('increment',5)
-            this.$store.dispatch('incrementAction',5)
+            this.$store.commit('increment',5) // 触发 mutations 的函数 
+            this.$store.dispatch('incrementAction',5) // 触发 actions 的函数
         }
     }
 })
