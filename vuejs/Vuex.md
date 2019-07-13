@@ -34,15 +34,15 @@ const store = new Vuex.Store({
             return state.name + ',Hello'
         }
     },
-    mutations:{ // 更改 state 内的值，只能同步操作
-        increment(state,num){
+    mutations:{ // 更改 state 内的值，只能同步操作 通过 this.$store.commit('increment',5)
+        increment(state,num){ 
             state.count = num
         },
         updateName(state,userName){
             state.name = userName
         }
     },
-    actions:{ // 触发 mutations 的函数，可异步操作
+    actions:{ // 触发 mutations 的函数，可异步操作 通过 this.$store.dispatch('incrementAction',5) 触发
         incrementAction(context,num){
             context.commit('increment',num)
         }
