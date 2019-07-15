@@ -29,10 +29,15 @@ const store = new Vuex.Store({
         count:10,
         name:'jack'
     },
-    getters:{
+    getters:{ // 与 state 一样是 状态，相当与 computed
         userName(state){
+            // 通过 store.getters.userName 调用
             return state.name + ',Hello'
-        }
+        }，
+        getTodoById: (state) => (id) => { 
+    	// 也可以返回一个函数，通过 store.getters.getTodoById(2) 调用
+            return state.todos.find(todo => todo.id === id)
+          }
     },
     mutations:{ // 更改 state 内的值，只能同步操作 通过 this.$store.commit('increment',5)
         increment(state,num){ 
