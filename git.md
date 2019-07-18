@@ -21,4 +21,14 @@ style : 代码样式改变
 ed: 某个已有功能修改
 ```
 
- 
+git 步骤
+
+```shell
+git merge origin/develop
+# git stash save    git stash pop
+ git add .
+ git commit -m 'feat:创建折线图组件和mock数据文件'
+ git push origin feature/charts 
+# http://git.dataexa.com:83/insight/Insight-View/data-center/merge_requests/new?merge_request%5Bsource_branch%5D=feature%2Fcharts  发起合并请求 
+```
+
