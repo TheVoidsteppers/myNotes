@@ -143,3 +143,11 @@ swiper
 ## 前端开发技术
 
 awesomes
+
+## 虚拟滚动条
+
+```
+https://github.com/tangbc/vue-virtual-scroll-list
+https://github.com/Akryum/vue-virtual-scroller
+大家要对 virtual scroller 了解下
+```
