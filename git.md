@@ -24,6 +24,10 @@ ed: 某个已有功能修改
 git 步骤
 
 ```shell
+# 创建并切换到新分支
+git checkout  -b feature/reviewStyle
+# 合并
+git pull
 git merge origin/develop
 # git stash save    git stash pop
  git add .
