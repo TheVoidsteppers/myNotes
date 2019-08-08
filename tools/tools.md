@@ -151,3 +151,11 @@ https://github.com/tangbc/vue-virtual-scroll-list
 https://github.com/Akryum/vue-virtual-scroller
 大家要对 virtual scroller 了解下
 ```
+
+## 表格
+
+```
+https://github.com/xuliangzhan/vxe-table
+https://xuliangzhan.com/vxe-table/index.html#/table/excel/cell
+```
+
