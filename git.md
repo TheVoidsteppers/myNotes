@@ -9,6 +9,9 @@ git log master..origin/master
 ```shell
 # git diff <local branch> <remote>/<remote branch>
 git diff --stat master origin/master
+git diff --cached  # 查看要提交的内容； 查看 git add 的内容
+git diff # 会显示已做出但未添加到索引的任何更改；查看未 git add 的内容
+git status # 获得情况的简要摘要
 ```
 
 ## commit 规范
@@ -38,7 +41,9 @@ git 步骤
 
 ```shell
 # 创建并切换到新分支
-git checkout  -b feature/reviewStyle
+git checkout -b feature/reviewStyle
+# 删除分支
+git branch -D  feature/reviewStyle
 # 合并
 git pull
 git merge origin/develop
