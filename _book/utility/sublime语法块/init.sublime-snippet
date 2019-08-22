@@ -1,0 +1,43 @@
+<snippet>
+  <content><![CDATA[
+// =============== ## code by voidsteepers ## ===============
+// =============== 初始化 ===============
+// ========== 定义url ==========
+// 活动类型
+const activityTypeUrl = "<?php echo site_url('activities_manage/activity_category') ?>"
+
+// ========== 声明函数 ==========
+// 发送 get
+function sendGetAxios(url,params,fun) {
+    axios({
+        method:'get',
+        url: url,
+        params: params
+    }).then(function (res) {
+        fun && fun(res)
+    })
+}
+// 发送 post
+function sendPostAxios(url,params,fun) {
+    let data = new URLSearchParams()
+    for (para in params) {
+        data.append(para, params[para])
+    }
+    axios({
+        method:'post',
+        url: url,
+        data: data,
+        headers: {"Content-type": "application/x-www-form-urlencoded"}
+    }).then(function (res) {
+        fun && fun(res)
+    })
+}
+
+// ========== 注册事件 ==========
+]]></content>
+<tabTrigger>init</tabTrigger>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <!-- <tabTrigger>hello</tabTrigger> -->
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>

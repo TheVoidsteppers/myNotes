@@ -1,0 +1,22 @@
+{
+    "author": "TheVoidsteppers",
+    "description": "Notes for Learning front-end",
+    "extension": null,
+    "language":"zh-hans",
+    "root": "./",
+    "generator": "site",
+    "output": null,
+    "plugins": [],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": false
+        }
+    },
+    "links": {
+        "sidebar": {
+            "github": "https://github.com/TheVoidsteppers"
+        }
+    },
+    "title": "我的学习笔记",
+    "variables": {}
+}

@@ -1,0 +1,936 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue 案例 · 我的学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="TheVoidsteppers">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../nodejs/" />
+    
+    
+    <link rel="prev" href="advanced/Vuex.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/TheVoidsteppers" target="_blank" class="custom-link">github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../HTML/">
+            
+                <a href="../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../HTML/base.html">
+            
+                <a href="../HTML/base.html">
+            
+                    
+                    HTML 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CSS/">
+            
+                <a href="../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CSS/base.html">
+            
+                <a href="../CSS/base.html">
+            
+                    
+                    CSS 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CSS/demos.html">
+            
+                <a href="../CSS/demos.html">
+            
+                    
+                    CSS 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../JavaScript/">
+            
+                <a href="../JavaScript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../JavaScript/base.html">
+            
+                <a href="../JavaScript/base.html">
+            
+                    
+                    JavaScript 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../JavaScript/jQuery.html">
+            
+                <a href="../JavaScript/jQuery.html">
+            
+                    
+                    jQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../JavaScript/add/">
+            
+                <a href="../JavaScript/add/">
+            
+                    
+                    JavaScript 补充
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.3.1" data-path="../JavaScript/add/EcmaScript6.html">
+            
+                <a href="../JavaScript/add/EcmaScript6.html">
+            
+                    
+                    EcmaScript6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../JavaScript/advanced.html">
+            
+                <a href="../JavaScript/advanced.html">
+            
+                    
+                    JavaScript 高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../JavaScript/demos.html">
+            
+                <a href="../JavaScript/demos.html">
+            
+                    
+                    JavaScript 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="README.md">
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                    Vue 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="advanced/">
+            
+                <a href="advanced/">
+            
+                    
+                    Vue 高级
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="advanced/Vue-axios.html">
+            
+                <a href="advanced/Vue-axios.html">
+            
+                    
+                    Vue-axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="advanced/Vue-router.html">
+            
+                <a href="advanced/Vue-router.html">
+            
+                    
+                    Vue-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="advanced/Vuex.html">
+            
+                <a href="advanced/Vuex.html">
+            
+                    
+                    Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4.3" data-path="demos.html">
+            
+                <a href="demos.html">
+            
+                    
+                    Vue 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../nodejs/">
+            
+                <a href="../nodejs/">
+            
+                    
+                    nodejs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../nodejs/base.html">
+            
+                <a href="../nodejs/base.html">
+            
+                    
+                    nodejs 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../nodejs/API.html">
+            
+                <a href="../nodejs/API.html">
+            
+                    
+                    nodejs API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../PHP/">
+            
+                <a href="../PHP/">
+            
+                    
+                    PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../PHP/base.html">
+            
+                <a href="../PHP/base.html">
+            
+                    
+                    PHP 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../PHP/demos.html">
+            
+                <a href="../PHP/demos.html">
+            
+                    
+                    PHP 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../PHP/WebsiteProcess.html">
+            
+                <a href="../PHP/WebsiteProcess.html">
+            
+                    
+                    建站流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    工具、插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Tools/git.html">
+            
+                <a href="../Tools/git.html">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../Tools/webpack.html">
+            
+                <a href="../Tools/webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../Tools/element-ui.html">
+            
+                <a href="../Tools/element-ui.html">
+            
+                    
+                    element-ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../Tools/Bootstrap.html">
+            
+                <a href="../Tools/Bootstrap.html">
+            
+                    
+                    Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../Tools/BootstrapFileInput.html">
+            
+                <a href="../Tools/BootstrapFileInput.html">
+            
+                    
+                    Bootstrap FileInput
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../Tools/tools.html">
+            
+                <a href="../Tools/tools.html">
+            
+                    
+                    其他工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue 案例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x9012;&#x5F52;&#x6E32;&#x67D3;">&#x9012;&#x5F52;&#x6E32;&#x67D3;</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x9012;&#x5F52;&#x7EC4;&#x4EF6;</span>
+;(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> template= <span class="hljs-string">`
+  &lt;li class=&quot;tree-menu&quot;&gt;
+    &lt;div&gt;
+      &lt;span @click=&quot;selectCate(id)&quot;&gt;{{title}}&lt;/span&gt;
+      &lt;span v-if=&quot;tree&quot; class=&quot;glyphicon glyphicon-chevron-down&quot; @click=&quot;toggleChildren&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;ul style=&quot;padding-left: inherit;&quot;&gt;
+      &lt;tree-menu
+        v-if=&quot;showChildren&quot;
+        v-for=&quot;tre in tree&quot;
+        :id=&quot;tre.id&quot;
+        :title=&quot;tre.title&quot;
+        :tree=&quot;tre.tree&quot;
+      &gt;
+      &lt;/tree-menu&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+ `</span>
+  <span class="hljs-built_in">window</span>.TreeMenu = {
+    name: <span class="hljs-string">&apos;tree-menu&apos;</span>,
+    template,
+    props: [ <span class="hljs-string">&apos;title&apos;</span>, <span class="hljs-string">&apos;tree&apos;</span>,<span class="hljs-string">&apos;id&apos;</span> ],
+    data(){
+      <span class="hljs-keyword">return</span> {
+        showChildren:<span class="hljs-literal">false</span>
+      }
+    },
+    methods: {
+      toggleChildren() {
+        <span class="hljs-keyword">this</span>.showChildren = !<span class="hljs-keyword">this</span>.showChildren;
+      },
+      selectCate(id){
+        <span class="hljs-built_in">console</span>.log(id)
+      }
+    }
+  }
+})()
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cateList&quot;</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isshow&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tree-menu</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;cate in cateList&quot;</span> <span class="hljs-attr">:id</span>=<span class="hljs-string">&quot;cate.id&quot;</span> <span class="hljs-attr">:title</span>=<span class="hljs-string">&quot;cate.title&quot;</span> <span class="hljs-attr">:tree</span>=<span class="hljs-string">&quot;cate.tree&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tree-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+new Vue({
+    data:{
+       cateList:[{
+            id: &quot;221&quot;,
+            pid: &quot;0&quot;,
+            title: &quot;&#x670D;&#x9970;&#x7BB1;&#x5305;&quot;,
+             tree: {
+                id: &quot;207&quot;,
+                pid: &quot;221&quot;,
+                title: &quot;&#x7BB1;&#x5305;
+             }
+            }]
+    },
+    components: {
+    TreeMenu
+  }
+})
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h2 id="&#x4E0A;&#x4F20;-&#x591A;&#x5F20;&#x56FE;&#x7247;">&#x4E0A;&#x4F20; &#x591A;&#x5F20;&#x56FE;&#x7247;</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 20px&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;kcUPNr&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: inline-block;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>&#x80CC;&#x666F;&#x56FE;&#x7247;<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tips&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tips2&quot;</span>&gt;</span>&#x672A;&#x9009;&#x62E9;&#x6587;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>&#x4EC5;&#x652F;&#x6301;jpg&#x3001;jpeg&#x3001;png&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bgImgList&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;clearfix&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(image,index) in bgPreImg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;65&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> @<span class="hljs-attr">click.prevent</span>=<span class="hljs-string">&apos;delImage(index)&apos;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;glyphicon glyphicon-remove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;?=ZT_ADMIN_IMG?&gt;ADDbTN.png&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;65&quot;</span> @<span class="hljs-attr">click.prevent</span>=<span class="hljs-string">&quot;addPic&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;onFileChange&quot;</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;bgPreImg.length &gt; 0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-danger&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;removeImage&quot;</span>&gt;</span>&#x79FB;&#x9664;&#x5168;&#x90E8;&#x56FE;&#x7247;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;uploadImage&apos;</span>&gt;</span>&#x4E0A;&#x4F20;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">ul</span>{<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;}
+<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span>{<span class="hljs-attribute">float</span>: left;<span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;<span class="hljs-attribute">position</span>: relative;<span class="hljs-attribute">padding</span>:<span class="hljs-number">5px</span>;<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;}
+<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>{<span class="hljs-attribute">padding</span>: initial;<span class="hljs-attribute">background-color</span>:initial;}
+<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span>{<span class="hljs-attribute">position</span>: absolute;<span class="hljs-attribute">top</span>: -<span class="hljs-number">8px</span>;<span class="hljs-attribute">right</span>: -<span class="hljs-number">8px</span>;}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> activityEdit = <span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#activityEdit&apos;</span>,
+  data: {
+    id:<span class="hljs-string">&apos;&apos;</span>,
+    bgPreImg:[],
+    bgImgFiles:[],
+    bg_pic:[]
+  },
+  methods:{
+    init(){
+      <span class="hljs-comment">// &#x83B7;&#x53D6; &#x6D3B;&#x52A8;&#x5206;&#x7C7B;</span>
+      sendPostAxios(activityTypeUrl,{},(response)=&gt;{
+        <span class="hljs-keyword">const</span> res = response.data
+        <span class="hljs-keyword">this</span>.activityType = res.data
+      })
+    },
+    addPic(event){
+      $(event.currentTarget).next(<span class="hljs-string">&apos;input[type=file]&apos;</span>).trigger(<span class="hljs-string">&apos;click&apos;</span>)
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    },
+    onFileChange(e) {
+      <span class="hljs-keyword">let</span> files = e.target.files || e.dataTransfer.files
+      <span class="hljs-keyword">if</span> (!files.length)<span class="hljs-keyword">return</span>
+      <span class="hljs-keyword">this</span>.bgImgFiles = files
+      <span class="hljs-keyword">this</span>.createImage(files)
+    },
+    createImage(file) {
+      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> FileReader===<span class="hljs-string">&apos;undefined&apos;</span>){
+          layer.msg(<span class="hljs-string">&apos;&#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#xFF0C;&#x8BF7;&#x5347;&#x7EA7;&#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&apos;</span>)
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+      }
+      <span class="hljs-keyword">const</span> leng = file.length
+      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;leng;i++){
+        <span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> FileReader()
+        reader.readAsDataURL(file[i])
+        reader.onload =(e) =&gt; {
+          <span class="hljs-keyword">this</span>.bgPreImg.push(e.target.result)
+        }
+      }
+    },
+    delImage:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">index</span>)</span>{
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.bg_pic.length &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">this</span>.bg_pic.splice(index,<span class="hljs-number">1</span>)
+      }
+      <span class="hljs-keyword">this</span>.bgPreImg.splice(index,<span class="hljs-number">1</span>)
+    },
+    removeImage: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+      <span class="hljs-keyword">this</span>.bgPreImg = []
+      <span class="hljs-keyword">this</span>.bg_pic = []
+    },
+    uploadImage: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">let</span> sucNum = <span class="hljs-number">0</span>
+      <span class="hljs-keyword">let</span> retNum = <span class="hljs-number">0</span>
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.bgImgFiles.length; i++) {
+        <span class="hljs-keyword">let</span> formData = <span class="hljs-keyword">new</span> FormData()
+        formData.append(<span class="hljs-string">&apos;activity_img&apos;</span>,<span class="hljs-keyword">this</span>.bgImgFiles[i])
+        axios({
+          method: <span class="hljs-string">&apos;post&apos;</span>,
+          url: uploadImgUrl,
+          data: formData,
+          headers:{<span class="hljs-string">&apos;Content-Type&apos;</span>:<span class="hljs-string">&apos;multipart/form-data&apos;</span>}
+        }).then((response)=&gt;{
+          <span class="hljs-keyword">const</span> res = response.data
+          <span class="hljs-built_in">console</span>.log(res)
+          retNum ++
+          <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">this</span>.bg_pic.push(res.data)
+            sucNum ++
+          }
+          <span class="hljs-keyword">if</span> (retNum &lt; <span class="hljs-keyword">this</span>.bgImgFiles.length){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+          }
+          <span class="hljs-keyword">if</span>(sucNum == <span class="hljs-keyword">this</span>.bgImgFiles.length){
+            layer.msg(<span class="hljs-string">&apos;&#x4E0A;&#x4F20;&#x6210;&#x529F;&apos;</span>)
+          }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">this</span>.bg_pic = []
+            layer.msg(<span class="hljs-string">&apos;&#x4E0A;&#x4F20;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x4E0A;&#x4F20;&apos;</span>)
+          }
+        })
+      }
+    }
+  },
+  mounted() {
+    <span class="hljs-keyword">this</span>.init()
+    <span class="hljs-keyword">this</span>.id = location.search.substr(<span class="hljs-number">4</span>)
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.id == <span class="hljs-string">&apos;&apos;</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    sendPostAxios(activityInfoUrl,{id:<span class="hljs-keyword">this</span>.id},(response)=&gt; {
+      <span class="hljs-keyword">const</span> res = response.data
+      <span class="hljs-comment">// &#x80CC;&#x666F;&#x56FE;&#x7247;</span>
+      <span class="hljs-keyword">this</span>.bg_pic = res.data.bg_pic.split(<span class="hljs-string">&apos;,&apos;</span>)
+      <span class="hljs-keyword">this</span>.bgPreImg = res.data.bg_pic.split(<span class="hljs-string">&apos;,&apos;</span>)
+    })
+  }
+})
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="advanced/Vuex.html" class="navigation navigation-prev " aria-label="Previous page: Vuex">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../nodejs/" class="navigation navigation-next " aria-label="Next page: nodejs">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue 案例","level":"2.4.3","depth":2,"next":{"title":"nodejs","level":"3.1","depth":1,"path":"nodejs/README.md","ref":"nodejs/README.md","articles":[{"title":"nodejs 基础","level":"3.1.1","depth":2,"path":"nodejs/base.md","ref":"nodejs/base.md","articles":[]},{"title":"nodejs API","level":"3.1.2","depth":2,"path":"nodejs/API.md","ref":"nodejs/API.md","articles":[]}]},"previous":{"title":"Vuex","level":"2.4.2.3","depth":3,"path":"Vue/advanced/Vuex.md","ref":"Vue/advanced/Vuex.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/demos.md","mtime":"2019-07-11T11:29:24.734Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T08:10:50.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

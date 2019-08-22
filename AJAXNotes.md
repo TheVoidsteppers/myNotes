@@ -267,3 +267,24 @@ $.ajax({
 // 允许跨域请求
 header('Access-Control-Allow-Origin: *');
 ```
+
+## 异步上传
+
+```javascript
+// 异步上传图片==============================
+// console.log(file.files[0]) // 获取文件
+var formData = new FormData();
+formData.append('image',file.files[0]);
+// http://localhost/bxiang/admin.php/classroom/upload_video
+var url = "../../../../admin.php/classroom/upload_video";
+axios({
+    method: 'post',
+    url: url,
+    data: formData,
+    headers:{'Content-Type':'multipart/form-data'}
+}).then(function(res){
+    console.log(res.data.data)
+});
+// 异步上传图片==============================
+```
+
