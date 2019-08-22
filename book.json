@@ -6,7 +6,7 @@
     "root": "./",
     "generator": "site",
     "output": null,
-    "plugins": [],
+    "plugins": ["-sharing"],
     "pluginsConfig": {
         "theme-default": {
             "showLevel": false
