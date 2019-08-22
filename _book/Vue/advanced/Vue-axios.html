@@ -1,0 +1,904 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue-axios · 我的学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="TheVoidsteppers">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Vue-router.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/TheVoidsteppers" target="_blank" class="custom-link">github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../HTML/">
+            
+                <a href="../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../HTML/base.html">
+            
+                <a href="../../HTML/base.html">
+            
+                    
+                    HTML 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../CSS/">
+            
+                <a href="../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../CSS/base.html">
+            
+                <a href="../../CSS/base.html">
+            
+                    
+                    CSS 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../CSS/demos.html">
+            
+                <a href="../../CSS/demos.html">
+            
+                    
+                    CSS 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../JavaScript/">
+            
+                <a href="../../JavaScript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../JavaScript/base.html">
+            
+                <a href="../../JavaScript/base.html">
+            
+                    
+                    JavaScript 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../JavaScript/jQuery.html">
+            
+                <a href="../../JavaScript/jQuery.html">
+            
+                    
+                    jQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../JavaScript/add/">
+            
+                <a href="../../JavaScript/add/">
+            
+                    
+                    JavaScript 补充
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.3.1" data-path="../../JavaScript/add/EcmaScript6.html">
+            
+                <a href="../../JavaScript/add/EcmaScript6.html">
+            
+                    
+                    EcmaScript6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../JavaScript/advanced.html">
+            
+                <a href="../../JavaScript/advanced.html">
+            
+                    
+                    JavaScript 高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../../JavaScript/demos.html">
+            
+                <a href="../../JavaScript/demos.html">
+            
+                    
+                    JavaScript 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../README.md">
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../base.html">
+            
+                <a href="../base.html">
+            
+                    
+                    Vue 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vue 高级
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.4.2.1" data-path="Vue-axios.html">
+            
+                <a href="Vue-axios.html">
+            
+                    
+                    Vue-axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="Vue-router.html">
+            
+                <a href="Vue-router.html">
+            
+                    
+                    Vue-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="Vuex.html">
+            
+                <a href="Vuex.html">
+            
+                    
+                    Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../demos.html">
+            
+                <a href="../demos.html">
+            
+                    
+                    Vue 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../nodejs/">
+            
+                <a href="../../nodejs/">
+            
+                    
+                    nodejs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../nodejs/base.html">
+            
+                <a href="../../nodejs/base.html">
+            
+                    
+                    nodejs 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../nodejs/API.html">
+            
+                <a href="../../nodejs/API.html">
+            
+                    
+                    nodejs API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../PHP/">
+            
+                <a href="../../PHP/">
+            
+                    
+                    PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../PHP/base.html">
+            
+                <a href="../../PHP/base.html">
+            
+                    
+                    PHP 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../PHP/demos.html">
+            
+                <a href="../../PHP/demos.html">
+            
+                    
+                    PHP 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../PHP/WebsiteProcess.html">
+            
+                <a href="../../PHP/WebsiteProcess.html">
+            
+                    
+                    建站流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../Tools/">
+            
+                <a href="../../Tools/">
+            
+                    
+                    工具、插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../Tools/git.html">
+            
+                <a href="../../Tools/git.html">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../Tools/webpack.html">
+            
+                <a href="../../Tools/webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../Tools/element-ui.html">
+            
+                <a href="../../Tools/element-ui.html">
+            
+                    
+                    element-ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../Tools/Bootstrap.html">
+            
+                <a href="../../Tools/Bootstrap.html">
+            
+                    
+                    Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../Tools/BootstrapFileInput.html">
+            
+                <a href="../../Tools/BootstrapFileInput.html">
+            
+                    
+                    Bootstrap FileInput
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../Tools/tools.html">
+            
+                <a href="../../Tools/tools.html">
+            
+                    
+                    其他工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Vue-axios</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x8D77;&#x6B65;">&#x8D77;&#x6B65;</h2>
+<p>&#x5B89;&#x88C5;&#xFF1A;</p>
+<pre><code class="lang-shell"># vue-axios &#x4F9D;&#x8D56; axios
+npm install --save axios vue-axios
+</code></pre>
+<p>vuecli3 &#x914D;&#x7F6E; vue-axios</p>
+<p>&#x63D0;&#x793A;&#xFF1A;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x8981;&#x5728;&#x5165;&#x53E3;&#x6587;&#x4EF6;main.js&#x4E2D;&#x5F15;&#x5165;&#xFF0C;&#x56E0;&#x4E3A;main.js&#x9879;&#x76EE;&#x8FD0;&#x884C;&#x9996;&#x5148;&#x8FD0;&#x884C;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;axios&apos;</span>
+<span class="hljs-keyword">import</span> VueAxios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-axios&apos;</span>
+
+Vue.use(VueAxios, axios)
+</code></pre>
+<p>&#x7591;&#x95EE;&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;Vue.use(VueAxios, axios)
+&#x89E3;&#x60D1;&#xFF1A;&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x65B9;&#x6CD5; Vue.use() &#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#xFF0C;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x8C03;&#x7528;install&#x65B9;&#x6CD5;&#xFF0C;vue&#x5B98;&#x7F51;&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x8C03;&#x7528; &apos;MyPlugin.install(Vue)&apos;</span>
+Vue.use(MyPlugin)
+</code></pre>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-javascript">Vue.axios.get(api).then((response) =&gt; {
+    <span class="hljs-built_in">console</span>.log(response.data)
+})
+
+<span class="hljs-keyword">this</span>.axios.get(api).then((response) =&gt; {
+    <span class="hljs-built_in">console</span>.log(response.data)
+})
+
+<span class="hljs-keyword">this</span>.$http.get(api).then((response) =&gt; {
+    <span class="hljs-built_in">console</span>.log(response.data)
+})
+<span class="hljs-comment">// &#x4F7F;&#x7528; axios &#x4E0D;&#x662F; vue-axios</span>
+axios.post(
+    <span class="hljs-string">&quot;/task_manage/task&quot;</span>,
+    {
+        sddsdf: <span class="hljs-string">&quot;sdfd&quot;</span>
+    },
+    {
+     headers: {
+         <span class="hljs-string">&quot;Content-type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>
+     }<span class="hljs-comment">//&#x6CA1;&#x6709; headers &#x4E0D;&#x662F; post &#x8BF7;&#x6C42;&#xFF1F;&#xFF1F;&#xFF1F;&#xFF1F;</span>
+    }
+).then(res =&gt; {
+    <span class="hljs-keyword">this</span>.taskInfo = res.data.data;
+    <span class="hljs-built_in">console</span>.log(res.data.data);
+});
+</code></pre>
+<h2 id="vue-axios&#x5B66;&#x4E60;&#x7F51;&#x5740;">vue-axios&#x5B66;&#x4E60;&#x7F51;&#x5740;</h2>
+<p><a href="https://blog.csdn.net/qq_41115965/article/details/80780264" target="_blank">https://blog.csdn.net/qq_41115965/article/details/80780264</a></p>
+<p>&#x7F51;&#x5740;1&#xFF1A; <a href="https://github.com/imcvampire/vue-axios" target="_blank">https://github.com/imcvampire/vue-axios</a>
+&#x7F51;&#x5740;2&#xFF1A; <a href="https://www.npmjs.com/packge/axios" target="_blank">https://www.npmjs.com/packge/axios</a></p>
+<h2 id="&#x672C;&#x5730;&#x8DE8;&#x57DF;">&#x672C;&#x5730;&#x8DE8;&#x57DF;</h2>
+<pre><code class="lang-javascript">devServer: {
+    port: <span class="hljs-number">8080</span>,
+        proxy: {
+            <span class="hljs-string">&apos;/task_manage&apos;</span>: {
+                target: <span class="hljs-string">&apos;http://localhost:80/ztong/manual.php/task_manage/task&apos;</span>, 
+                <span class="hljs-comment">// target host &#x63A5;&#x53E3;&#x5730;&#x5740;    80 &#x662F;&#x63A5;&#x53E3;&#x7AEF;&#x53E3;</span>
+                ws: <span class="hljs-literal">true</span>, 
+                <span class="hljs-comment">// proxy websockets </span>
+                changeOrigin: <span class="hljs-literal">true</span>,
+                <span class="hljs-comment">// needed for virtual hosted sites</span>
+                pathRewrite: {
+                    <span class="hljs-string">&apos;^/task_manage&apos;</span>: <span class="hljs-string">&apos;&apos;</span> <span class="hljs-comment">// rewrite path</span>
+                }
+            }
+        }
+}
+</code></pre>
+<h2 id="axios-&#x53D1;-post-&#x8BF7;&#x6C42;&#xFF0C;&#x540E;&#x7AEF;&#x63A5;&#x6536;&#x4E0D;&#x5230;&#x53C2;&#x6570;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;">axios &#x53D1; post &#x8BF7;&#x6C42;&#xFF0C;&#x540E;&#x7AEF;&#x63A5;&#x6536;&#x4E0D;&#x5230;&#x53C2;&#x6570;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
+<blockquote>
+<p>axios&#x4F1A;&#x5E2E;&#x6211;&#x4EEC; <strong>&#x8F6C;&#x6362;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x548C;&#x54CD;&#x5E94;&#x6570;&#x636E;</strong> &#x4EE5;&#x53CA; <strong>&#x81EA;&#x52A8;&#x8F6C;&#x6362; JSON &#x6570;&#x636E;</strong></p>
+</blockquote>
+<p>&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x7684; Content-Type &#x53D8;&#x6210;&#x4E86; application/json;charset=utf-8
+&#x7136;&#x540E;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x53C2;&#x6570;&#x662F; JSON &#x5BF9;&#x8C61;&#xFF0C;axios &#x5E2E;&#x6211;&#x4EEC;&#x505A;&#x4E86;&#x4E00;&#x4E2A; stringify &#x7684;&#x5904;&#x7406;&#x3002;
+&#x800C;&#x4E14;&#x67E5;&#x9605; axios &#x6587;&#x6863;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#xFF1A;axios &#x4F7F;&#x7528; post &#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x76F4;&#x63A5;&#x628A; json &#x653E;&#x5230;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;&#x63D0;&#x4EA4;&#x5230;&#x540E;&#x7AEF;&#x7684;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x5C31;&#x4E0E;&#x6211;&#x4EEC;&#x670D;&#x52A1;&#x7AEF;&#x8981;&#x6C42;&#x7684; &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded&apos; &#x4EE5;&#x53CA; @RequestParam &#x4E0D;&#x7B26;&#x5408;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x7528; URLSearchParams &#x4F20;&#x9012;&#x53C2;&#x6570;&#x3011;</span>
+<span class="hljs-keyword">let</span> param = <span class="hljs-keyword">new</span> URLSearchParams()
+param.append(<span class="hljs-string">&apos;username&apos;</span>, <span class="hljs-string">&apos;admin&apos;</span>)
+param.append(<span class="hljs-string">&apos;pwd&apos;</span>, <span class="hljs-string">&apos;admin&apos;</span>)
+axios({
+    method: <span class="hljs-string">&apos;post&apos;</span>,
+    url: <span class="hljs-string">&apos;/api/lockServer/search&apos;</span>,
+    data: param
+})
+<span class="hljs-comment">// &#x53D1;&#x9001; get</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendGetAxios</span>(<span class="hljs-params">url,params,fun</span>) </span>{
+    axios({
+        method:<span class="hljs-string">&apos;get&apos;</span>,
+        url: url,
+        params: params
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{
+        fun &amp;&amp; fun(res)
+    })
+}
+<span class="hljs-comment">// &#x53D1;&#x9001; post</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendPostAxios</span>(<span class="hljs-params">url,params,fun</span>) </span>{
+    <span class="hljs-keyword">let</span> data = <span class="hljs-keyword">new</span> URLSearchParams()
+    <span class="hljs-keyword">for</span> (para <span class="hljs-keyword">in</span> params) {
+        data.append(para, params[para])
+    }
+    axios({
+        method:<span class="hljs-string">&apos;post&apos;</span>,
+        url: url,
+        data: data,
+        headers: {<span class="hljs-string">&quot;Content-type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>}
+    }).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{
+        fun &amp;&amp; fun(res)
+    })
+}
+</code></pre>
+<p>&#x539F;&#x6587;&#xFF1A;<a href="https://blog.csdn.net/csdn_yudong/article/details/79668655" target="_blank">https://blog.csdn.net/csdn_yudong/article/details/79668655</a></p>
+<p><code>jQuery.ajax</code>&#x7684;<code>post</code>&#x63D0;&#x4EA4;&#x9ED8;&#x8BA4;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x7684;<code>Content-Type: application/x-www-form-urlencoded</code>
+&#x800C;<code>axios.post</code>&#x63D0;&#x4EA4;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x662F;<code>Content-Type: application/json</code>&#x3002;</p>
+<p><code>application/json</code>&#x662F;&#x4E00;&#x4E2A;&#x8D8B;&#x52BF;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6539;&#x4E00;&#x4E2A;&#x65E7;&#x9879;&#x76EE;&#xFF0C;&#x628A;<code>jQuery.ajax</code>&#x5168;&#x90E8;&#x6362;&#x6210;<code>axios.post</code>&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8BF7;&#x6C42;&#x505A;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x539F;&#x6765;&#x7684;&#x4EE3;&#x7801; &#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8BF7;&#x6C42;&#x5934;&#x7684;content-type</span>
+<span class="hljs-keyword">var</span> data = {age: <span class="hljs-number">18</span>};
+$.ajax({
+    url: <span class="hljs-string">&apos;&apos;</span>,
+    type: <span class="hljs-string">&apos;POST&apos;</span>,
+    data: data
+    dataType: <span class="hljs-string">&apos;json&apos;</span>,
+    success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+        <span class="hljs-comment">// do something</span>
+    }
+})
+<span class="hljs-comment">// &#x4F7F;&#x7528; axios &#x7684;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;axios&apos;</span>;
+<span class="hljs-keyword">import</span> qs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;qs&apos;</span>;
+
+<span class="hljs-keyword">var</span> data = {age: <span class="hljs-number">18</span>};
+<span class="hljs-keyword">var</span> url = <span class="hljs-string">&apos;&apos;</span>;
+
+axios.post(
+    url, 
+    qs.stringify(data), 
+    {headers: {<span class="hljs-string">&apos;Content-Type&apos;</span>: <span class="hljs-string">&apos;application/x-www-form-urlencoded&apos;</span>}}
+).then(result =&gt; {
+    <span class="hljs-comment">// do something</span>
+})
+</code></pre>
+<h2 id="&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;">&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</h2>
+<pre><code class="lang-javascript">axios({
+    method:<span class="hljs-string">&apos;post&apos;</span>,
+    url: downloadFileUrl,
+    data: data,
+    headers: {<span class="hljs-string">&quot;Content-type&quot;</span>: <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>},
+    responseType:<span class="hljs-string">&apos;blob&apos;</span>
+}).then( (res) =&gt;{
+    <span class="hljs-keyword">let</span> blob = <span class="hljs-keyword">new</span> Blob([res.data])
+    <span class="hljs-keyword">let</span> downloadElement = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;a&apos;</span>)
+    <span class="hljs-keyword">let</span> href = <span class="hljs-built_in">window</span>.URL.createObjectURL(blob); <span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E0B;&#x8F7D;&#x7684;&#x94FE;&#x63A5;</span>
+    downloadElement.href = href;
+    downloadElement.download = <span class="hljs-string">`&#x5546;&#x54C1;&#x5217;&#x8868;.xls`</span>; <span class="hljs-comment">//&#x4E0B;&#x8F7D;&#x540E;&#x6587;&#x4EF6;&#x540D;</span>
+    <span class="hljs-built_in">document</span>.body.appendChild(downloadElement);
+    downloadElement.click(); <span class="hljs-comment">//&#x70B9;&#x51FB;&#x4E0B;&#x8F7D;</span>
+    <span class="hljs-built_in">document</span>.body.removeChild(downloadElement); <span class="hljs-comment">//&#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x79FB;&#x9664;&#x5143;&#x7D20;</span>
+    <span class="hljs-built_in">window</span>.URL.revokeObjectURL(href); <span class="hljs-comment">//&#x91CA;&#x653E;blob&#x5BF9;&#x8C61;</span>
+})
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Vue 高级">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Vue-router.html" class="navigation navigation-next " aria-label="Next page: Vue-router">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue-axios","level":"2.4.2.1","depth":3,"next":{"title":"Vue-router","level":"2.4.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},"previous":{"title":"Vue 高级","level":"2.4.2","depth":2,"path":"Vue/advanced/README.md","ref":"Vue/advanced/README.md","articles":[{"title":"Vue-axios","level":"2.4.2.1","depth":3,"path":"Vue/advanced/Vue-axios.md","ref":"Vue/advanced/Vue-axios.md","articles":[]},{"title":"Vue-router","level":"2.4.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},{"title":"Vuex","level":"2.4.2.3","depth":3,"path":"Vue/advanced/Vuex.md","ref":"Vue/advanced/Vuex.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","livereload"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/advanced/Vue-axios.md","mtime":"2019-08-22T10:37:25.068Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T11:30:58.324Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
