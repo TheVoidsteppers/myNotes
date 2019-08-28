@@ -785,7 +785,7 @@ d3.selectAll() <span class="hljs-comment">// &#x9009;&#x62E9;&#x6240;&#x6709;  <
 <span class="hljs-keyword">var</span> p = d3.select(<span class="hljs-string">&quot;body&quot;</span>).select(<span class="hljs-string">&quot;p&quot;</span>);<span class="hljs-comment">// &#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x4E2A; p</span>
  p.style(<span class="hljs-string">&quot;color&quot;</span>,<span class="hljs-string">&quot;red&quot;</span>);
 
- <span class="hljs-comment">// &#x63D2;&#x5165;&#x5143;&#x7D20;</span>
+<span class="hljs-comment">// &#x63D2;&#x5165;&#x5143;&#x7D20;</span>
 <span class="hljs-comment">/**
 .append()&#xFF1A;&#x5728;&#x9009;&#x62E9;&#x96C6;&#x5C3E;&#x90E8;&#x63D2;&#x5165;&#x5143;&#x7D20;
 .insert()&#xFF1A;&#x5728;&#x9009;&#x62E9;&#x96C6;&#x524D;&#x9762;&#x63D2;&#x5165;&#x5143;&#x7D20;
@@ -958,6 +958,33 @@ gs.append(<span class="hljs-string">&quot;rect&quot;</span>)
 })
 </code></pre>
 <h2 id="&#x51E0;&#x4F55;&#x56FE;&#x5F62;">&#x51E0;&#x4F55;&#x56FE;&#x5F62;</h2>
+<h3 id="&#x76F4;&#x7EBF;&#xFF1A;line">&#x76F4;&#x7EBF;&#xFF1A;line</h3>
+<h3 id="&#x77E9;&#x5F62;&#xFF1A;rect">&#x77E9;&#x5F62;&#xFF1A;rect</h3>
+<h3 id="&#x5706;&#xFF1A;circle">&#x5706;&#xFF1A;circle</h3>
+<h3 id="&#x6298;&#x7EBF;&#xFF1A;polyline">&#x6298;&#x7EBF;&#xFF1A;polyline</h3>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--
+const point = [
+    {&apos;x&apos;:641,&apos;y&apos;:1008},
+    ...
+]  
+this.elementSelection = this.groupSelection
+      .append(&quot;polygon&quot;)
+      .attr(&quot;class&quot;, &quot;arya-marker-shape arya-marker-shape-polygon&quot;)
+      .attr(&quot;points&quot;, () =&gt; {
+        return points.map(item =&gt; {
+          return [item.x, item.y].join(&apos;,&apos;)
+        }).join(&apos; &apos;)
+      })
+x0,y0 x1,y1 ...   &#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x5272;&#x70B9;
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">polyline</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;arya-marker-shape-polygon&quot;</span> <span class="hljs-attr">points</span>=<span class="hljs-string">&quot;641,1008 1339,909 1152,1387 682,1343&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">polyline</span>&gt;</span>
+</code></pre>
+<h3 id="&#x591A;&#x8FB9;&#x5F62;&#xFF1A;polygon">&#x591A;&#x8FB9;&#x5F62;&#xFF1A;polygon</h3>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--
+&#x6570;&#x636E;&#x683C;&#x5F0F; &#x540C; polyline
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">polygon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;arya-marker-shape-polygon&quot;</span> <span class="hljs-attr">points</span>=<span class="hljs-string">&quot;641,1008 1339,909 1152,1387 682,1343&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">polygon</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1001,7 +1028,7 @@ gs.append(<span class="hljs-string">&quot;rect&quot;</span>)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"D3_v5","level":"4.1.4","depth":2,"next":{"title":"Bootstrap","level":"4.1.5","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},"previous":{"title":"element-ui","level":"4.1.3","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/D3_v5.md","mtime":"2019-08-24T12:03:02.083Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-26T01:34:10.040Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"D3_v5","level":"4.1.4","depth":2,"next":{"title":"Bootstrap","level":"4.1.5","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},"previous":{"title":"element-ui","level":"4.1.3","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/D3_v5.md","mtime":"2019-08-27T09:34:40.973Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-28T02:06:48.064Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

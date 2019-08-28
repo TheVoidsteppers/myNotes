@@ -1,0 +1,4 @@
+package-lock.json
+_book/
+book/
+node_modules/
