@@ -4,7 +4,7 @@
 git log master..origin/master
 ```
 
-统计文件的改动
+## 统计文件的改动
 
 ```shell
 # git diff <local branch> <remote>/<remote branch>
@@ -37,7 +37,7 @@ footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.
 // 推荐以动词开头，如： 设置、修改、增加、删减、撤销等
 ```
 
-git 步骤
+## git 步骤
 
 ```shell
 # 创建并切换到新分支
@@ -52,5 +52,11 @@ git merge origin/develop
  git commit -m 'feat:创建折线图组件和mock数据文件'
  git push origin feature/charts 
 # http://git.dataexa.com:83/insight/Insight-View/data-center/merge_requests/new?merge_request%5Bsource_branch%5D=feature%2Fcharts  发起合并请求 
+```
+
+## git clone
+
+```shell
+git clone -b dev_jk http://10.1.1.11/service/tmall-service.git # 选择分支下载
 ```
 

@@ -1,3 +1,4 @@
 package-lock.json
-_book
-node_modules/*
+_book/
+book/
+node_modules/
