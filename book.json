@@ -6,7 +6,7 @@
     "root": "./",
     "generator": "site",
     "output": null,
-    "plugins": ["-sharing"],
+    "plugins": ["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],
     "pluginsConfig": {
         "theme-default": {
             "showLevel": false
