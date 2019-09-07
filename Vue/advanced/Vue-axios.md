@@ -193,3 +193,26 @@ axios({
 })
 ```
 
+## chunk 数据处理
+
+```javascript
+// 设置 responseType
+ responseType: "arraybuffer"
+// 处理 arraybuffer
+
+let imgBase64;
+const resolve = res => {
+    imgBase64 =
+        "data:image/png;base64," +
+        btoa(
+        // 将图片数据做处理(百度的)
+        new Uint8Array(res).reduce(
+            (data, byte) => data + String.fromCharCode(byte),
+            ""
+        )
+    );
+	return imgBase64
+};
+await jobManageImageApi.getImage(id).then(resolve);
+```
+
