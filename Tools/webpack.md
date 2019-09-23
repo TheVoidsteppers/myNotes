@@ -731,3 +731,11 @@ devtool: 'inline-source-map',
 ## VueCLi
 
 Vue 作者考虑到新手使用 webpack 带来的复杂度，所以官方开发了一个工具： `vue-cli` 。它可以帮你快速生成一个已经配置好了的 webpack 项目
+
+
+
+## crumb
+
+1、npm 包的vue 项目入口文件在 src/index.js
+
+2、不会加载 模块内的 vue.config.js  、 .env.development 等
