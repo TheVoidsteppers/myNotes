@@ -167,15 +167,200 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 
 ### 配置基础系统
 
+#### 生成分区表
 
+```shell
+# genfstab -U /mnt >> /mnt/etc/fstab
+```
 
+接着使用 *arch-chroot* 进入新系统。
 
+```shell
+# arch-chroot /mnt
+```
 
+#### 时区
 
+```shell
+# ln -sf /usr/share/zoneinfo/$(tzselect) /etc/localtime
+# 中国大陆用户使用以下命令。
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
 
+![localtime](./images/localtime.gif)
 
+#### 硬件时间设置
 
+```shell
+# hwclock --systohc
+```
 
+####  本地化设置
+
+进行本地化设置以正确显示本地文字、货币、时间与时期格式以及其它本地相关标准。
+编辑 /etc/locale.gen，去掉需要的 locale 的注释（行头的字符 #）。
+
+```shell
+# nano /etc/locale.gen
+```
+
+1. [F6] 搜索 zh_CN.UTF-8
+2. [←]/[→]（方向键）移动光标至字符 # 处
+3. [DELETE]/[BACKSPACE] 删除字符 #
+4. [CTRL+O] 保存，[回车键] 确定
+
+然后使用 *locale-gen* 生成 locale。
+
+```shell
+# locale-gen
+```
+
+![local-gen](./images/locale-gen.gif)
+
+接着使用以下命令设置默认 locale。
+
+```shell
+# echo LANG=<默认 locale>  > /etc/locale.conf
+# echo 'LANG=zh_CN.UTF-8'  > /etc/locale.conf
+```
+
+####  主机名
+
+```shell
+# echo <主机名> > /etc/hostname
+```
+
+接着向 /etc/hosts 文件添加 hosts 条目。
+
+```shell
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+127.0.1.1	<主机名>.localdomain	<主机名>
+```
+
+#### 网络连接
+
+考虑到多数用户最终会安装图形化的桌面环境，因而推荐使用兼容性较好 NetworkManager 来管理网络。需要注意的是，当前安装环境已连接至网络，请勿尝试多次连接，而待安装完成并重启后再进行连接。
+
+首先安装 NetworkManager：
+
+```shell
+# pacman -S networkmanager
+```
+
+* 如果需要图形化的管理工具，以便稍后在桌面环境中使用，可接着安装 *nm-connection-editor*
+* 如果需要系统托盘工具，可接着安装 *network-manager-applet*
+* 如果需要 ADSL 支持，需要安装 *rp-pppoe*
+
+#### 为 root 用户设置密码
+
+```shell
+# passwd
+```
+
+#### 安装引导程序
+
+引导程序是机器启动后运行的第一个程序，其作用在于加载并启动系统内核。本文推荐安装并介绍如何配置 GRUB 作为引导程序。如需安装其他引导程序
+
+BIOS 系统：
+
+```shell
+# pacman -S grub os-prober
+# grub-install --target=i386-pc /dev/sdX    # sdX 为目标磁盘
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+UEFI 系统：
+
+```shell
+# pacman -S dosfstools grub efibootmgr
+# grub-install --target=x86_64-efi --efi-directory=<EFI 分区挂载点> --bootloader-id=GRUB
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+#### 完成安装
+
+至此，基础可用的 Arch Linux 便安装完毕。现在按下列步骤退出安装环境并重启。
+1. 使用命令 *exit* 或 [CTRL+D] 退回安装环境
+2. 卸载新分区：
+
+```shell
+# umount -R /mnt
+```
+
+3. 重启
+
+```shell
+# reboot
+```
+
+4. 移除安装介质
+
+### 用户管理
+
+添加用户使用 *useradd* 命令。具体用法请查看 man 手册或 help 消息。
+
+```shell
+# useradd -m -g users -s /bin/bash archuser
+```
+
+该命令创建一个名为 archuser 的用户，指定登录 shell 为 bash，所属主用户组 users，并在 /home 下创建同名用户文件夹。
+
+```shell
+passwd archuser
+```
+
+该命令为用户 archuser 设置密码。
+
+### 配置图形界面
+
+####  安装显卡驱动
+
+官方软件软件仓库为主流的显卡提供了驱动包：
+
+\### 通用显卡驱动
+*xf86-video-vesa* 是开源的显卡驱动实现，提供了最基本的显示功能。
+
+\### 因特尔显卡驱动
+因特尔显卡应当是开箱即用的，不需要安装显卡驱动，但通常建议安装 *mesa* 以支持 3D 加速。如果需要 Vulkan 支持（需 Ivy Bridge 及更新架构），须安装 *valkan-intel*。如果需要支持 Xorg 2D 加速，须安装 *xf86-video-intel*。
+然而需要注意的是，安装 *xf86-video-intel* 与否需要更多斟酌，[详见此处](https://wiki.archlinux.org/index.php/Intel_graphics_(简体中文))。
+
+\### 英伟达显卡驱动
+英伟达显卡驱动有第三方的开源实现 *xf86-video-nouveau* 和英伟达官方私有驱动 *nvidia* 系列。
+
+\* 对于 GeForce 600 及更新系列（除了 610, 620, 625, 705, 800A 和其他低端重贴牌显卡）请安装 *nvidia*
+\* 对于 2010 至 2011 年间 GeForce 400/500 请安装 *nvidia-390xx*
+\* 对于 2006 至 2010 年间 GeForce 8000/9000、ION 和 100-300 系列 [NV5x, NV8x, NV9x and NVAx] 请安装 *nvidia-340xx*
+\* 更早的显卡系列驱动[请查阅此处](https://wiki.archlinux.org/index.php/NVIDIA#Unsupported_drivers)
+
+> 如果需要 NVIDIA Optimus 支持，[请查阅此处](https://wiki.archlinux.org/index.php/NVIDIA_Optimus_(简体中文))。
+
+\### AMD/ATI
+AMD/ATI 显卡驱动原先有开源实现 *xf86-video-ati* 及闭源实现 AMD Catalyst。而AMD 自统一开源驱动和闭源驱动后又发布了新的开源实现 *xf86-video-amdgpu* 和闭源实现 AMDGPU PRO。其中 AMD Catalyst 及 AMDGPU PRO 不被 Arch Linux 官方所支持（未收录于官方软件仓库）。
+
+\* *xf86-video-amdgpu* 支持 GCN 1、GCN 2、GCN 3、GCN 4 及更新架构的显卡。
+\* AMDGPU PRO 支持 GCN 3、GCN 4 及更新架构的显卡。
+\* *xf86-video-ati* 支持 X1000 及更早的显卡、TeraScale 1、TeraScale 2、TeraScale 3、GCN 1、GCN 2 架构的显卡。
+\* AMD Catalyst 支持 TeraScale 2、TeraScale 3、GCN 1、GCN 2、GCN 3 架构的显卡。
+\* AMD Catalyst Legacy 支持 TeraScale 1 架构的显卡。
+
+###  中文字体
+
+本文推荐思源黑体，可通过以下命令安装。
+
+```shell
+# pacman -S adobe-source-han-sans-cn-fonts
+```
+
+### 安装桌面环境
+
+### 安装中文输入法
+
+##### # 推荐阅读
+
+- [Arch 用户软件仓库](https://wiki.archlinux.org/index.php/Arch_User_Repository_(简体中文))
+- [AUR 助手工具](https://wiki.archlinux.org/index.php/AUR_helpers_(简体中文))
 
 
 
