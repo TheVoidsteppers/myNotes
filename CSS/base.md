@@ -19,7 +19,7 @@ img{
 
 ```
 
-### box-shadow
+## box-shadow
 
 ```
 box-shadow: h-shadow v-shadow blur spread color inset;
@@ -30,5 +30,20 @@ blur: 模糊距离(就是渐变的距离，设为0就没有渐变)。
 spread: 投影的尺寸，通过这个控制“影分身”的大小。
 color: 投影颜色，通过这个实现后方的乌云。
 inset: 改为内阴影。这里用不到。
+```
+
+## 伪类选择器
+
+```css
+/*
+	找到P元素，通过P找到父元素，通过父元素找子元素当中类型为P的，然再去找第几个。
+    p:first-of-type
+    p:last-of-type
+    p:nth-of-type(n)
+    p:nth-last-of-type(n)
+    å¦‚æžœä½¿ç”¨çš„æ˜¯child;
+    p:first-child
+    找到P元素,通过P找到父元素，通过父元素找所有的子元素，找第一个元素，匹配判断类型(如果不是无效选择器)
+    */
 ```
 
