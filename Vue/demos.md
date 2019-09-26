@@ -204,3 +204,11 @@ const activityEdit = new Vue({
 })
 ```
 
+## vue data恢复初始化数据
+
+```javascript
+// 重置表单 
+this.form = this.$options.data().form;
+Object.assign(this.$data, this.$options.data())
+```
+
