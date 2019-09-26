@@ -751,6 +751,237 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x5B89;&#x88C5;-archlinux">&#x5B89;&#x88C5; archLinux</h2>
+<h3 id="&#x5B89;&#x88C5;&#x524D;&#x51C6;&#x5907;">&#x5B89;&#x88C5;&#x524D;&#x51C6;&#x5907;</h3>
+<pre><code class="lang-shell"># &#x4E0B;&#x8F7D;  iso &#x955C;&#x50CF;
+# 1&#x3001;&#x63D2;&#x5165;U&#x76D8;&#xFF0C;df -h &#x67E5;&#x770B;U&#x76D8;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6302;&#x8F7D;&#x60C5;&#x51B5;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; umount /dev/sdb* &#x5378;&#x8F7D;U&#x76D8;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1B;
+
+# 2&#x3001;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF1A;sudo mkfs.xxx  /dev/sdb &#x683C;&#x5F0F;&#x5316;U&#x76D8;&#x4E3A; xxx &#x683C;&#x5F0F;&#xFF1B;
+# &#x8BF7;&#x5C06;xxx&#x6362;&#x6210;&#x60A8;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;&#xFF0C;&#x5982;fat&#x3001;vfat&#x3001;ntfs&#x3001;ext4&#x7B49;&#x7B49;
+
+# 3&#x3001;dd if=*/*.iso   of=/dev/sdb  bs=4M  (&#x6570;&#x636E;&#x5757;&#x5927;&#x5C0F;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5757;&#x53EA;&#x80FD;&#x5B58;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x6570;&#x636E;)
+
+# 4&#x3001;&#x6267;&#x884C;sync&#xFF0C;&#x540C;&#x6B65;&#x7F13;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x81F3;U&#x76D8;
+sudo dd bs=4M  if=archlinux.iso of=/dev/sdx status=progress  &amp;&amp; sync
+</code></pre>
+<h4 id="&#x542F;&#x52A8;&#x5B89;&#x88C5;&#x73AF;&#x5883;">&#x542F;&#x52A8;&#x5B89;&#x88C5;&#x73AF;&#x5883;</h4>
+<p>&#x6210;&#x529F;&#x4ECE;&#x51C6;&#x5907;&#x597D;&#x7684;&#x5B89;&#x88C5;&#x4ECB;&#x8D28;&#x4E2D;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x5C4F;&#x5E55;&#x5C06;&#x5448;&#x73B0;&#x51FA;&#x4E00;&#x4E2A;&#x83DC;&#x5355;&#x3002;&#x8BF7;&#x4F7F;&#x7528; [&#x2191;]/[&#x2193;]&#xFF08;&#x65B9;&#x5411;&#x952E;&#xFF09;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#xFF0C;[&#x21A9;] &#xFF08;&#x56DE;&#x8F66;&#x952E;&#xFF09;&#x786E;&#x8BA4;&#x3002;
+BIOS&#xFF1A;</p>
+<p><img src="images/BIOS_boot.gif" alt="BIOS_boot"></p>
+<p>UEFI&#xFF1A;</p>
+<p><img src="images/UEFI_boot.gif" alt="UEFI_boot"></p>
+<p>&#x5F53;&#x5C4F;&#x5E55;&#x4E0A;&#x51FA;&#x73B0;&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x53CA;&#x95EA;&#x70C1;&#x7684;&#x5149;&#x6807;&#x65F6;&#x5373;&#x542F;&#x52A8;&#x5B8C;&#x6BD5;&#x3002;</p>
+<p><img src="images/boot_over.gif" alt="boot_over"></p>
+<h4 id="&#x8BBE;&#x7F6E;&#x952E;&#x76D8;&#x5E03;&#x5C40;">&#x8BBE;&#x7F6E;&#x952E;&#x76D8;&#x5E03;&#x5C40;</h4>
+<p>&#x9ED8;&#x8BA4;&#x952E;&#x76D8;&#x5E03;&#x5C40;&#x4E3A; US&#xFF08;&#x7F8E;&#x5F0F;&#x952E;&#x76D8;&#xFF09;&#x3002;&#x5982;&#x9700;&#x4FEE;&#x6539;&#x952E;&#x76D8;&#x5E03;&#x5C40;&#x8BF7;&#x4F7F;&#x7528; <em>loadkeys</em> &#x547D;&#x4EE4;&#x3002;&#x5982;&#x9700;&#x4FEE;&#x6539;&#x5B57;&#x4F53;&#x8BF7;&#x4F7F;&#x7528; <em>setfont</em> &#x547D;&#x4EE4;&#x3002;</p>
+<h4 id="&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;">&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;</h4>
+<p>ArchISO &#x5728;&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x5C1D;&#x8BD5;&#x8FDE;&#x63A5;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x547D;&#x4EE4; <em>ping</em> &#x67E5;&#x770B;&#x8FDE;&#x63A5;&#x662F;&#x5426;&#x5DF2;&#x5EFA;&#x7ACB;&#x3002;</p>
+<pre><code class="lang-shell">ping -c 4 www.baidu.com
+</code></pre>
+<p><img src="images/ping.gif" alt="ping"></p>
+<p>&#x82E5;&#x7F51;&#x7EDC;&#x5C1A;&#x672A;&#x8FDE;&#x63A5;&#xFF0C;&#x8BF7;&#x5148;&#x63A5;&#x5165;&#x7F51;&#x7EDC;&#x3002;&#x82E5;&#x4F7F;&#x7528; WiFi &#x8FDE;&#x63A5;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <em>wifi-menu</em> &#x547D;&#x4EE4;&#x3002;
+&#x82E5;&#x4F7F;&#x7528; ADSL &#x5BBD;&#x5E26;&#x8FDE;&#x63A5;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <em>pppoe-setup</em> &#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x518D;&#x4F7F;&#x7528; <em>systemctl start adsl</em> &#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x3002;</p>
+<h4 id="&#x5237;&#x65B0;&#x672C;&#x5730;&#x65F6;&#x95F4;">&#x5237;&#x65B0;&#x672C;&#x5730;&#x65F6;&#x95F4;</h4>
+<pre><code class="lang-shell"># timedatectl set-ntp true
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x955C;&#x50CF;">&#x914D;&#x7F6E;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x955C;&#x50CF;</h4>
+<p>&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x955C;&#x50CF;&#x662F;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x7684;&#x62F7;&#x8D1D;&#x526F;&#x672C;&#x3002;Arch Linux &#x5728;&#x8BB8;&#x591A;&#x56FD;&#x5BB6;&#x548C;&#x5730;&#x533A;&#x90FD;&#x6709;&#x4ED3;&#x5E93;&#x955C;&#x50CF;&#xFF0C;&#x4F46;&#x662F;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x4E86;&#x6240;&#x6709;&#x4ED3;&#x5E93;&#x955C;&#x50CF;&#xFF0C;&#x56E0;&#x800C;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x5145;&#x5206;&#x5229;&#x7528;&#x5F53;&#x5730;&#x7F51;&#x7EDC;&#x4F18;&#x52BF;&#x3002;&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x6700;&#x9AD8;&#x7684;&#x4E0B;&#x8F7D;&#x901F;&#x5EA6;&#xFF0C;&#x9700;&#x8C03;&#x6574;&#x955C;&#x50CF;&#x987A;&#x5E8F;&#xFF0C;&#x63D0;&#x9AD8;&#x5F53;&#x5730;&#x955C;&#x50CF;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x3002;
+Arch Linux &#x7684;&#x4ED3;&#x5E93;&#x955C;&#x50CF;&#x5730;&#x5740;&#x5B58;&#x4E8E; <em>/etc/pacman.d/mirrorlist</em>&#xFF0C;&#x6BCF;&#x884C;&#x4E00;&#x6761;&#x6309;&#x4F7F;&#x7528;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x3002;&#x8981;&#x8BA9; Arch Linux &#x7684;&#x5305;&#x7BA1;&#x7406;&#x5668; <em>pacman</em> &#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x4ED3;&#x5E93;&#x955C;&#x50CF;&#xFF0C;&#x53EA;&#x9700;&#x8C03;&#x6574;&#x987A;&#x5E8F;&#xFF0C;&#x4F7F;&#x4E4B;&#x7F6E;&#x4E8E;&#x524D;&#x5217;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-shell"># nano /etc/pacman.d/mirrorlist
+</code></pre>
+<ol>
+<li>[F6] &#x641C;&#x7D22; china</li>
+<li>[&#x65B9;&#x5411;&#x952E;] &#x79FB;&#x52A8;&#x5149;&#x6807;&#x81F3; Server &#x884C;</li>
+<li>[CTRL+K] &#x526A;&#x5207;&#x8BE5;&#x884C;</li>
+<li>[&#x65B9;&#x5411;&#x952E;] &#x79FB;&#x52A8;&#x5149;&#x6807;&#x81F3;&#x5176;&#x4ED6; Server &#x884C;&#x524D;</li>
+<li>[CTRL+U] &#x7C98;&#x8D34;&#x81F3;&#x6B64;&#x884C;</li>
+<li>[CTRL+O] &#x4FDD;&#x5B58;&#xFF0C;[&#x56DE;&#x8F66;&#x952E;] &#x786E;&#x5B9A;</li>
+</ol>
+<p><img src="images/mirrorlist.gif" alt="mirrorlist"></p>
+<pre><code class="lang-shell"># &#x4E2D;&#x56FD;&#x5927;&#x9646;&#x7528;&#x6237;&#x53EF;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x9009;&#x53D6;&#x5927;&#x9646;&#x955C;&#x50CF;&#x670D;&#x52A1;&#x5668;&#x3002;
+# sed -i &apos;/China/!{n;/Server/s/^/#/};t;n&apos; /etc/pacman.d/mirrorlist
+</code></pre>
+<h3 id="&#x73AF;&#x5883;&#x68C0;&#x67E5;">&#x73AF;&#x5883;&#x68C0;&#x67E5;</h3>
+<h4 id="&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x68C0;&#x67E5;">&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x68C0;&#x67E5;</h4>
+<pre><code class="lang-shell"># ls /sys/firmware/efi/efivars
+</code></pre>
+<p>&#x82E5;&#x8BE5;&#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5F53;&#x524D;&#x662F;&#x4EE5; BIOS/CSM &#x6A21;&#x5F0F;&#x542F;&#x52A8;&#xFF0C;&#x5426;&#x5219;&#x662F;&#x4EE5; UEFI &#x6A21;&#x5F0F;&#x542F;&#x52A8;&#x3002;</p>
+<p><img src="images/boot_mode_check.gif" alt="boot_mode_check"></p>
+<h3 id="&#x5206;&#x533A;">&#x5206;&#x533A;</h3>
+<h4 id="&#x5206;&#x533A;&#x65B9;&#x6848;">&#x5206;&#x533A;&#x65B9;&#x6848;</h4>
+<ul>
+<li>Arch Linux &#x8981;&#x6C42;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x5206;&#x914D;&#x7ED9;&#x6839;&#x76EE;&#x5F55; /&#x3002;</li>
+<li>&#x5728; UEFI &#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A; UEFI &#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x3002;</li>
+</ul>
+<h4 id="&#x5B9E;&#x65BD;&#x5206;&#x533A;">&#x5B9E;&#x65BD;&#x5206;&#x533A;</h4>
+<p>&#x9996;&#x5148;&#x4F7F;&#x7528; <em>lsblk</em> &#x6216; <em>fdisk -l</em> &#x786E;&#x5B9A;&#x76EE;&#x6807;&#x78C1;&#x76D8;&#x53CA;&#x76EE;&#x6807;&#x5206;&#x533A;&#x3002;</p>
+<pre><code class="lang-shell"># fdisk -l
+</code></pre>
+<p><img src="images/fdisk.gif" alt="fdisk"></p>
+<p>&#x7136;&#x540E;&#x4F7F;&#x7528;&#x5206;&#x533A;&#x5DE5;&#x5177;&#x5982; <em>parted</em>&#x3001;<em>cfdisk</em> &#x8FDB;&#x884C;&#x5206;&#x533A;&#x3002;&#x63A8;&#x8350; <em>cfdisk</em></p>
+<pre><code class="lang-shell"># cfdisk /dev/sdX    # sdX &#x4E3A;&#x76EE;&#x6807;&#x78C1;&#x76D8;
+</code></pre>
+<pre><code class="lang-shell">&#x65B0;&#x5EFA;&#x5206;&#x533A;&#xFF1A;
+
+1. [&#x2191;]/[&#x2193;]&#xFF08;&#x65B9;&#x5411;&#x952E;&#xFF09;&#x9009;&#x4E2D; Free space&#xFF08;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#xFF09;
+
+2. [&#x2190;]/[&#x2192;]&#xFF08;&#x65B9;&#x5411;&#x952E;&#xFF09;&#x9009;&#x4E2D; New &#x65B0;&#x5EFA;&#x5206;&#x533A;
+
+3. [&#x2190;]/[&#x2192;]&#xFF08;&#x65B9;&#x5411;&#x952E;&#xFF09;&#x9009;&#x4E2D; Type &#x9009;&#x62E9;&#x5206;&#x533A;&#x7C7B;&#x578B;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; Linux filesystem&#xFF1B;&#x5BF9;&#x4E8E; EFI &#x7CFB;&#x7EDF;&#x5206;&#x533A;&#x9009;&#x62E9; EFI System&#xFF09;
+
+4. &#x8F93;&#x5165;&#x5206;&#x533A;&#x5927;&#x5C0F;&#xFF08;&#x9ED8;&#x8BA4;&#x5355;&#x4F4D;&#x4E3A;&#x5B57;&#x8282;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x4E0A;&#x540E;&#x7F00;K&#x3001;M&#x3001;G&#xFF09;&#xFF0C;[&#x56DE;&#x8F66;&#x952E;] &#x786E;&#x8BA4;
+
+&#x5199;&#x5165;&#x5206;&#x533A;&#x8868;&#xFF1A;
+
+1. [&#x2190;]/[&#x2192;]&#xFF08;&#x65B9;&#x5411;&#x952E;&#xFF09;&#x9009;&#x4E2D; Write
+
+2. &#x8F93;&#x5165; yes [&#x56DE;&#x8F66;] &#x786E;&#x5B9A;&#x5199;&#x5165;
+</code></pre>
+<p><img src="images/cfdisk.gif" alt="cfdisk"></p>
+<h4 id="&#x5206;&#x533A;&#x683C;&#x5F0F;&#x5316;&#xFF08;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;">&#x5206;&#x533A;&#x683C;&#x5F0F;&#x5316;&#xFF08;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;</h4>
+<p>&#x9996;&#x5148;&#x4F7F;&#x7528; <em>lsblk</em> &#x6216; <em>fdisk -l</em> &#x786E;&#x5B9A;&#x76EE;&#x6807;&#x78C1;&#x76D8;&#x53CA;&#x76EE;&#x6807;&#x5206;&#x533A;&#x3002;</p>
+<pre><code class="lang-shell"># lsblk
+</code></pre>
+<p>&#x7136;&#x540E;&#x4F7F;&#x7528;&#x683C;&#x5F0F;&#x5316;&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#x3002;&#x672C;&#x6587;&#x63A8;&#x8350; EXT4 &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x683C;&#x5F0F;&#x5316;&#x5DE5;&#x5177;&#x4E3A; <em>mkfs.ext4</em>&#x3002;</p>
+<pre><code class="lang-shell"># mkfs.ext4 /dev/sdXY    # sdXY &#x4E3A;&#x76EE;&#x6807;&#x5206;&#x533A;
+</code></pre>
+<p><img src="images/mkfs.gif" alt="mkfs"></p>
+<h4 id="&#x6302;&#x8F7D;&#x5206;&#x533A;">&#x6302;&#x8F7D;&#x5206;&#x533A;</h4>
+<p><code>&#x8BF7;&#x6CE8;&#x610F;&#x6302;&#x8F7D;&#x6B21;&#x5E8F;&#x3002;&#x4ECE;&#x6839;&#x76EE;&#x5F55;&#x5F00;&#x59CB;&#xFF0C;&#x5148;&#x6302;&#x8F7D;&#x7236;&#x76EE;&#x5F55;&#xFF0C;&#x518D;&#x6302;&#x8F7D;&#x5B50;&#x76EE;&#x5F55;</code></p>
+<pre><code class="lang-shell"># mount &lt;&#x5206;&#x533A;&gt; &lt;&#x6302;&#x8F7D;&#x70B9;&gt;
+</code></pre>
+<p><img src="images/mount.gif" alt="mount"></p>
+<h4 id="&#x5B89;&#x88C5;&#x57FA;&#x7840;&#x5305;">&#x5B89;&#x88C5;&#x57FA;&#x7840;&#x5305;</h4>
+<pre><code class="lang-shell"># pacstrap /mnt base
+</code></pre>
+<p><img src="images/pacstrap.gif" alt="pacstrap"></p>
+<h3 id="&#x914D;&#x7F6E;&#x57FA;&#x7840;&#x7CFB;&#x7EDF;">&#x914D;&#x7F6E;&#x57FA;&#x7840;&#x7CFB;&#x7EDF;</h3>
+<h4 id="&#x751F;&#x6210;&#x5206;&#x533A;&#x8868;">&#x751F;&#x6210;&#x5206;&#x533A;&#x8868;</h4>
+<pre><code class="lang-shell"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre>
+<p>&#x63A5;&#x7740;&#x4F7F;&#x7528; <em>arch-chroot</em> &#x8FDB;&#x5165;&#x65B0;&#x7CFB;&#x7EDF;&#x3002;</p>
+<pre><code class="lang-shell"># arch-chroot /mnt
+</code></pre>
+<h4 id="&#x65F6;&#x533A;">&#x65F6;&#x533A;</h4>
+<pre><code class="lang-shell"># ln -sf /usr/share/zoneinfo/$(tzselect) /etc/localtime
+# &#x4E2D;&#x56FD;&#x5927;&#x9646;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x3002;
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
+<p><img src="images/localtime.gif" alt="localtime"></p>
+<h4 id="&#x786C;&#x4EF6;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;">&#x786C;&#x4EF6;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;</h4>
+<pre><code class="lang-shell"># hwclock --systohc
+</code></pre>
+<h4 id="&#x672C;&#x5730;&#x5316;&#x8BBE;&#x7F6E;">&#x672C;&#x5730;&#x5316;&#x8BBE;&#x7F6E;</h4>
+<p>&#x8FDB;&#x884C;&#x672C;&#x5730;&#x5316;&#x8BBE;&#x7F6E;&#x4EE5;&#x6B63;&#x786E;&#x663E;&#x793A;&#x672C;&#x5730;&#x6587;&#x5B57;&#x3001;&#x8D27;&#x5E01;&#x3001;&#x65F6;&#x95F4;&#x4E0E;&#x65F6;&#x671F;&#x683C;&#x5F0F;&#x4EE5;&#x53CA;&#x5176;&#x5B83;&#x672C;&#x5730;&#x76F8;&#x5173;&#x6807;&#x51C6;&#x3002;
+&#x7F16;&#x8F91; /etc/locale.gen&#xFF0C;&#x53BB;&#x6389;&#x9700;&#x8981;&#x7684; locale &#x7684;&#x6CE8;&#x91CA;&#xFF08;&#x884C;&#x5934;&#x7684;&#x5B57;&#x7B26; #&#xFF09;&#x3002;</p>
+<pre><code class="lang-shell"># nano /etc/locale.gen
+</code></pre>
+<ol>
+<li>[F6] &#x641C;&#x7D22; zh_CN.UTF-8</li>
+<li>[&#x2190;]/[&#x2192;]&#xFF08;&#x65B9;&#x5411;&#x952E;&#xFF09;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x81F3;&#x5B57;&#x7B26; # &#x5904;</li>
+<li>[DELETE]/[BACKSPACE] &#x5220;&#x9664;&#x5B57;&#x7B26; #</li>
+<li>[CTRL+O] &#x4FDD;&#x5B58;&#xFF0C;[&#x56DE;&#x8F66;&#x952E;] &#x786E;&#x5B9A;</li>
+</ol>
+<p>&#x7136;&#x540E;&#x4F7F;&#x7528; <em>locale-gen</em> &#x751F;&#x6210; locale&#x3002;</p>
+<pre><code class="lang-shell"># locale-gen
+</code></pre>
+<p><img src="images/locale-gen.gif" alt="local-gen"></p>
+<p>&#x63A5;&#x7740;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4; locale&#x3002;</p>
+<pre><code class="lang-shell"># echo LANG=&lt;&#x9ED8;&#x8BA4; locale&gt;  &gt; /etc/locale.conf
+# echo &apos;LANG=zh_CN.UTF-8&apos;  &gt; /etc/locale.conf
+</code></pre>
+<h4 id="&#x4E3B;&#x673A;&#x540D;">&#x4E3B;&#x673A;&#x540D;</h4>
+<pre><code class="lang-shell"># echo &lt;&#x4E3B;&#x673A;&#x540D;&gt; &gt; /etc/hostname
+</code></pre>
+<p>&#x63A5;&#x7740;&#x5411; /etc/hosts &#x6587;&#x4EF6;&#x6DFB;&#x52A0; hosts &#x6761;&#x76EE;&#x3002;</p>
+<pre><code class="lang-shell">#&lt;ip-address&gt;    &lt;hostname.domain.org&gt;    &lt;hostname&gt;
+127.0.0.1    localhost.localdomain    localhost
+::1        localhost.localdomain    localhost
+127.0.1.1    &lt;&#x4E3B;&#x673A;&#x540D;&gt;.localdomain    &lt;&#x4E3B;&#x673A;&#x540D;&gt;
+</code></pre>
+<h4 id="&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;">&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;</h4>
+<p>&#x8003;&#x8651;&#x5230;&#x591A;&#x6570;&#x7528;&#x6237;&#x6700;&#x7EC8;&#x4F1A;&#x5B89;&#x88C5;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x684C;&#x9762;&#x73AF;&#x5883;&#xFF0C;&#x56E0;&#x800C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x517C;&#x5BB9;&#x6027;&#x8F83;&#x597D; NetworkManager &#x6765;&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5F53;&#x524D;&#x5B89;&#x88C5;&#x73AF;&#x5883;&#x5DF2;&#x8FDE;&#x63A5;&#x81F3;&#x7F51;&#x7EDC;&#xFF0C;&#x8BF7;&#x52FF;&#x5C1D;&#x8BD5;&#x591A;&#x6B21;&#x8FDE;&#x63A5;&#xFF0C;&#x800C;&#x5F85;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x5E76;&#x91CD;&#x542F;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5B89;&#x88C5; NetworkManager&#xFF1A;</p>
+<pre><code class="lang-shell"># pacman -S networkmanager
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x4EE5;&#x4FBF;&#x7A0D;&#x540E;&#x5728;&#x684C;&#x9762;&#x73AF;&#x5883;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x63A5;&#x7740;&#x5B89;&#x88C5; <em>nm-connection-editor</em></li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x7CFB;&#x7EDF;&#x6258;&#x76D8;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x63A5;&#x7740;&#x5B89;&#x88C5; <em>network-manager-applet</em></li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981; ADSL &#x652F;&#x6301;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5; <em>rp-pppoe</em></li>
+</ul>
+<h4 id="&#x4E3A;-root-&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;">&#x4E3A; root &#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;</h4>
+<pre><code class="lang-shell"># passwd
+</code></pre>
+<h4 id="&#x5B89;&#x88C5;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;">&#x5B89;&#x88C5;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;</h4>
+<p>&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#x662F;&#x673A;&#x5668;&#x542F;&#x52A8;&#x540E;&#x8FD0;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x5728;&#x4E8E;&#x52A0;&#x8F7D;&#x5E76;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x3002;&#x672C;&#x6587;&#x63A8;&#x8350;&#x5B89;&#x88C5;&#x5E76;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x914D;&#x7F6E; GRUB &#x4F5C;&#x4E3A;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;&#x3002;&#x5982;&#x9700;&#x5B89;&#x88C5;&#x5176;&#x4ED6;&#x5F15;&#x5BFC;&#x7A0B;&#x5E8F;</p>
+<p>BIOS &#x7CFB;&#x7EDF;&#xFF1A;</p>
+<pre><code class="lang-shell"># pacman -S grub os-prober
+# grub-install --target=i386-pc /dev/sdX    # sdX &#x4E3A;&#x76EE;&#x6807;&#x78C1;&#x76D8;
+# grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>UEFI &#x7CFB;&#x7EDF;&#xFF1A;</p>
+<pre><code class="lang-shell"># pacman -S dosfstools grub efibootmgr
+# grub-install --target=x86_64-efi --efi-directory=&lt;EFI &#x5206;&#x533A;&#x6302;&#x8F7D;&#x70B9;&gt; --bootloader-id=GRUB
+# grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<h4 id="&#x5B8C;&#x6210;&#x5B89;&#x88C5;">&#x5B8C;&#x6210;&#x5B89;&#x88C5;</h4>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x57FA;&#x7840;&#x53EF;&#x7528;&#x7684; Arch Linux &#x4FBF;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x3002;&#x73B0;&#x5728;&#x6309;&#x4E0B;&#x5217;&#x6B65;&#x9AA4;&#x9000;&#x51FA;&#x5B89;&#x88C5;&#x73AF;&#x5883;&#x5E76;&#x91CD;&#x542F;&#x3002;</p>
+<ol>
+<li>&#x4F7F;&#x7528;&#x547D;&#x4EE4; <em>exit</em> &#x6216; [CTRL+D] &#x9000;&#x56DE;&#x5B89;&#x88C5;&#x73AF;&#x5883;</li>
+<li>&#x5378;&#x8F7D;&#x65B0;&#x5206;&#x533A;&#xFF1A;</li>
+</ol>
+<pre><code class="lang-shell"># umount -R /mnt
+</code></pre>
+<ol>
+<li>&#x91CD;&#x542F;</li>
+</ol>
+<pre><code class="lang-shell"># reboot
+</code></pre>
+<ol>
+<li>&#x79FB;&#x9664;&#x5B89;&#x88C5;&#x4ECB;&#x8D28;</li>
+</ol>
+<h3 id="&#x7528;&#x6237;&#x7BA1;&#x7406;">&#x7528;&#x6237;&#x7BA1;&#x7406;</h3>
+<p>&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x4F7F;&#x7528; <em>useradd</em> &#x547D;&#x4EE4;&#x3002;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x8BF7;&#x67E5;&#x770B; man &#x624B;&#x518C;&#x6216; help &#x6D88;&#x606F;&#x3002;</p>
+<pre><code class="lang-shell"># useradd -m -g users -s /bin/bash archuser
+</code></pre>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; archuser &#x7684;&#x7528;&#x6237;&#xFF0C;&#x6307;&#x5B9A;&#x767B;&#x5F55; shell &#x4E3A; bash&#xFF0C;&#x6240;&#x5C5E;&#x4E3B;&#x7528;&#x6237;&#x7EC4; users&#xFF0C;&#x5E76;&#x5728; /home &#x4E0B;&#x521B;&#x5EFA;&#x540C;&#x540D;&#x7528;&#x6237;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<pre><code class="lang-shell">passwd archuser
+</code></pre>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x4E3A;&#x7528;&#x6237; archuser &#x8BBE;&#x7F6E;&#x5BC6;&#x7801;&#x3002;</p>
+<h3 id="&#x914D;&#x7F6E;&#x56FE;&#x5F62;&#x754C;&#x9762;">&#x914D;&#x7F6E;&#x56FE;&#x5F62;&#x754C;&#x9762;</h3>
+<h4 id="&#x5B89;&#x88C5;&#x663E;&#x5361;&#x9A71;&#x52A8;">&#x5B89;&#x88C5;&#x663E;&#x5361;&#x9A71;&#x52A8;</h4>
+<p>&#x5B98;&#x65B9;&#x8F6F;&#x4EF6;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x4E3A;&#x4E3B;&#x6D41;&#x7684;&#x663E;&#x5361;&#x63D0;&#x4F9B;&#x4E86;&#x9A71;&#x52A8;&#x5305;&#xFF1A;</p>
+<p>### &#x901A;&#x7528;&#x663E;&#x5361;&#x9A71;&#x52A8;
+<em>xf86-video-vesa</em> &#x662F;&#x5F00;&#x6E90;&#x7684;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x5B9E;&#x73B0;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x6700;&#x57FA;&#x672C;&#x7684;&#x663E;&#x793A;&#x529F;&#x80FD;&#x3002;</p>
+<p>### &#x56E0;&#x7279;&#x5C14;&#x663E;&#x5361;&#x9A71;&#x52A8;
+&#x56E0;&#x7279;&#x5C14;&#x663E;&#x5361;&#x5E94;&#x5F53;&#x662F;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x663E;&#x5361;&#x9A71;&#x52A8;&#xFF0C;&#x4F46;&#x901A;&#x5E38;&#x5EFA;&#x8BAE;&#x5B89;&#x88C5; <em>mesa</em> &#x4EE5;&#x652F;&#x6301; 3D &#x52A0;&#x901F;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981; Vulkan &#x652F;&#x6301;&#xFF08;&#x9700; Ivy Bridge &#x53CA;&#x66F4;&#x65B0;&#x67B6;&#x6784;&#xFF09;&#xFF0C;&#x987B;&#x5B89;&#x88C5; <em>valkan-intel</em>&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x652F;&#x6301; Xorg 2D &#x52A0;&#x901F;&#xFF0C;&#x987B;&#x5B89;&#x88C5; <em>xf86-video-intel</em>&#x3002;
+&#x7136;&#x800C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5B89;&#x88C5; <em>xf86-video-intel</em> &#x4E0E;&#x5426;&#x9700;&#x8981;&#x66F4;&#x591A;&#x659F;&#x914C;&#xFF0C;<a href="https://wiki.archlinux.org/index.php/Intel_graphics_(&#x7B80;&#x4F53;&#x4E2D;&#x6587;" target="_blank">&#x8BE6;&#x89C1;&#x6B64;&#x5904;</a>)&#x3002;</p>
+<p>### &#x82F1;&#x4F1F;&#x8FBE;&#x663E;&#x5361;&#x9A71;&#x52A8;
+&#x82F1;&#x4F1F;&#x8FBE;&#x663E;&#x5361;&#x9A71;&#x52A8;&#x6709;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5F00;&#x6E90;&#x5B9E;&#x73B0; <em>xf86-video-nouveau</em> &#x548C;&#x82F1;&#x4F1F;&#x8FBE;&#x5B98;&#x65B9;&#x79C1;&#x6709;&#x9A71;&#x52A8; <em>nvidia</em> &#x7CFB;&#x5217;&#x3002;</p>
+<p>* &#x5BF9;&#x4E8E; GeForce 600 &#x53CA;&#x66F4;&#x65B0;&#x7CFB;&#x5217;&#xFF08;&#x9664;&#x4E86; 610, 620, 625, 705, 800A &#x548C;&#x5176;&#x4ED6;&#x4F4E;&#x7AEF;&#x91CD;&#x8D34;&#x724C;&#x663E;&#x5361;&#xFF09;&#x8BF7;&#x5B89;&#x88C5; <em>nvidia</em>
+* &#x5BF9;&#x4E8E; 2010 &#x81F3; 2011 &#x5E74;&#x95F4; GeForce 400/500 &#x8BF7;&#x5B89;&#x88C5; <em>nvidia-390xx</em>
+* &#x5BF9;&#x4E8E; 2006 &#x81F3; 2010 &#x5E74;&#x95F4; GeForce 8000/9000&#x3001;ION &#x548C; 100-300 &#x7CFB;&#x5217; [NV5x, NV8x, NV9x and NVAx] &#x8BF7;&#x5B89;&#x88C5; <em>nvidia-340xx</em>
+* &#x66F4;&#x65E9;&#x7684;&#x663E;&#x5361;&#x7CFB;&#x5217;&#x9A71;&#x52A8;<a href="https://wiki.archlinux.org/index.php/NVIDIA#Unsupported_drivers" target="_blank">&#x8BF7;&#x67E5;&#x9605;&#x6B64;&#x5904;</a></p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x9700;&#x8981; NVIDIA Optimus &#x652F;&#x6301;&#xFF0C;<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus_(&#x7B80;&#x4F53;&#x4E2D;&#x6587;" target="_blank">&#x8BF7;&#x67E5;&#x9605;&#x6B64;&#x5904;</a>)&#x3002;</p>
+</blockquote>
+<p>### AMD/ATI
+AMD/ATI &#x663E;&#x5361;&#x9A71;&#x52A8;&#x539F;&#x5148;&#x6709;&#x5F00;&#x6E90;&#x5B9E;&#x73B0; <em>xf86-video-ati</em> &#x53CA;&#x95ED;&#x6E90;&#x5B9E;&#x73B0; AMD Catalyst&#x3002;&#x800C;AMD &#x81EA;&#x7EDF;&#x4E00;&#x5F00;&#x6E90;&#x9A71;&#x52A8;&#x548C;&#x95ED;&#x6E90;&#x9A71;&#x52A8;&#x540E;&#x53C8;&#x53D1;&#x5E03;&#x4E86;&#x65B0;&#x7684;&#x5F00;&#x6E90;&#x5B9E;&#x73B0; <em>xf86-video-amdgpu</em> &#x548C;&#x95ED;&#x6E90;&#x5B9E;&#x73B0; AMDGPU PRO&#x3002;&#x5176;&#x4E2D; AMD Catalyst &#x53CA; AMDGPU PRO &#x4E0D;&#x88AB; Arch Linux &#x5B98;&#x65B9;&#x6240;&#x652F;&#x6301;&#xFF08;&#x672A;&#x6536;&#x5F55;&#x4E8E;&#x5B98;&#x65B9;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#xFF09;&#x3002;</p>
+<p>* <em>xf86-video-amdgpu</em> &#x652F;&#x6301; GCN 1&#x3001;GCN 2&#x3001;GCN 3&#x3001;GCN 4 &#x53CA;&#x66F4;&#x65B0;&#x67B6;&#x6784;&#x7684;&#x663E;&#x5361;&#x3002;
+* AMDGPU PRO &#x652F;&#x6301; GCN 3&#x3001;GCN 4 &#x53CA;&#x66F4;&#x65B0;&#x67B6;&#x6784;&#x7684;&#x663E;&#x5361;&#x3002;
+* <em>xf86-video-ati</em> &#x652F;&#x6301; X1000 &#x53CA;&#x66F4;&#x65E9;&#x7684;&#x663E;&#x5361;&#x3001;TeraScale 1&#x3001;TeraScale 2&#x3001;TeraScale 3&#x3001;GCN 1&#x3001;GCN 2 &#x67B6;&#x6784;&#x7684;&#x663E;&#x5361;&#x3002;
+* AMD Catalyst &#x652F;&#x6301; TeraScale 2&#x3001;TeraScale 3&#x3001;GCN 1&#x3001;GCN 2&#x3001;GCN 3 &#x67B6;&#x6784;&#x7684;&#x663E;&#x5361;&#x3002;
+* AMD Catalyst Legacy &#x652F;&#x6301; TeraScale 1 &#x67B6;&#x6784;&#x7684;&#x663E;&#x5361;&#x3002;</p>
+<h3 id="&#x4E2D;&#x6587;&#x5B57;&#x4F53;">&#x4E2D;&#x6587;&#x5B57;&#x4F53;</h3>
+<p>&#x672C;&#x6587;&#x63A8;&#x8350;&#x601D;&#x6E90;&#x9ED1;&#x4F53;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;&#x3002;</p>
+<pre><code class="lang-shell"># pacman -S adobe-source-han-sans-cn-fonts
+</code></pre>
+<h3 id="&#x5B89;&#x88C5;&#x684C;&#x9762;&#x73AF;&#x5883;">&#x5B89;&#x88C5;&#x684C;&#x9762;&#x73AF;&#x5883;</h3>
+<h3 id="&#x5B89;&#x88C5;&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;">&#x5B89;&#x88C5;&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;</h3>
+<h5 id="&#x63A8;&#x8350;&#x9605;&#x8BFB;"># &#x63A8;&#x8350;&#x9605;&#x8BFB;</h5>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Arch_User_Repository_(&#x7B80;&#x4F53;&#x4E2D;&#x6587;" target="_blank">Arch &#x7528;&#x6237;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;</a>)</li>
+<li><a href="https://wiki.archlinux.org/index.php/AUR_helpers_(&#x7B80;&#x4F53;&#x4E2D;&#x6587;" target="_blank">AUR &#x52A9;&#x624B;&#x5DE5;&#x5177;</a>)</li>
+</ul>
 <h2 id="pacman-&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">Pacman &#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h2>
 <pre><code class="lang-shell">## Pacman &#x547D;&#x4EE4;&#x8BE6;&#x89E3;
 
@@ -835,7 +1066,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"archLinux使用手册","level":"5.1.1.1","depth":3,"previous":{"title":"Linux","level":"5.1.1","depth":2,"path":"System/Linux/README.md","ref":"System/Linux/README.md","articles":[{"title":"archLinux使用手册","level":"5.1.1.1","depth":3,"path":"System/Linux/archlinux.md","ref":"System/Linux/archlinux.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"System/Linux/archlinux.md","mtime":"2019-09-17T06:23:11.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-17T06:27:23.684Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"archLinux使用手册","level":"5.1.1.1","depth":3,"previous":{"title":"Linux","level":"5.1.1","depth":2,"path":"System/Linux/README.md","ref":"System/Linux/README.md","articles":[{"title":"archLinux使用手册","level":"5.1.1.1","depth":3,"path":"System/Linux/archlinux.md","ref":"System/Linux/archlinux.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"System/Linux/archlinux.md","mtime":"2019-09-23T12:37:18.834Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-26T02:26:43.881Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
