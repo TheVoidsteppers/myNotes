@@ -777,35 +777,35 @@
   { id: <span class="hljs-number">16</span>, name: <span class="hljs-string">&quot;&#x8840;&#x543C;&quot;</span>, parentId: <span class="hljs-number">4</span> }
 ]
 
+<span class="hljs-comment">// &#x6570;&#x7EC4;&#x8F6C; &#x6811;&#x7ED3;&#x6784;</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">List2Tree</span>(<span class="hljs-params">list</span>) </span>{
-  <span class="hljs-keyword">this</span>.tree = []
-  <span class="hljs-keyword">this</span>.list = list
-  <span class="hljs-keyword">this</span>.tempMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()
 
-  <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6811;&#x7ED3;&#x6784;&#x7247;&#x6BB5; &#x8FD4;&#x56DE;&#x4EE5;&#x8BE5; id &#x4E3A;&#x6839;&#x5143;&#x7D20;&#x7684; &#x6811; </span>
-  <span class="hljs-keyword">this</span>.findChildren = (id) =&gt; {
+  <span class="hljs-keyword">this</span>.tree = [];
+  <span class="hljs-keyword">this</span>.list = list;
+  <span class="hljs-keyword">this</span>.tempMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+
+  <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6811;&#x7ED3;&#x6784;&#x7247;&#x6BB5; &#x8FD4;&#x56DE;&#x4EE5;&#x8BE5; id &#x4E3A;&#x6839;&#x5143;&#x7D20;&#x7684; &#x6811;</span>
+  <span class="hljs-keyword">this</span>.findChildren = id =&gt; {
     <span class="hljs-keyword">const</span> childTree = [];
+    <span class="hljs-keyword">const</span> tobeDelete = []
 
     <span class="hljs-keyword">this</span>.list.forEach((item, index) =&gt; {
       <span class="hljs-keyword">if</span> (item) {
         <span class="hljs-comment">// &#x627E;&#x5230;&#x5B50;&#x5143;&#x7D20;</span>
         <span class="hljs-keyword">if</span> (item.parentId === id) {
-          <span class="hljs-keyword">this</span>.list[index] = <span class="hljs-literal">undefined</span>
+          tobeDelete.push(item.id)<span class="hljs-comment">// &#x627E;&#x5230;&#x7236;&#x7EA7;&#x7684;&#x5C06;&#x4F1A;&#x88AB;&#x5220;&#x9664;</span>
 
           <span class="hljs-comment">// &#x5982;&#x679C;&#x5DF2;&#x7ECF; &#x9012;&#x5F52;&#x8FC7;&#x5B50;&#x5143;&#x7D20;</span>
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.tempMap.has(item.id)) {
             childTree.push({
-              id: item.id,
-              label: item.name,
+              ...item,
               children: <span class="hljs-keyword">this</span>.tempMap.get(item.id)
-            })
+            });
 
-            <span class="hljs-keyword">this</span>.tempMap.delete(id)
-          }
-          <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.tempMap.delete(id);
+          } <span class="hljs-keyword">else</span> {
             childTree.push({
-              id: item.id,
-              label: item.name,
+              ...item,
               children: <span class="hljs-keyword">this</span>.findChildren(
                 item.id,
                 <span class="hljs-keyword">this</span>.list.slice(<span class="hljs-number">0</span>, index).concat(<span class="hljs-keyword">this</span>.list.slice(index + <span class="hljs-number">1</span>))
@@ -816,35 +816,39 @@
       }
     });
     <span class="hljs-comment">// &#x7F13;&#x5B58;&#x9012;&#x5F52;&#x7ED3;&#x679C;</span>
-    <span class="hljs-keyword">this</span>.tempMap.set(id, childTree)
-    <span class="hljs-comment">// &#x53BB;&#x6389;&#x904D;&#x5386;&#x8FC7;&#x7684;&#x5143;&#x7D20;</span>
-    <span class="hljs-keyword">this</span>.list = <span class="hljs-keyword">this</span>.list.filter(item =&gt; item)
+    <span class="hljs-keyword">this</span>.tempMap.set(id, childTree);
+    <span class="hljs-comment">// &#x53BB;&#x6389;&#x53EF;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;</span>
+    <span class="hljs-keyword">this</span>.list = <span class="hljs-keyword">this</span>.list.filter(item =&gt; !tobeDelete.includes(item));
     <span class="hljs-keyword">return</span> childTree;
-  }
+  };
 
   <span class="hljs-comment">// &#x62FC;&#x63A5;&#x6210;&#x6811;</span>
-  <span class="hljs-keyword">this</span>.splice2Tree = (node) =&gt; {
+  <span class="hljs-keyword">this</span>.splice2Tree = node =&gt; {
     <span class="hljs-keyword">let</span> tempTree = {
-      id: node.id,
-      label: node.name,
+      ...node,
       children: <span class="hljs-keyword">this</span>.findChildren(node.id)
-    }
+    };
 
-    <span class="hljs-keyword">const</span> isRoot = <span class="hljs-keyword">this</span>.list.filter(item =&gt; item.id === node.parentId)
+    <span class="hljs-keyword">const</span> isRoot = <span class="hljs-keyword">this</span>.list.filter(item =&gt; item.id === node.parentId);
     <span class="hljs-keyword">if</span> (isRoot.length === <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">this</span>.tree = tempTree
+      <span class="hljs-keyword">this</span>.tree = tempTree;
     } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">this</span>.tempMap.set(tempTree.id, tempTree.children)
-      <span class="hljs-keyword">this</span>.splice2Tree(isRoot[<span class="hljs-number">0</span>])
+      <span class="hljs-keyword">this</span>.tempMap.set(tempTree.id, tempTree.children);
+      <span class="hljs-keyword">this</span>.splice2Tree(isRoot[<span class="hljs-number">0</span>]);
     }
-  }
+  };
 
   <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6811;</span>
   <span class="hljs-keyword">this</span>.getTree = () =&gt; {
-    <span class="hljs-keyword">this</span>.splice2Tree(<span class="hljs-keyword">this</span>.list[<span class="hljs-number">0</span>])
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree
-  }
+    <span class="hljs-keyword">this</span>.splice2Tree(<span class="hljs-keyword">this</span>.list[<span class="hljs-number">0</span>]);
+
+    <span class="hljs-keyword">const</span> secRoot = <span class="hljs-keyword">this</span>.tree
+    <span class="hljs-keyword">this</span>.tempMap.set(secRoot.id, secRoot.children);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.findChildren(secRoot.parentId);
+  };
 }
+
 
 <span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> List2Tree(list)
 <span class="hljs-keyword">const</span> treeData = obj.getTree()
@@ -894,7 +898,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"utils","level":"4.1.1","depth":2,"next":{"title":"git","level":"4.1.2","depth":2,"path":"Tools/git.md","ref":"Tools/git.md","articles":[]},"previous":{"title":"工具、插件","level":"4.1","depth":1,"path":"Tools/README.md","ref":"Tools/README.md","articles":[{"title":"utils","level":"4.1.1","depth":2,"path":"Tools/utils.md","ref":"Tools/utils.md","articles":[]},{"title":"git","level":"4.1.2","depth":2,"path":"Tools/git.md","ref":"Tools/git.md","articles":[]},{"title":"webpack","level":"4.1.3","depth":2,"path":"Tools/webpack.md","ref":"Tools/webpack.md","articles":[]},{"title":"element-ui","level":"4.1.4","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},{"title":"D3_v5","level":"4.1.5","depth":2,"path":"Tools/D3_v5.md","ref":"Tools/D3_v5.md","articles":[]},{"title":"SVG","level":"4.1.6","depth":2,"path":"Tools/SVG.md","ref":"Tools/SVG.md","articles":[]},{"title":"Bootstrap","level":"4.1.7","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},{"title":"Bootstrap FileInput","level":"4.1.8","depth":2,"path":"Tools/BootstrapFileInput.md","ref":"Tools/BootstrapFileInput.md","articles":[]},{"title":"其他工具","level":"4.1.9","depth":2,"path":"Tools/tools.md","ref":"Tools/tools.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/utils.md","mtime":"2019-10-28T09:40:11.175Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-28T09:40:25.919Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"utils","level":"4.1.1","depth":2,"next":{"title":"git","level":"4.1.2","depth":2,"path":"Tools/git.md","ref":"Tools/git.md","articles":[]},"previous":{"title":"工具、插件","level":"4.1","depth":1,"path":"Tools/README.md","ref":"Tools/README.md","articles":[{"title":"utils","level":"4.1.1","depth":2,"path":"Tools/utils.md","ref":"Tools/utils.md","articles":[]},{"title":"git","level":"4.1.2","depth":2,"path":"Tools/git.md","ref":"Tools/git.md","articles":[]},{"title":"webpack","level":"4.1.3","depth":2,"path":"Tools/webpack.md","ref":"Tools/webpack.md","articles":[]},{"title":"element-ui","level":"4.1.4","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},{"title":"D3_v5","level":"4.1.5","depth":2,"path":"Tools/D3_v5.md","ref":"Tools/D3_v5.md","articles":[]},{"title":"SVG","level":"4.1.6","depth":2,"path":"Tools/SVG.md","ref":"Tools/SVG.md","articles":[]},{"title":"Bootstrap","level":"4.1.7","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},{"title":"Bootstrap FileInput","level":"4.1.8","depth":2,"path":"Tools/BootstrapFileInput.md","ref":"Tools/BootstrapFileInput.md","articles":[]},{"title":"其他工具","level":"4.1.9","depth":2,"path":"Tools/tools.md","ref":"Tools/tools.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/utils.md","mtime":"2019-11-01T02:26:17.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T09:43:36.479Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
