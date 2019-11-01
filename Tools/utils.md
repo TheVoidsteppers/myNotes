@@ -22,12 +22,13 @@ function List2Tree(list) {
   // 获取树结构片段 返回以该 id 为根元素的 树
   this.findChildren = id => {
     const childTree = [];
+    const tobeDelete = []
 
     this.list.forEach((item, index) => {
       if (item) {
         // 找到子元素
         if (item.parentId === id) {
-          this.list[index] = undefined;
+          tobeDelete.push(item.id)// 找到父级的将会被删除
 
           // 如果已经 递归过子元素
           if (this.tempMap.has(item.id)) {
@@ -51,8 +52,8 @@ function List2Tree(list) {
     });
     // 缓存递归结果
     this.tempMap.set(id, childTree);
-    // 去掉遍历过的元素
-    this.list = this.list.filter(item => item);
+    // 去掉可删除的元素
+    this.list = this.list.filter(item => !tobeDelete.includes(item));
     return childTree;
   };
 
@@ -83,7 +84,7 @@ function List2Tree(list) {
   };
 }
 
-export default List2Tree
+
 const obj = new List2Tree(list)
 const treeData = obj.getTree()
 
