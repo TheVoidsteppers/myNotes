@@ -171,8 +171,6 @@ bindSwipeEvent(document.querySelector('.box'),function (e) {
 
 ### tap 事件 --- 基于 touch 事件
 
-
-
 ```html
 <!--
 1. tap事件  轻击 轻触  （响应速度快）
