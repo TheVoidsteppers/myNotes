@@ -1,5 +1,13 @@
 ## 安装 archLinux 
 
+参考链接：
+
+[Arch Linux 安装指南[2018.12.01] / 安装问题 / Arch Linux 中文论坛](https://bbs.archlinuxcn.org/viewtopic.php?id=1037)
+
+[Installation guide (简体中文) - ArchWiki](https://wiki.archlinux.org/index.php/Installation_guide_(简体中文))
+
+[给 GNU/Linux 萌新的 Arch Linux 安装指南 rev.B - 约伊兹的萌狼乡手札](https://blog.yoitsu.moe/arch-linux/installing_arch_linux_for_complete_newbies.html)
+
 ### 安装前准备
 
 ```shell
@@ -7,7 +15,7 @@
 # 1、插入U盘，df -h 查看U盘文件系统挂载情况，然后使用 umount /dev/sdb* 卸载U盘文件系统；
 
 # 2、执行命令：sudo mkfs.xxx  /dev/sdb 格式化U盘为 xxx 格式；
-# 请将xxx换成您需要的文件系统类型，如fat、vfat、ntfs、ext4等等
+# 请将xxx换成您需要的文件系统类型，如fat、vfat、ntfs、ext4等等、或者 windows 用户推荐 rufus
 
 # 3、dd if=*/*.iso   of=/dev/sdb  bs=4M  (数据块大小，每个数据块只能存一个文件的数据)
 
@@ -45,6 +53,9 @@ ping -c 4 www.baidu.com
 ![ping](./images/ping.gif)
 
 若网络尚未连接，请先接入网络。若使用 WiFi 连接，请使用 *wifi-menu* 命令。
+
+![wifi-munu](./images/wifi-menu.png)
+
 若使用 ADSL 宽带连接，请使用 *pppoe-setup* 进行配置，再使用 *systemctl start adsl* 进行连接。
 
 #### 刷新本地时间
@@ -76,6 +87,8 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 # sed -i '/China/!{n;/Server/s/^/#/};t;n' /etc/pacman.d/mirrorlist
 ```
 
+然后用 pacman -Syy 刷新一下软件包数据库
+
 ### 环境检查
 
 #### 启动模式检查
@@ -105,7 +118,16 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 
 ![fdisk](./images/fdisk.gif)
 
-然后使用分区工具如 *parted*、*cfdisk* 进行分区。推荐 *cfdisk*
+结果中以 `rom`，`loop` 或者 `airoot` 结束的可以被忽略。
+
+对于一个选定的设备，以下的*分区*是必须要有的：
+
+- 一个根分区（挂载在根目录）`/`；
+- 如果 [UEFI](https://wiki.archlinux.org/index.php/UEFI) 模式被启用，你还需要一个 [EFI 系统分区](https://wiki.archlinux.org/index.php/EFI_system_partition)。
+
+如果需要创建多级存储例如 [LVM](https://wiki.archlinux.org/index.php/LVM)、[disk encryption](https://wiki.archlinux.org/index.php/Disk_encryption) 或 [RAID](https://wiki.archlinux.org/index.php/RAID)，请在此时完成。
+
+然后使用分区工具如 *parted*、*cfdisk*、cgdisk 进行分区。推荐 *cfdisk*
 
 ```shell
 # cfdisk /dev/sdX    # sdX 为目标磁盘
@@ -131,6 +153,19 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 
 ![cfdisk](./images/cfdisk.gif)
 
+#### 分区示例
+
+| BIOS 和 [MBR](https://wiki.archlinux.org/index.php/Partitioning_(简体中文)#Master_Boot_Record) |               |                                                              |              |
+| :----------------------------------------------------------: | :-----------: | :----------------------------------------------------------: | :----------: |
+|                            挂载点                            |     分区      |   [分区类型](https://en.wikipedia.org/wiki/Partition_type)   |   建议大小   |
+|                            `/mnt`                            | `/dev/sd*X*1` |                            Linux                             |   剩余空间   |
+|                            [SWAP]                            | `/dev/sd*X*2` |                    Linux swap (交换空间)                     | 大于 512 MiB |
+| UEFI with [GPT](https://wiki.archlinux.org/index.php/Partitioning_(简体中文)#GUID_分区表) |               |                                                              |              |
+|                            挂载点                            |     分区      | [分区类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs) |   建议大小   |
+|                  `/mnt/boot` or `/mnt/efi`                   | `/dev/sd*X*1` | [EFI 系统分区](https://wiki.archlinux.org/index.php/EFI_system_partition_(简体中文)) | 260–512 MiB  |
+|                            `/mnt`                            | `/dev/sd*X*2` |                   Linux x86-64 根目录 (/)                    |   剩余空间   |
+|                            [SWAP]                            | `/dev/sd*X*3` |                    Linux swap (交换空间)                     | 大于 512 MiB |
+
 #### 分区格式化（创建文件系统）
 
 首先使用 *lsblk* 或 *fdisk -l* 确定目标磁盘及目标分区。
@@ -147,6 +182,21 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 
 ![mkfs](./images/mkfs.gif)
 
+举个例子，如果根分区在 `/dev/sd*X*1` 上并且会使用 `*ext4*` 文件系统，运行：
+
+```shell
+ # mkfs.ext4 /dev/sdX1
+```
+
+如果您创建了交换分区（例如 `/dev/*sda3*`），使用 mkswap 将其初始化：
+
+```shell
+# mkswap /dev/sdX2
+# swapon /dev/sdX2
+```
+
+如果要格式化新的 EFI 系统分区的话，用 mkfs.vfat
+
 #### 挂载分区
 
 `请注意挂载次序。从根目录开始，先挂载父目录，再挂载子目录`
@@ -157,7 +207,23 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 
 ![mount](./images/mount.gif)
 
+将根分区[挂载](https://wiki.archlinux.org/index.php/Mount)到 `/mnt`，例如：
+
+```
+# mount /dev/sdX1 /mnt
+```
+
+创建其他剩余的挂载点（比如 `/mnt/efi`）并挂载其相应的分区。
+
 #### 安装基础包
+
+文件 `/etc/pacman.d/mirrorlist` 定义了软件包会从哪个 [镜像源](https://wiki.archlinux.org/index.php/Mirrors) 下载。在 LiveCD 启动的系统上，所有的镜像都被启用，并且在镜像被制作时，我们已经通过他们的同步情况和速度排序。
+
+在列表中越前的镜像在下载软件包时有越高的优先权。你可以相应的修改文件 `/etc/pacman.d/mirrorlist`，并将地理位置最近的镜像源挪到文件的头部，同时你也应该考虑一些其他标准。
+
+这个文件接下来还会被 *pacstrap* 拷贝到新系统里，所以请确保设置正确。
+
+使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/packages/?name=base) 软件包和 Linux [内核](https://wiki.archlinux.org/index.php/Kernel)以及常规硬件的固件：
 
 ```shell
 # pacstrap /mnt base
@@ -168,6 +234,8 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 ### 配置基础系统
 
 #### 生成分区表
+
+用以下命令生成 [fstab](https://wiki.archlinux.org/index.php/Fstab) 文件 (用 `-U` 或 `-L` 选项设置UUID 或卷标)：
 
 ```shell
 # genfstab -U /mnt >> /mnt/etc/fstab
@@ -190,6 +258,8 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 ![localtime](./images/localtime.gif)
 
 #### 硬件时间设置
+
+运行 [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) 以生成 `/etc/adjtime`：
 
 ```shell
 # hwclock --systohc
@@ -223,6 +293,8 @@ Arch Linux 的仓库镜像地址存于 */etc/pacman.d/mirrorlist*，每行一条
 # echo LANG=<默认 locale>  > /etc/locale.conf
 # echo 'LANG=zh_CN.UTF-8'  > /etc/locale.conf
 ```
+
+**警告:** 不推荐在此设置任何中文 locale，会导致 TTY 乱码。
 
 ####  主机名
 
@@ -313,6 +385,36 @@ passwd archuser
 
 该命令为用户 archuser 设置密码。
 
+#### 设置 sudo
+
+sudo 应该已经作为 base-devel 的一部分装上去了，如果没有的话也可以自己手动安装一下：
+
+```shell
+# pacman -S sudo
+```
+
+sudo 的配置文件是 /etc/sudoers ，但是咱们不会直接去编辑它（因为一旦搞坏了不好修）。 所以有一个 visudo 的命令用来代理编辑它（就是先编辑一个临时文件，然后检查有没有错误， 一切 OK 后再覆盖）。
+
+虽然这个文件有很多行，但是咱们还是先从让它能够工作开始来最小的修改它。
+
+找到下面的这一行，然后把 %wheel 前面的注释符号（#）去掉，不过百分号要留下：
+
+```shell
+## Uncomment to allow members of group wheel to execute any command
+# %wheel ALL=(ALL) ALL
+```
+
+然后就可以保存退出啦~ （效果就是注释里说明的，给 wheel 组执行所有命令的权限）
+
+如果汝不想每一次都在前面加上 EDITOR 来指定编辑器的话，可以加上这几行：
+
+```shell
+# 重设默认的环境变量
+Defaults      env_reset
+# 设置默认的编辑器，并使 visudo 不再读取环境变量 editor 的值。
+Defaults      editor=/usr/bin/nano, !env_editor
+```
+
 ### 配置图形界面
 
 ####  安装显卡驱动
@@ -355,6 +457,36 @@ AMD/ATI 显卡驱动原先有开源实现 *xf86-video-ati* 及闭源实现 AMD C
 
 ### 安装桌面环境
 
+安装桌面环境需要的基础包 （就是 xorg ）
+
+```shell
+# pacman -S xorg
+```
+
+这时会让汝选择需要哪些软件包啦,其实大多数时候默认的就行……
+
+接下来挑一个喜欢的桌面环境包组装上咯~
+
+GNOME , 想要 GNOME 全家桶的话带上 gnome-extras
+
+```shell
+# pacman -S gnome
+```
+
+KDE Plasma , 想要 KDE 全家桶的话用 kde-applications-meta 代替 。 kde-applications 会提示汝选择要安装哪些包。
+
+以及一个显示管理器， KDE 和 sddm 一起使用最好。
+
+```shell
+# pacman -S plasma sddm kde-applications
+```
+
+或者只安装 kdebase 组，包含了一些基本组件（例如文件管理器和终端模拟器）。
+
+```shell
+# pacman -S plasma sddm kdebase
+```
+
 ### 安装中文输入法
 
 ##### # 推荐阅读
@@ -362,7 +494,41 @@ AMD/ATI 显卡驱动原先有开源实现 *xf86-video-ati* 及闭源实现 AMD C
 - [Arch 用户软件仓库](https://wiki.archlinux.org/index.php/Arch_User_Repository_(简体中文))
 - [AUR 助手工具](https://wiki.archlinux.org/index.php/AUR_helpers_(简体中文))
 
+### 收尾工作
 
+激活需要的服务，例如一个显示管理器，在例如 gdm ：
+
+```shell
+# systemctl enable gdm
+
+```
+
+当然还有 NetworkManager：
+
+```shell
+# systemctl enable NetworkManager
+```
+
+设置用户级别的 locale
+
+用 su 切换到刚建立的用户，然后编辑 ~/.config/locale.conf 修改自己的 Locale ，例如：
+
+```shell
+LANG=zh_CN.UTF-8
+LC_CTYPE="zh_CN.UTF-8"
+LC_NUMERIC="zh_CN.UTF-8"
+LC_TIME="zh_CN.UTF-8"
+LC_COLLATE="zh_CN.UTF-8"
+LC_MONETARY="zh_CN.UTF-8"
+LC_MESSAGES="zh_CN.UTF-8"
+LC_PAPER="zh_CN.UTF-8"
+LC_NAME="zh_CN.UTF-8"
+LC_ADDRESS="zh_CN.UTF-8"
+LC_TELEPHONE="zh_CN.UTF-8"
+LC_MEASUREMENT="zh_CN.UTF-8"
+LC_IDENTIFICATION="zh_CN.UTF-8"
+LC_ALL=
+```
 
 ## Pacman 命令详解
 
@@ -411,3 +577,5 @@ AMD/ATI 显卡驱动原先有开源实现 *xf86-video-ati* 及闭源实现 AMD C
 
 # 关于 Pacman 更加详细的用法，可以阅读 Pacman 的手册页
 ```
+
+## AUR 包手动安装
