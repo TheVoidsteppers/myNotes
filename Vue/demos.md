@@ -236,3 +236,57 @@ Object.assign(this.$data, this.$options.data())
 </script>
 ```
 
+## 校验 
+
+```javascript
+// 验证纯英文
+const validateEnglish = (rule, value, callback) => {
+    const reg = /^[a-zA-Z]+$/;
+
+    if (!reg.test(value)) {
+        callback(new Error("仅支持字母组合"));
+    } else {
+        callback();
+    }
+};
+
+// 验证纯中文
+const validateChinese = (rule, value, callback) => {
+    const reg = /^[\u4e00-\u9fa5]+$/;
+
+    if (!reg.test(value)) {
+        callback(new Error("只能输入中文"));
+    } else {
+        callback();
+    }
+};
+
+// 校验中文名称重复
+const validateDuplicate = async (rule, value, callback) => {
+    const params = {
+        category: "system",
+        name: value,
+        parentId: this.parentNode.id,
+        id: this.form.id || ""
+    };
+
+    const res = await dataCatalogApi.exist(params);
+    const { code, object, msg, errorMsg } = res;
+
+    if (code === 0) {
+        if (object) {
+            callback(new Error("名称重复"));
+        } else {
+            callback();
+        }
+    } else {
+        this.$notify({
+            title: "错误",
+            message: errorMsg || msg,
+            type: "error"
+        });
+        callback(new Error("校验失败"));
+    }
+};
+```
+
