@@ -19,15 +19,16 @@ git status # 获得情况的简要摘要
 ```json
 feat : 新功能
 fix : 修复bug
-docs : 文档改变
-style : 代码样式改变,格式修改，注意不是 css 修改
+docs : 文档改变,修改文档
+style : 代码样式改变,格式修改，不影响代码逻辑，注意不是 css 修改
 refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 perf : 性能优化
-test：增加测试
+test：增加修改测试用例
 build : 改变了build工具 如 grunt换成了 npm
 revert : 撤销上一次的 commit
 chore：构建过程或辅助工具的变动，其他修改, 比如构建流程, 依赖管理
 ed: 某个已有功能修改
+deps: 升级依赖
 
 scope: commit 影响的范围, 比如: route, component, utils, build...
 subject: commit 的概述
