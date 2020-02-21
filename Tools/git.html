@@ -778,15 +778,16 @@ git status # &#x83B7;&#x5F97;&#x60C5;&#x51B5;&#x7684;&#x7B80;&#x8981;&#x6458;&#x
 <h2 id="commit-&#x89C4;&#x8303;">commit &#x89C4;&#x8303;</h2>
 <pre><code class="lang-json">feat : &#x65B0;&#x529F;&#x80FD;
 fix : &#x4FEE;&#x590D;bug
-docs : &#x6587;&#x6863;&#x6539;&#x53D8;
-style : &#x4EE3;&#x7801;&#x6837;&#x5F0F;&#x6539;&#x53D8;,&#x683C;&#x5F0F;&#x4FEE;&#x6539;&#xFF0C;&#x6CE8;&#x610F;&#x4E0D;&#x662F; css &#x4FEE;&#x6539;
+docs : &#x6587;&#x6863;&#x6539;&#x53D8;,&#x4FEE;&#x6539;&#x6587;&#x6863;
+style : &#x4EE3;&#x7801;&#x6837;&#x5F0F;&#x6539;&#x53D8;,&#x683C;&#x5F0F;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#xFF0C;&#x6CE8;&#x610F;&#x4E0D;&#x662F; css &#x4FEE;&#x6539;
 refactor&#xFF1A;&#x91CD;&#x6784;&#xFF08;&#x5373;&#x4E0D;&#x662F;&#x65B0;&#x589E;&#x529F;&#x80FD;&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x4FEE;&#x6539;bug&#x7684;&#x4EE3;&#x7801;&#x53D8;&#x52A8;&#xFF09;
 perf : &#x6027;&#x80FD;&#x4F18;&#x5316;
-test&#xFF1A;&#x589E;&#x52A0;&#x6D4B;&#x8BD5;
+test&#xFF1A;&#x589E;&#x52A0;&#x4FEE;&#x6539;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;
 build : &#x6539;&#x53D8;&#x4E86;build&#x5DE5;&#x5177; &#x5982; grunt&#x6362;&#x6210;&#x4E86; npm
 revert : &#x64A4;&#x9500;&#x4E0A;&#x4E00;&#x6B21;&#x7684; commit
 chore&#xFF1A;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x6216;&#x8F85;&#x52A9;&#x5DE5;&#x5177;&#x7684;&#x53D8;&#x52A8;&#xFF0C;&#x5176;&#x4ED6;&#x4FEE;&#x6539;, &#x6BD4;&#x5982;&#x6784;&#x5EFA;&#x6D41;&#x7A0B;, &#x4F9D;&#x8D56;&#x7BA1;&#x7406;
 ed: &#x67D0;&#x4E2A;&#x5DF2;&#x6709;&#x529F;&#x80FD;&#x4FEE;&#x6539;
+deps: &#x5347;&#x7EA7;&#x4F9D;&#x8D56;
 
 scope: commit &#x5F71;&#x54CD;&#x7684;&#x8303;&#x56F4;, &#x6BD4;&#x5982;: route, component, utils, build...
 subject: commit &#x7684;&#x6982;&#x8FF0;
@@ -855,7 +856,7 @@ git merge origin/develop
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git","level":"4.1.2","depth":2,"next":{"title":"webpack","level":"4.1.3","depth":2,"path":"Tools/webpack.md","ref":"Tools/webpack.md","articles":[]},"previous":{"title":"utils","level":"4.1.1","depth":2,"path":"Tools/utils.md","ref":"Tools/utils.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/git.md","mtime":"2019-08-27T09:48:14.045Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-08T08:07:36.678Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git","level":"4.1.2","depth":2,"next":{"title":"webpack","level":"4.1.3","depth":2,"path":"Tools/webpack.md","ref":"Tools/webpack.md","articles":[]},"previous":{"title":"utils","level":"4.1.1","depth":2,"path":"Tools/utils.md","ref":"Tools/utils.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/git.md","mtime":"2019-11-20T02:57:51.906Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-21T02:55:20.695Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

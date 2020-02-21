@@ -766,48 +766,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <p>CSS3&#x7684;animation&#x5236;&#x4F5C;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x7684;CSS&#x96C6;&#x5408;&#xFF1A;<a href="https://daneden.github.io/animate.css/" target="_blank">https://daneden.github.io/animate.css/</a></p>
-<h2 id="&#x53BB;&#x6389;&#x56FE;&#x7247;&#x4E0B;&#x95F4;&#x9699;">&#x53BB;&#x6389;&#x56FE;&#x7247;&#x4E0B;&#x95F4;&#x9699;</h2>
-<pre><code class="lang-css"><span class="hljs-comment">/* &#x56FE;&#x7247;&#x9ED8;&#x8BA4;&#x662F;&#x6587;&#x5B57;&#xFF0C;&#x4EE5;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50; */</span>
-<span class="hljs-selector-tag">body</span>{
-    <span class="hljs-comment">/*font-size: 0px;*/</span>
-}
-<span class="hljs-selector-tag">img</span>{
-    <span class="hljs-comment">/*display: block;*/</span>
-    <span class="hljs-attribute">vertical-align</span>: middle;
-}
-</code></pre>
-<h2 id="&#x81EA;&#x52A8;&#x6362;&#x884C;">&#x81EA;&#x52A8;&#x6362;&#x884C;</h2>
-<pre><code class="lang-css"><span class="hljs-selector-tag">word-wrap</span><span class="hljs-selector-pseudo">:break-word</span>;
-<span class="hljs-selector-tag">word-break</span><span class="hljs-selector-pseudo">:break-all</span>;
-<span class="hljs-comment">/* &#x4E24;&#x884C; */</span>
-<span class="hljs-selector-tag">overflow</span> : <span class="hljs-selector-tag">hidden</span>;
-<span class="hljs-selector-tag">text-overflow</span>: <span class="hljs-selector-tag">ellipsis</span>;
-<span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">-webkit-box</span>;
-<span class="hljs-selector-tag">-webkit-line-clamp</span>: 2;
-<span class="hljs-selector-tag">-webkit-box-orient</span>: <span class="hljs-selector-tag">vertical</span>;
-</code></pre>
-<h2 id="&#x6A21;&#x4EFF;-placeholder">&#x6A21;&#x4EFF; placeholder</h2>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-placeholder</span>=<span class="hljs-string">&quot;(untitled)&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-<pre><code class="lang-css"><span class="hljs-selector-class">.title</span><span class="hljs-selector-pseudo">:empty</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-pseudo">:focus)</span><span class="hljs-selector-pseudo">:before</span> {
-  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(data-placeholder)
-}
-</code></pre>
-<h2 id="&#x53BB;&#x6389;&#x5DF2;&#x8BBE;&#x7F6E;&#x7684;&#x6837;&#x5F0F;">&#x53BB;&#x6389;&#x5DF2;&#x8BBE;&#x7F6E;&#x7684;&#x6837;&#x5F0F;</h2>
-<pre><code class="lang-javascript">initial | inherit
-</code></pre>
-<h2 id="&#x8D85;&#x51FA;&#x6587;&#x5B57;-&#x7701;&#x7565;&#x53F7;">&#x8D85;&#x51FA;&#x6587;&#x5B57; &#x7701;&#x7565;&#x53F7;</h2>
-<pre><code class="lang-css"><span class="hljs-selector-tag">overflow</span><span class="hljs-selector-pseudo">:hidden</span>;
-<span class="hljs-selector-tag">text-overflow</span><span class="hljs-selector-pseudo">:ellipsis</span>;
-<span class="hljs-selector-tag">white-space</span><span class="hljs-selector-pseudo">:nowrap</span>;
-</code></pre>
-<h2 id="&#x6587;&#x5B57;&#x6E10;&#x53D8;&#x8272;">&#x6587;&#x5B57;&#x6E10;&#x53D8;&#x8272;</h2>
-<pre><code class="lang-css"><span class="hljs-selector-tag">background</span>: <span class="hljs-selector-tag">linear-gradient</span>(<span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">right</span>, <span class="hljs-selector-id">#ff338e</span>, <span class="hljs-selector-id">#f83e3e</span>);
-<span class="hljs-selector-tag">-webkit-background-clip</span>: <span class="hljs-selector-tag">text</span>;
-<span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">transparent</span>;
-</code></pre>
-<h2 id="flex-&#x5E03;&#x5C40;">flex &#x5E03;&#x5C40;</h2>
+<h2 id="&#x5E03;&#x5C40;">&#x5E03;&#x5C40;</h2>
+<h3 id="flex-&#x5E03;&#x5C40;">flex &#x5E03;&#x5C40;</h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <pre><code class="lang-css"><span class="hljs-selector-class">.box</span>{
@@ -816,58 +776,28 @@
   <span class="hljs-attribute">display</span>: -webkit-flex; <span class="hljs-comment">/* Safari */</span>
 }
 </code></pre>
-<h2 id="&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;">&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;</h2>
-<pre><code class="lang-css"><span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;*/</span>
-<span class="hljs-selector-pseudo">::-webkit-scrollbar-track-piece</span> {
-    <span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x51F9;&#x69FD;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8FB9;&#x6846;&#x5C5E;&#x6027;*/</span>
-    <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#f8f8f8</span>;
-}
-<span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
-    <span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7684;&#x5BBD;&#x5EA6;*/</span>
-    <span class="hljs-attribute">width</span>:<span class="hljs-number">9px</span>;
-    <span class="hljs-attribute">height</span>:<span class="hljs-number">9px</span>;
-}
-<span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span> {
-    <span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7684;&#x8BBE;&#x7F6E;*/</span>
-    <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#dddddd</span>;
-    <span class="hljs-attribute">background-clip</span>:padding-box;
-    <span class="hljs-attribute">min-height</span>:<span class="hljs-number">28px</span>;
-}
-<span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span><span class="hljs-selector-pseudo">:hover</span> {
-    <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#bbb</span>;
-}
-<span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316; end*/</span>
+<h2 id="&#x6587;&#x672C;">&#x6587;&#x672C;</h2>
+<h3 id="&#x81EA;&#x52A8;&#x6362;&#x884C;">&#x81EA;&#x52A8;&#x6362;&#x884C;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/*&#x4E00;&#x884C;*/</span>
+<span class="hljs-selector-tag">word-wrap</span><span class="hljs-selector-pseudo">:break-word</span>;
+<span class="hljs-selector-tag">word-break</span><span class="hljs-selector-pseudo">:break-all</span>;
+<span class="hljs-comment">/* &#x4E24;&#x884C; */</span>
+<span class="hljs-selector-tag">overflow</span> : <span class="hljs-selector-tag">hidden</span>;
+<span class="hljs-selector-tag">text-overflow</span>: <span class="hljs-selector-tag">ellipsis</span>;
+<span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">-webkit-box</span>;
+<span class="hljs-selector-tag">-webkit-line-clamp</span>: 2;
+<span class="hljs-selector-tag">-webkit-box-orient</span>: <span class="hljs-selector-tag">vertical</span>;
+<span class="hljs-comment">/*&#x8D85;&#x51FA;&#x6587;&#x5B57; &#x7701;&#x7565;&#x53F7;&#x66FF;&#x4EE3;*/</span>
+<span class="hljs-selector-tag">overflow</span><span class="hljs-selector-pseudo">:hidden</span>;
+<span class="hljs-selector-tag">text-overflow</span><span class="hljs-selector-pseudo">:ellipsis</span>;
+<span class="hljs-selector-tag">white-space</span><span class="hljs-selector-pseudo">:nowrap</span>;
 </code></pre>
-<h2 id="&#x80CC;&#x666F;&#x56FE;&#x7247;-----&#x663E;&#x793A;&#x4F4D;&#x7F6E;&#x3001;&#x88C1;&#x526A;">&#x80CC;&#x666F;&#x56FE;&#x7247; --- &#x663E;&#x793A;&#x4F4D;&#x7F6E;&#x3001;&#x88C1;&#x526A;</h2>
-<pre><code class="lang-css"><span class="hljs-comment">/*&#x8BA9;&#x80CC;&#x666F;&#x4ECE;&#x5185;&#x5BB9;&#x5F00;&#x59CB;&#x5E73;&#x94FA;*/</span>
-<span class="hljs-selector-tag">background-origin</span>: <span class="hljs-selector-tag">content-box</span>;
-<span class="hljs-comment">/*&#x6CA1;&#x6709;&#x505A;&#x80CC;&#x666F;&#x88C1;&#x526A; &#x80CC;&#x666F;&#x56FE;&#x9ED8;&#x8BA4;&#x5C31;&#x662F;&#x4ECE;&#x8FB9;&#x6846;&#x663E;&#x793A;*/</span>
-<span class="hljs-comment">/*&#x9ED8;&#x8BA4;&#x7684;&#x5C31;&#x662F;
-border-box  &#x8FB9;&#x6846;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
-padding-box &#x5185;&#x8FB9;&#x8DDD;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
-content-box &#x5185;&#x5BB9;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
-*/</span>
-<span class="hljs-selector-tag">background-clip</span>: <span class="hljs-selector-tag">content-box</span>;
+<h3 id="&#x6587;&#x5B57;&#x6E10;&#x53D8;&#x8272;">&#x6587;&#x5B57;&#x6E10;&#x53D8;&#x8272;</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">background</span>: <span class="hljs-selector-tag">linear-gradient</span>(<span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">right</span>, <span class="hljs-selector-id">#ff338e</span>, <span class="hljs-selector-id">#f83e3e</span>);
+<span class="hljs-selector-tag">-webkit-background-clip</span>: <span class="hljs-selector-tag">text</span>;
+<span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">transparent</span>;
 </code></pre>
-<h2 id="&#x6DFB;&#x52A0;&#x5B57;&#x4F53;">&#x6DFB;&#x52A0;&#x5B57;&#x4F53;</h2>
-<pre><code class="lang-css"><span class="hljs-comment">/*&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x56FE;&#x6807;*/</span>
-<span class="hljs-comment">/*1.&#x901A;&#x8FC7;@font-face&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x5B57;&#x4F53;*/</span>
-@<span class="hljs-keyword">font-face</span> {
-    <span class="hljs-comment">/*2.&#x7533;&#x660E;&#x81EA;&#x5DF1;&#x7684;&#x5B57;&#x4F53;&#x540D;&#x79F0;*/</span>
-    <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&apos;wjs&apos;</span>;
-    <span class="hljs-comment">/*3.&#x5F15;&#x5165;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#xFF08;&#x7EA6;&#x675F;&#x67D0;&#x4E00;&#x6BB5;&#x5B57;&#x7B26;&#x4EE3;&#x7801;&#x4EC0;&#x4E48;&#x56FE;&#x6848;&#xFF09;*/</span>
-    <span class="hljs-attribute">src</span>:
-    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.svg) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;svg&apos;</span>),
-    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.eot) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;embedded-opentype&apos;</span>),
-    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.ttf) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;truetype&apos;</span>),
-    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.woff) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;woff&apos;</span>);
-}
-<span class="hljs-comment">/*4.&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x7EF4;&#x62A4;&#x6027;&#x66F4;&#x597D;*/</span>
-<span class="hljs-selector-class">.wjs_icon</span>{
-    <span class="hljs-attribute">font-family</span>: wjs;
-}
-</code></pre>
-<h2 id="&#x6587;&#x672C;&#x73AF;&#x7ED5;">&#x6587;&#x672C;&#x73AF;&#x7ED5;</h2>
+<h3 id="&#x6587;&#x672C;&#x73AF;&#x7ED5;">&#x6587;&#x672C;&#x73AF;&#x7ED5;</h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
     <span class="hljs-selector-class">.box1</span>{
         <span class="hljs-attribute">float</span>: left;
@@ -894,19 +824,28 @@ content-box &#x5185;&#x5BB9;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
 &#x5185;&#x5BB9;&#x5185;&#x5BB9;&#x5185;&#x5BB9;&#x5185;&#x5BB9;&#x5185;&#x5BB9;&#x5185;&#x5BB9;
 --&gt;</span>
 </code></pre>
-<h2 id="&#x5A92;&#x4F53;&#x67E5;&#x8BE2;">&#x5A92;&#x4F53;&#x67E5;&#x8BE2;</h2>
-<pre><code class="lang-css"><span class="hljs-comment">/*&#x4F7F;&#x7528;&#x5A92;&#x4F53;&#x67E5;&#x8BE2;&#x80FD;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x5C4F;&#x5E55;&#x533A;&#x95F4;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x548C;&#x6837;&#x5F0F;*/</span>
-<span class="hljs-comment">/*&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x5A92;&#x4F53;&#x67E5;&#x8BE2;&#xFF1A;&#x5173;&#x4E8E;&#x5A92;&#x4F53;&#x67E5;&#x8BE2; @media */</span>
-<span class="hljs-comment">/*&#x8BED;&#x6CD5;&#xFF1A; @media screen and (max-width: 768px) and (min-width: 320px){&#x5C5E;&#x6027;&#x6837;&#x5F0F;}*/</span>
-@<span class="hljs-keyword">media</span> screen and (max-width: <span class="hljs-number">768px</span>) {
-    <span class="hljs-comment">/*1. &#x5728;&#x8D85;&#x5C0F;&#x5C4F;&#x8BBE;&#x5907;&#x7684;&#x65F6;&#x5019; 768px&#x4EE5;&#x4E0B;      &#x5F53;&#x524D;&#x5BB9;&#x5668;&#x7684;&#x5BBD;&#x5EA6;100%     &#x80CC;&#x666F;&#x84DD;&#x8272;*/</span>
-    <span class="hljs-selector-class">.container</span>{
-        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-        <span class="hljs-attribute">background</span>: blue;
-    }
-}
+<h3 id="&#x53BB;&#x6389;&#x6587;&#x672C;&#x9009;&#x4E2D;&#x6548;&#x679C;">&#x53BB;&#x6389;&#x6587;&#x672C;&#x9009;&#x4E2D;&#x6548;&#x679C;</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">-webkit-touch-callout</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* iOS Safari */</span>
+<span class="hljs-selector-tag">-webkit-user-select</span>: <span class="hljs-selector-tag">none</span>;<span class="hljs-comment">/* Chrome/Safari/Opera */</span>
+<span class="hljs-selector-tag">-khtml-user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Konqueror */</span>
+<span class="hljs-selector-tag">-moz-user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Firefox */</span>
+<span class="hljs-selector-tag">-ms-user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Internet Explorer/Edge */</span>
+<span class="hljs-selector-tag">user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Non-prefixed version, currently not supported by any browser */</span>
 </code></pre>
-<h2 id="&#x4E09;&#x89D2;&#x5F62;">&#x4E09;&#x89D2;&#x5F62;</h2>
+<h2 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h2>
+<h3 id="&#x80CC;&#x666F;&#x56FE;&#x7247;-----&#x663E;&#x793A;&#x4F4D;&#x7F6E;&#x3001;&#x88C1;&#x526A;">&#x80CC;&#x666F;&#x56FE;&#x7247; --- &#x663E;&#x793A;&#x4F4D;&#x7F6E;&#x3001;&#x88C1;&#x526A;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/*&#x8BA9;&#x80CC;&#x666F;&#x4ECE;&#x5185;&#x5BB9;&#x5F00;&#x59CB;&#x5E73;&#x94FA;*/</span>
+<span class="hljs-selector-tag">background-origin</span>: <span class="hljs-selector-tag">content-box</span>;
+<span class="hljs-comment">/*&#x6CA1;&#x6709;&#x505A;&#x80CC;&#x666F;&#x88C1;&#x526A; &#x80CC;&#x666F;&#x56FE;&#x9ED8;&#x8BA4;&#x5C31;&#x662F;&#x4ECE;&#x8FB9;&#x6846;&#x663E;&#x793A;*/</span>
+<span class="hljs-comment">/*&#x9ED8;&#x8BA4;&#x7684;&#x5C31;&#x662F;
+border-box  &#x8FB9;&#x6846;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
+padding-box &#x5185;&#x8FB9;&#x8DDD;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
+content-box &#x5185;&#x5BB9;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
+*/</span>
+<span class="hljs-selector-tag">background-clip</span>: <span class="hljs-selector-tag">content-box</span>;
+</code></pre>
+<h2 id="&#x8FB9;&#x6846;">&#x8FB9;&#x6846;</h2>
+<h3 id="&#x4E09;&#x89D2;&#x5F62;">&#x4E09;&#x89D2;&#x5F62;</h3>
 <pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">::before</span>{
     <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
@@ -919,13 +858,79 @@ content-box &#x5185;&#x5BB9;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
     <span class="hljs-attribute">border-right</span>: solid <span class="hljs-number">10px</span> transparent;
 }
 </code></pre>
-<h2 id="&#x53BB;&#x6389;&#x9F20;&#x6807;&#x9009;&#x4E2D;&#x6587;&#x672C;&#x6548;&#x679C;">&#x53BB;&#x6389;&#x9F20;&#x6807;&#x9009;&#x4E2D;&#x6587;&#x672C;&#x6548;&#x679C;</h2>
-<pre><code class="lang-css"><span class="hljs-selector-tag">-webkit-touch-callout</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* iOS Safari */</span>
-<span class="hljs-selector-tag">-webkit-user-select</span>: <span class="hljs-selector-tag">none</span>;<span class="hljs-comment">/* Chrome/Safari/Opera */</span>
-<span class="hljs-selector-tag">-khtml-user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Konqueror */</span>
-<span class="hljs-selector-tag">-moz-user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Firefox */</span>
-<span class="hljs-selector-tag">-ms-user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Internet Explorer/Edge */</span>
-<span class="hljs-selector-tag">user-select</span>: <span class="hljs-selector-tag">none</span>; <span class="hljs-comment">/* Non-prefixed version, currently not supported by any browser */</span>
+<h2 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h2>
+<h3 id="&#x53BB;&#x6389;&#x56FE;&#x7247;&#x4E0B;&#x95F4;&#x9699;">&#x53BB;&#x6389;&#x56FE;&#x7247;&#x4E0B;&#x95F4;&#x9699;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/* &#x56FE;&#x7247;&#x9ED8;&#x8BA4;&#x662F;&#x6587;&#x5B57;&#xFF0C;&#x4EE5;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50; */</span>
+<span class="hljs-selector-tag">body</span>{
+    <span class="hljs-comment">/*font-size: 0px;*/</span>
+}
+<span class="hljs-selector-tag">img</span>{
+    <span class="hljs-comment">/*display: block;*/</span>
+    <span class="hljs-attribute">vertical-align</span>: middle;
+}
+</code></pre>
+<h3 id="&#x6A21;&#x4EFF;-placeholder">&#x6A21;&#x4EFF; placeholder</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-placeholder</span>=<span class="hljs-string">&quot;(untitled)&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.title</span><span class="hljs-selector-pseudo">:empty</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-pseudo">:focus)</span><span class="hljs-selector-pseudo">:before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(data-placeholder)
+}
+</code></pre>
+<h3 id="&#x53BB;&#x6389;&#x5DF2;&#x8BBE;&#x7F6E;&#x7684;&#x6837;&#x5F0F;">&#x53BB;&#x6389;&#x5DF2;&#x8BBE;&#x7F6E;&#x7684;&#x6837;&#x5F0F;</h3>
+<pre><code class="lang-javascript">initial | inherit
+</code></pre>
+<h3 id="&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;">&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316;*/</span>
+<span class="hljs-selector-pseudo">::-webkit-scrollbar-track-piece</span> {
+    <span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x51F9;&#x69FD;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8FB9;&#x6846;&#x5C5E;&#x6027;*/</span>
+    <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#f8f8f8</span>;
+}
+<span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
+    <span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7684;&#x5BBD;&#x5EA6;*/</span>
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">9px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">9px</span>;
+}
+<span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span> {
+    <span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7684;&#x8BBE;&#x7F6E;*/</span>
+    <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#dddddd</span>;
+    <span class="hljs-attribute">background-clip</span>:padding-box;
+    <span class="hljs-attribute">min-height</span>:<span class="hljs-number">28px</span>;
+}
+<span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#bbb</span>;
+}
+<span class="hljs-comment">/*&#x6EDA;&#x52A8;&#x6761;&#x7F8E;&#x5316; end*/</span>
+</code></pre>
+<h3 id="&#x6DFB;&#x52A0;&#x5B57;&#x4F53;">&#x6DFB;&#x52A0;&#x5B57;&#x4F53;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/*&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x56FE;&#x6807;*/</span>
+<span class="hljs-comment">/*1.&#x901A;&#x8FC7;@font-face&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x5B57;&#x4F53;*/</span>
+@<span class="hljs-keyword">font-face</span> {
+    <span class="hljs-comment">/*2.&#x7533;&#x660E;&#x81EA;&#x5DF1;&#x7684;&#x5B57;&#x4F53;&#x540D;&#x79F0;*/</span>
+    <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&apos;wjs&apos;</span>;
+    <span class="hljs-comment">/*3.&#x5F15;&#x5165;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#xFF08;&#x7EA6;&#x675F;&#x67D0;&#x4E00;&#x6BB5;&#x5B57;&#x7B26;&#x4EE3;&#x7801;&#x4EC0;&#x4E48;&#x56FE;&#x6848;&#xFF09;*/</span>
+    <span class="hljs-attribute">src</span>:
+    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.svg) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;svg&apos;</span>),
+    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.eot) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;embedded-opentype&apos;</span>),
+    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.ttf) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;truetype&apos;</span>),
+    <span class="hljs-built_in">url</span>(../fonts/MiFie-Web-Font.woff) <span class="hljs-built_in">format</span>(<span class="hljs-string">&apos;woff&apos;</span>);
+}
+<span class="hljs-comment">/*4.&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x7EF4;&#x62A4;&#x6027;&#x66F4;&#x597D;*/</span>
+<span class="hljs-selector-class">.wjs_icon</span>{
+    <span class="hljs-attribute">font-family</span>: wjs;
+}
+</code></pre>
+<h3 id="&#x5A92;&#x4F53;&#x67E5;&#x8BE2;">&#x5A92;&#x4F53;&#x67E5;&#x8BE2;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/*&#x4F7F;&#x7528;&#x5A92;&#x4F53;&#x67E5;&#x8BE2;&#x80FD;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x5C4F;&#x5E55;&#x533A;&#x95F4;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x548C;&#x6837;&#x5F0F;*/</span>
+<span class="hljs-comment">/*&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x5A92;&#x4F53;&#x67E5;&#x8BE2;&#xFF1A;&#x5173;&#x4E8E;&#x5A92;&#x4F53;&#x67E5;&#x8BE2; @media */</span>
+<span class="hljs-comment">/*&#x8BED;&#x6CD5;&#xFF1A; @media screen and (max-width: 768px) and (min-width: 320px){&#x5C5E;&#x6027;&#x6837;&#x5F0F;}*/</span>
+@<span class="hljs-keyword">media</span> screen and (max-width: <span class="hljs-number">768px</span>) {
+    <span class="hljs-comment">/*1. &#x5728;&#x8D85;&#x5C0F;&#x5C4F;&#x8BBE;&#x5907;&#x7684;&#x65F6;&#x5019; 768px&#x4EE5;&#x4E0B;      &#x5F53;&#x524D;&#x5BB9;&#x5668;&#x7684;&#x5BBD;&#x5EA6;100%     &#x80CC;&#x666F;&#x84DD;&#x8272;*/</span>
+    <span class="hljs-selector-class">.container</span>{
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">background</span>: blue;
+    }
+}
 </code></pre>
 
                                 
@@ -970,7 +975,7 @@ content-box &#x5185;&#x5BB9;&#x4EE5;&#x5916;&#x88AB;&#x88C1;&#x526A;&#x6389;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CSS 案例","level":"2.2.2","depth":2,"next":{"title":"JavaScript","level":"2.3","depth":1,"path":"JavaScript/README.md","ref":"JavaScript/README.md","articles":[{"title":"JavaScript 基础","level":"2.3.1","depth":2,"path":"JavaScript/base.md","ref":"JavaScript/base.md","articles":[]},{"title":"jQuery","level":"2.3.2","depth":2,"path":"JavaScript/jQuery.md","ref":"JavaScript/jQuery.md","articles":[]},{"title":"JavaScript 补充","level":"2.3.3","depth":2,"path":"JavaScript/add/README.md","ref":"JavaScript/add/README.md","articles":[{"title":"EcmaScript6","level":"2.3.3.1","depth":3,"path":"JavaScript/add/EcmaScript6.md","ref":"JavaScript/add/EcmaScript6.md","articles":[]}]},{"title":"JavaScript 高级","level":"2.3.4","depth":2,"path":"JavaScript/advanced.md","ref":"JavaScript/advanced.md","articles":[]},{"title":"JavaScript 案例","level":"2.3.5","depth":2,"path":"JavaScript/demos.md","ref":"JavaScript/demos.md","articles":[]}]},"previous":{"title":"CSS 基础","level":"2.2.1","depth":2,"path":"CSS/base.md","ref":"CSS/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"CSS/demos.md","mtime":"2019-09-02T02:35:14.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-08T08:07:36.678Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CSS 案例","level":"2.2.2","depth":2,"next":{"title":"JavaScript","level":"2.3","depth":1,"path":"JavaScript/README.md","ref":"JavaScript/README.md","articles":[{"title":"JavaScript 基础","level":"2.3.1","depth":2,"path":"JavaScript/base.md","ref":"JavaScript/base.md","articles":[]},{"title":"jQuery","level":"2.3.2","depth":2,"path":"JavaScript/jQuery.md","ref":"JavaScript/jQuery.md","articles":[]},{"title":"JavaScript 补充","level":"2.3.3","depth":2,"path":"JavaScript/add/README.md","ref":"JavaScript/add/README.md","articles":[{"title":"EcmaScript6","level":"2.3.3.1","depth":3,"path":"JavaScript/add/EcmaScript6.md","ref":"JavaScript/add/EcmaScript6.md","articles":[]}]},{"title":"JavaScript 高级","level":"2.3.4","depth":2,"path":"JavaScript/advanced.md","ref":"JavaScript/advanced.md","articles":[]},{"title":"JavaScript 案例","level":"2.3.5","depth":2,"path":"JavaScript/demos.md","ref":"JavaScript/demos.md","articles":[]}]},"previous":{"title":"CSS 基础","level":"2.2.1","depth":2,"path":"CSS/base.md","ref":"CSS/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"CSS/demos.md","mtime":"2020-02-21T02:28:40.451Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-21T02:55:20.695Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
