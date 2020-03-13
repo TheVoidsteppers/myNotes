@@ -7,11 +7,11 @@
 
 
 - [JavaScript  基础](base.md)
+- [JavaScript 高级](advanced.md)
+- [JavaScript 进阶](add/README.md)
+  - [EcmaScript6](add/EcmaScript6.md)
+- [jQuery](jQuery.md)
 - [JavaScript 案例](demos.md)
--  [jQuery](JavaScript/jQuery.md)
-  -  [JavaScript 进阶](JavaScript/add/README.md)
-     + [EcmaScript6](JavaScript/add/EcmaScript6.md)
-  - [JavaScript 高级](JavaScript/advanced.md)
-  - [JavaScript 案例](JavaScript/demos.md)
+
 
 
