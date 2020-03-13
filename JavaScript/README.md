@@ -11,7 +11,7 @@
 - [JavaScript 进阶](add/README.md)
   - [EcmaScript6](add/EcmaScript6.md)
 - [jQuery](jQuery.md)
-- [JavaScript 案例](demos.md)
+- [JavaScript 样例](demos.md)
 
 
 

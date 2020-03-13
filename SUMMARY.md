@@ -11,7 +11,7 @@
 
 * [CSS](CSS/README.md)
   - [CSS 基础](CSS/base.md)
-  - [CSS 案例](CSS/demos.md)
+  - [CSS 样例](CSS/demos.md)
 
 
 * [JavaScript](JavaScript/README.md )
@@ -20,7 +20,7 @@
       - [EcmaScript6](JavaScript/add/EcmaScript6.md)
     - [JavaScript 高级](JavaScript/advanced.md)
     - [jQuery](JavaScript/jQuery.md)
-    - [JavaScript 案例](JavaScript/demos.md)
+    - [JavaScript 样例](JavaScript/demos.md)
 
 
 * [Vue](Vue/README.md )
@@ -29,7 +29,7 @@
      + [Vue-axios](Vue/advanced/Vue-axios.md)
      + [Vue-router](Vue/advanced/Vue-router.md)
      +  [Vuex](Vue/advanced/Vuex.md)
-  -  [Vue 案例](Vue/demos.md)
+  -  [Vue 样例](Vue/demos.md)
 
 ----
 
@@ -39,7 +39,7 @@
 
 * [PHP](PHP/README.md )
   - [PHP 基础](PHP/base.md)
-  -  [PHP 案例](PHP/demos.md)
+  -  [PHP 样例](PHP/demos.md)
   -  [建站流程](PHP/WebsiteProcess.md)
 
 ----
