@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>工具、插件 · 我的学习笔记</title>
+        <title>vim · 我的学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="utils.html" />
+    <link rel="next" href="markdown.html" />
     
     
-    <link rel="prev" href="../PHP/WebsiteProcess.html" />
+    <link rel="prev" href="Bootstrap.html" />
     
 
     </head>
@@ -547,7 +547,7 @@
         
         
     
-        <li class="chapter active" data-level="7.1" data-path="./">
+        <li class="chapter " data-level="7.1" data-path="./">
             
                 <a href="./">
             
@@ -652,7 +652,7 @@
             
         </li>
     
-        <li class="chapter " data-level="7.1.8" data-path="vim.html">
+        <li class="chapter active" data-level="7.1.8" data-path="vim.html">
             
                 <a href="vim.html">
             
@@ -784,7 +784,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >工具、插件</a>
+        <a href=".." >vim</a>
     </h1>
 </div>
 
@@ -799,19 +799,162 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="tools">Tools</h1>
-<p>&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x63D2;&#x4EF6;&#x3001;&#x5DE5;&#x5177;</p>
+                                <h2 id="normal-&#x6A21;&#x5F0F;">Normal &#x6A21;&#x5F0F;</h2>
+<h3 id="&#x79FB;&#x52A8;">&#x79FB;&#x52A8;</h3>
 <ul>
-<li><a href="utils.html">utils</a></li>
-<li><a href="git.html">git</a></li>
-<li><a href="webpack.html">webpack</a></li>
-<li><a href="element-ui.html">element-ui</a></li>
-<li><a href="D3_v5.html">D3_v5</a></li>
-<li><a href="SVG.html">SVG</a></li>
-<li><a href="Bootstrap.html">Bootstrap</a></li>
-<li><a href="vim.html">vim</a></li>
-<li><a href="markdown.html">markdown</a></li>
-<li><a href="tools.html">&#x5176;&#x4ED6;&#x5DE5;&#x5177;</a></li>
+<li><code>hjkl</code>  &#x2192;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5149;&#x6807;&#x952E; (&#x2190;&#x2193;&#x2191;&#x2192;)</li>
+<li><code>0</code> &#x2192; &#x6570;&#x5B57;&#x96F6;&#xFF0C;&#x5230;&#x884C;&#x5934;</li>
+<li><code>^</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;blank&#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x6240;&#x8C13;blank&#x5B57;&#x7B26;&#x5C31;&#x662F;&#x7A7A;&#x683C;&#xFF0C;tab&#xFF0C;&#x6362;&#x884C;&#xFF0C;&#x56DE;&#x8F66;&#x7B49;&#xFF09;</li>
+<li><code>$</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x884C;&#x5C3E;</li>
+<li><code>g_</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;blank&#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;</li>
+<li><code>fa</code> &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A;a&#x7684;&#x5B57;&#x7B26;&#x5904;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;fs&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A;s&#x7684;&#x5B57;&#x7B26;(F&#x76F8;&#x53CD;&#x65B9;&#x5411;)</li>
+<li><code>t,</code> &#x2192; &#x5230;&#x9017;&#x53F7;&#x524D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;(&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;)(T&#x76F8;&#x53CD;&#x65B9;&#x5411;)</li>
+<li><code>3fa</code> &#x2192; &#x5728;&#x5F53;&#x524D;&#x884C;&#x67E5;&#x627E;&#x7B2C;&#x4E09;&#x4E2A;&#x51FA;&#x73B0;&#x7684;a</li>
+<li><code>/pattern</code> <em>&#x2192; &#x641C;&#x7D22;</em> <code>pattern</code> &#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x5982;&#x679C;&#x641C;&#x7D22;&#x51FA;&#x591A;&#x4E2A;&#x5339;&#x914D;&#xFF0C;&#x53EF;&#x6309;n&#x952E;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#xFF09;</li>
+<li>ngg &#x2192;  &#x8DF3;&#x8F6C;&#x5230;&#x67D0;&#x884C;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5; : N &#x5230;&#x7B2C;N&#x884C;&#xFF0C;&#x5982; :137 &#x5230;&#x7B2C;137&#x884C;&#xFF09;</li>
+<li>n% &#x2192; &#x6309;&#x767E;&#x5206;&#x6BD4;&#x8F6C;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x884C;&#x6570; </li>
+<li>N<code>G</code> &#x2192; &#x5230;&#x7B2C; N &#x884C; &#xFF08;g&#x5927;&#x5C0F;&#x5199;&#x5747;&#x53EF;&#xFF09;</li>
+<li><code>gg</code> &#x2192; &#x5230;&#x7B2C;&#x4E00;&#x884C;</li>
+<li><code>G</code> &#x2192; &#x5230;&#x6700;&#x540E;&#x4E00;&#x884C;</li>
+<li>H  &#x2192; &#x9875;&#x9762;&#x9876;&#x90E8; </li>
+<li>M  &#x2192; &#x9875;&#x9762;&#x4E2D;&#x90E8; </li>
+<li>L  &#x2192; &#x9875;&#x9762;&#x5E95;&#x90E8;</li>
+<li>zz &#x2192; &#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x8C03;&#x6574;&#x81F3;&#x9875;&#x9762;&#x4E2D;&#x95F4;</li>
+<li>&#x6309;&#x5355;&#x8BCD;&#x79FB;&#x52A8;<ul>
+<li><code>w</code> &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x5F00;&#x5934;&#x3001;</li>
+<li><code>e</code> &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x7ED3;&#x5C3E;</li>
+</ul>
+</li>
+<li>&#x6700;&#x5F3A;&#x7684;&#x5149;&#x6807;&#x79FB;&#x52A8;<ul>
+<li><code>%</code> : &#x5339;&#x914D;&#x62EC;&#x53F7;&#x79FB;&#x52A8;&#xFF0C;&#x5305;&#x62EC;<code>(</code><em>,</em> <code>{</code><em>,</em> <code>[</code>&#xFF08;&#x4F60;&#x9700;&#x8981;&#x628A;&#x5149;&#x6807;&#x5148;&#x79FB;&#x5230;&#x62EC;&#x53F7;&#x4E0A;&#xFF09;</li>
+<li><code>*</code> <em>&#x548C;</em> <code>#</code>:  &#x5339;&#x914D;&#x5149;&#x6807;&#x5F53;&#x524D;&#x6240;&#x5728;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#xFF08;&#x6216;&#x4E0A;&#x4E00;&#x4E2A;&#xFF09;&#x5339;&#x914D;&#x5355;&#x8BCD;&#xFF08;*&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#xFF0C;#&#x662F;&#x4E0A;&#x4E00;&#x4E2A;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5FEB;&#x901F;&#x9009;&#x4E2D;">&#x5FEB;&#x901F;&#x9009;&#x4E2D;</h3>
+<ul>
+<li>ci&apos;  &#x2192; &#x66F4;&#x6539;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
+<li>di&apos; &#x2192; &#x5220;&#x9664;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
+<li>yi&apos; &#x2192; &#x590D;&#x5236;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
+<li>vi&apos; &#x2192; &#x9009;&#x4E2D;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
+</ul>
+<h3 id="&#x590D;&#x5236;&#x3001;&#x526A;&#x5207;&#x3001;&#x7C98;&#x8D34;">&#x590D;&#x5236;&#x3001;&#x526A;&#x5207;&#x3001;&#x7C98;&#x8D34;</h3>
+<ul>
+<li><code>dd</code>  &#x2192; &#x5220;&#x9664;&#x5F53;&#x524D;&#x884C;&#xFF0C;&#x5E76;&#x628A;&#x5220;&#x9664;&#x7684;&#x884C;&#x5B58;&#x5230;&#x526A;&#x8D34;&#x677F;&#x91CC;</li>
+<li><code>p</code> &#x2192; &#x7C98;&#x8D34;&#x526A;&#x8D34;&#x677F;</li>
+<li>yy &#x2192; &#x62F7;&#x8D1D;&#x5F53;&#x524D;&#x884C;&#x5F53;&#x884C;&#x4E8E; ddP</li>
+</ul>
+<h3 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h3>
+<ul>
+<li>dt<code>&quot;</code> &#x2192; &#x5220;&#x9664;&#x6240;&#x6709;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x76F4;&#x5230;&#x9047;&#x5230;&#x53CC;&#x5F15;&#x53F7;&#x2014;&#x2014; <code>&quot;</code></li>
+</ul>
+<h3 id="undoredo">Undo/Redo</h3>
+<ul>
+<li><code>u</code> &#x2192; undo</li>
+<li><code>&lt;C-r&gt;</code> &#x2192; redo</li>
+</ul>
+<h3 id="&#x91CD;&#x590D;&#x64CD;&#x4F5C;">&#x91CD;&#x590D;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li><code>.</code> &#x2192; (&#x5C0F;&#x6570;&#x70B9;) &#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x547D;&#x4EE4;</li>
+<li>N<command> &#x2192; &#x91CD;&#x590D;&#x67D0;&#x4E2A;&#x547D;&#x4EE4;N&#x6B21;</li>
+</ul>
+<h3 id="&#x8054;&#x52A8;">&#x8054;&#x52A8;</h3>
+<p><code>&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</code></p>
+<pre><code class="lang-shell"># &#x4F8B;&#x5982; 0y$ &#x547D;&#x4EE4;&#x610F;&#x5473;&#x7740;&#xFF1A;
+
+0 &#x2192; &#x5148;&#x5230;&#x884C;&#x5934;
+y &#x2192; &#x4ECE;&#x8FD9;&#x91CC;&#x5F00;&#x59CB;&#x62F7;&#x8D1D;
+$ &#x2192; &#x62F7;&#x8D1D;&#x5230;&#x672C;&#x884C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;
+# &#x4F60;&#x53EF;&#x53EF;&#x4EE5;&#x8F93;&#x5165; ye&#xFF0C;&#x4ECE;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x62F7;&#x8D1D;&#x5230;&#x672C;&#x5355;&#x8BCD;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;
+
+# &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8F93;&#x5165; y2/foo &#x6765;&#x62F7;&#x8D1D;2&#x4E2A; &#x201C;foo&#x201D; &#x4E4B;&#x95F4;&#x7684;&#x5B57;&#x7B26;&#x4E32;
+
+# &#x8FD8;&#x6709;&#x5F88;&#x591A;&#x65F6;&#x95F4;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x4F60;&#x5C31;&#x4E00;&#x5B9A;&#x8981;&#x6309;y&#x624D;&#x4F1A;&#x62F7;&#x8D1D;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x4E5F;&#x4F1A;&#x88AB;&#x62F7;&#x8D1D;&#xFF1A;
+d (&#x5220;&#x9664; )
+v (&#x53EF;&#x89C6;&#x5316;&#x7684;&#x9009;&#x62E9;)
+gU (&#x53D8;&#x5927;&#x5199;)
+gu (&#x53D8;&#x5C0F;&#x5199;)
+&#x7B49;&#x7B49;
+</code></pre>
+<h3 id="&#x526A;&#x5207;&#x677F;">&#x526A;&#x5207;&#x677F;</h3>
+<ul>
+<li><code>&quot;</code>+y &#x2192; &#x590D;&#x5236;&#x5230;&#x526A;&#x5207;&#x677F;</li>
+<li><code>&quot;</code>+p &#x2192; &#x4ECE;&#x526A;&#x5207;&#x677F;&#x7C98;&#x8D34;</li>
+</ul>
+<h3 id="&#x6807;&#x8BB0;">&#x6807;&#x8BB0;</h3>
+<ul>
+<li>m&lt;&#x6807;&#x8BB0;&#x540D;&#x79F0;&gt; &#x2192; &#x5B9A;&#x4E49;&#x6807;&#x8BB0;&#x3002;&#x6807;&#x8BB0;&#x540D;&#x79F0;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</li>
+<li>`&lt;&#x6807;&#x8BB0;&#x540D;&#x79F0;&gt;  &#x2192; &#x8FD4;&#x56DE;&#x6807;&#x8BB0;</li>
+</ul>
+<h3 id="&#x5B8F;&#x5F55;&#x5236;&#xFF1A;-qa-&#x64CD;&#x4F5C;&#x5E8F;&#x5217;-q-a-">&#x5B8F;&#x5F55;&#x5236;&#xFF1A; <code>qa</code> &#x64CD;&#x4F5C;&#x5E8F;&#x5217; <code>q</code>, <code>@a</code>, <code>@@</code></h3>
+<ul>
+<li><code>qa</code> &#x628A;&#x4F60;&#x7684;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x5728;&#x5BC4;&#x5B58;&#x5668; <code>a&#x3002;</code></li>
+<li>&#x4E8E;&#x662F; <code>@a</code> &#x4F1A;replay&#x88AB;&#x5F55;&#x5236;&#x7684;&#x5B8F;&#x3002;</li>
+<li><code>@@</code> &#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x952E;&#x7528;&#x6765;replay&#x6700;&#x65B0;&#x5F55;&#x5236;&#x7684;&#x5B8F;&#x3002;</li>
+</ul>
+<pre><code class="lang-shell"># &#x793A;&#x4F8B;
+
+# &#x5728;&#x4E00;&#x4E2A;&#x53EA;&#x6709;&#x4E00;&#x884C;&#x4E14;&#x8FD9;&#x4E00;&#x884C;&#x53EA;&#x6709;&#x201C;1&#x201D;&#x7684;&#x6587;&#x672C;&#x4E2D;&#xFF0C;&#x952E;&#x5165;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;
+
+qaYp&lt;C-a&gt;q&#x2192;
+qa &#x5F00;&#x59CB;&#x5F55;&#x5236;
+Yp &#x590D;&#x5236;&#x884C;.
+&lt;C-a&gt; &#x589E;&#x52A0;1.
+q &#x505C;&#x6B62;&#x5F55;&#x5236;.
+@a &#x2192; &#x5728;1&#x4E0B;&#x9762;&#x5199;&#x4E0B; 2
+@@ &#x2192; &#x5728;2 &#x6B63;&#x9762;&#x5199;&#x4E0B;3
+# &#x73B0;&#x5728;&#x505A; 100@@ &#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;100&#x884C;&#xFF0C;&#x5E76;&#x628A;&#x6570;&#x636E;&#x589E;&#x52A0;&#x5230; 103.
+</code></pre>
+<h2 id="visual-&#x6A21;&#x5F0F;">Visual &#x6A21;&#x5F0F;</h2>
+<ul>
+<li><code>J</code> &#x2192; &#x628A;&#x6240;&#x6709;&#x7684;&#x884C;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF08;&#x53D8;&#x6210;&#x4E00;&#x884C;&#xFF09;</li>
+<li><code>&lt;</code> &#x6216; <code>&gt;</code> &#x2192; &#x5DE6;&#x53F3;&#x7F29;&#x8FDB;</li>
+<li><code>=</code> &#x2192; &#x81EA;&#x52A8;&#x7ED9;&#x7F29;&#x8FDB; </li>
+</ul>
+<h3 id="&#x533A;&#x57DF;&#x9009;&#x62E9;">&#x533A;&#x57DF;&#x9009;&#x62E9;</h3>
+<p>&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;<code>&lt;action&gt;a&lt;object&gt;</code> &#x548C; <code>&lt;action&gt;i&lt;object&gt;</code></p>
+<ul>
+<li>action&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982; <code>d</code> (&#x5220;&#x9664;), <code>y</code> (&#x62F7;&#x8D1D;), <code>v</code> (&#x53EF;&#x4EE5;&#x89C6;&#x6A21;&#x5F0F;&#x9009;&#x62E9;)&#x3002;</li>
+<li>object &#x53EF;&#x80FD;&#x662F;&#xFF1A; <code>w</code> &#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C; <code>W</code> &#x4E00;&#x4E2A;&#x4EE5;&#x7A7A;&#x683C;&#x4E3A;&#x5206;&#x9694;&#x7684;&#x5355;&#x8BCD;&#xFF0C; <code>s</code> &#x4E00;&#x4E2A;&#x53E5;&#x5B57;&#xFF0C; <code>p</code> &#x4E00;&#x4E2A;&#x6BB5;&#x843D;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x522B;&#x7684;&#x5B57;&#x7B26;&#xFF1A;<code>&quot;&#x3001;</code> <code>&apos;&#x3001;</code> <code>)&#x3001;</code> <code>}&#x3001;</code> <code>]&#x3002;</code></li>
+</ul>
+<pre><code class="lang-shell"># &#x5047;&#x8BBE;&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; `(map (+) (&quot;foo&quot;))`.&#x800C;&#x5149;&#x6807;&#x952E;&#x5728;&#x7B2C;&#x4E00;&#x4E2A; `o `&#x7684;&#x4F4D;&#x7F6E;&#x3002;
+vi&quot; &#x2192; &#x4F1A;&#x9009;&#x62E9; foo.
+va&quot; &#x2192; &#x4F1A;&#x9009;&#x62E9; &quot;foo&quot;.
+vi) &#x2192; &#x4F1A;&#x9009;&#x62E9; &quot;foo&quot;.
+va) &#x2192; &#x4F1A;&#x9009;&#x62E9;(&quot;foo&quot;).
+v2i) &#x2192; &#x4F1A;&#x9009;&#x62E9; map (+) (&quot;foo&quot;)
+v2a) &#x2192; &#x4F1A;&#x9009;&#x62E9; (map (+) (&quot;foo&quot;))
+</code></pre>
+<h3 id="&#x5757;&#x64CD;&#x4F5C;c-v">&#x5757;&#x64CD;&#x4F5C;:<code>&lt;C-v&gt;</code></h3>
+<p>&#x5178;&#x578B;&#x7684;&#x64CD;&#x4F5C;&#xFF1A; <code>0 &lt;C-v&gt; &lt;C-d&gt; I-- [ESC]</code></p>
+<ul>
+<li><code>^</code> &#x2192; &#x5230;&#x884C;&#x5934;</li>
+<li><code>&lt;C-v&gt;</code> &#x2192; &#x5F00;&#x59CB;&#x5757;&#x64CD;&#x4F5C;</li>
+<li><code>&lt;C-d&gt;</code> &#x2192; &#x5411;&#x4E0B;&#x79FB;&#x52A8; (&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;hjkl&#x6765;&#x79FB;&#x52A8;&#x5149;&#x6807;&#xFF0C;&#x6216;&#x662F;&#x4F7F;&#x7528;%&#xFF0C;&#x6216;&#x662F;&#x522B;&#x7684;)</li>
+<li><code>I-- [ESC]</code> &#x2192; I&#x662F;&#x63D2;&#x5165;&#xFF0C;&#x63D2;&#x5165;&#x201C;<code>--</code>&#x201D;&#xFF0C;&#x6309;ESC&#x952E;&#x6765;&#x4E3A;&#x6BCF;&#x4E00;&#x884C;&#x751F;&#x6548;</li>
+</ul>
+<p>&#x5728;&#x6240;&#x6709;&#x88AB;&#x9009;&#x62E9;&#x7684;&#x884C;&#x540E;&#x52A0;&#x4E0A;&#x70B9;&#x4E1C;&#x897F;&#xFF1A;</p>
+<ul>
+<li><code>&lt;C-v&gt;</code></li>
+<li>&#x9009;&#x4E2D;&#x76F8;&#x5173;&#x7684;&#x884C; (&#x53EF;&#x4F7F;&#x7528; <code>j</code> &#x6216; <code>&lt;C-d&gt;</code> &#x6216;&#x662F; <code>/pattern</code> &#x6216;&#x662F; <code>%</code> &#x7B49;&#x2026;&#x2026;)</li>
+<li><code>$</code> &#x5230;&#x884C;&#x6700;&#x540E;</li>
+<li><code>A</code>, &#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6309; <code>ESC&#x3002;</code></li>
+</ul>
+<h2 id="insert-&#x6A21;&#x5F0F;">Insert &#x6A21;&#x5F0F;</h2>
+<h3 id="&#x81EA;&#x52A8;&#x63D0;&#x793A;&#xFF1A;-c-n-&#x548C;-c-p">&#x81EA;&#x52A8;&#x63D0;&#x793A;&#xFF1A; <code>&lt;C-n&gt;</code> &#x548C; <code>&lt;C-p&gt;</code></h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x8BCD;&#x7684;&#x5F00;&#x5934;&#xFF0C;&#x7136;&#x540E;&#x6309; <code>&lt;C-p&gt;&#x6216;&#x662F;&lt;C-n&gt;&#xFF0C;&#x81EA;&#x52A8;&#x8865;&#x9F50;&#x529F;&#x80FD;&#x5C31;&#x51FA;&#x73B0;&#x4E86;</code></p>
+<h3 id="&#x63D2;&#x5165;&#x6A21;&#x5F0F;">&#x63D2;&#x5165;&#x6A21;&#x5F0F;</h3>
+<ul>
+<li><code>a</code> &#x2192; &#x5728;&#x5149;&#x6807;&#x540E;&#x63D2;&#x5165;(A &#x884C;&#x5C3E;&#x63D2;&#x5165;)</li>
+<li><code>i</code>  &#x2192;  &#x5149;&#x6807;&#x4E4B;&#x524D;&#x63D2;&#x5165;( I &#x884C;&#x9996;&#x63D2;&#x5165;)</li>
+<li><code>o</code> &#x2192; &#x4E0B;&#x4E00;&#x884C;&#x63D2;&#x5165;(O &#x4E0A;&#x4E00;&#x884C;&#x63D2;&#x5165;)</li>
+<li><code>cw</code> &#x2192; &#x66FF;&#x6362;&#x4ECE;&#x5149;&#x6807;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x540E;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7ED3;&#x5C3E;&#x7684;&#x5B57;&#x7B26;</li>
+</ul>
+<h3 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h3>
+<ul>
+<li><code>&lt;C-h&gt;</code> &#x2192;  &#x5220;&#x9664;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</li>
+<li><code>&lt;C-w&gt;</code> &#x2192;  &#x524D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;</li>
+<li><code>&lt;C-u&gt;</code> &#x2192;  &#x524D;&#x9762;&#x4E00;&#x884C;&#x6240;&#x6709;&#x5B57;&#x7B26;</li>
 </ul>
 
                                 
@@ -840,12 +983,12 @@
 
             
                 
-                <a href="../PHP/WebsiteProcess.html" class="navigation navigation-prev " aria-label="Previous page: 建站流程">
+                <a href="Bootstrap.html" class="navigation navigation-prev " aria-label="Previous page: Bootstrap">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="utils.html" class="navigation navigation-next " aria-label="Next page: utils">
+                <a href="markdown.html" class="navigation navigation-next " aria-label="Next page: markdown">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -856,7 +999,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"工具、插件","level":"7.1","depth":1,"next":{"title":"utils","level":"7.1.1","depth":2,"path":"Tools/utils.md","ref":"Tools/utils.md","articles":[]},"previous":{"title":"建站流程","level":"6.2.3","depth":2,"path":"PHP/WebsiteProcess.md","ref":"PHP/WebsiteProcess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/README.md","mtime":"2020-05-29T08:26:01.064Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T08:37:39.775Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vim","level":"7.1.8","depth":2,"next":{"title":"markdown","level":"7.1.9","depth":2,"path":"Tools/markdown.md","ref":"Tools/markdown.md","articles":[]},"previous":{"title":"Bootstrap","level":"7.1.7","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/vim.md","mtime":"2020-05-29T08:36:38.478Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T08:37:39.775Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
