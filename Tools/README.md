@@ -9,6 +9,7 @@
  - [D3_v5](D3_v5.md)
  - [SVG](SVG.md)
  - [Bootstrap](Bootstrap.md)
+ - [vim](vim.md)
  - [markdown](markdown.md)
  - [其他工具](tools.md)
 

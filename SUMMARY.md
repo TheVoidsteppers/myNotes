@@ -52,6 +52,7 @@
   * [D3_v5](Tools/D3_v5.md)
   * [SVG](Tools/SVG.md)
   * [Bootstrap](Tools/Bootstrap.md)
+  * [vim](Tools/vim.md)
   * [markdown](Tools/markdown.md)
   * [其他工具](Tools/tools.md)
 
