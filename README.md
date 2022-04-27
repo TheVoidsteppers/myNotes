@@ -2,14 +2,12 @@
 
 本项目使用 markdown 书写，gitbook 生成
 
-
-
 ## gitbook 相关
 
 ### 安装
 
 ```shell
-sudo npm -g gitbook
+npm install -g gitbook-cli
 ```
 
 ### 本地运行

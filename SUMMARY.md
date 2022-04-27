@@ -54,6 +54,7 @@
   * [Bootstrap](Tools/Bootstrap.md)
   * [vim](Tools/vim.md)
   * [markdown](Tools/markdown.md)
+  * [autoHotKey](Tools/autoHotKey.md)
   * [其他工具](Tools/tools.md)
 
 ----
@@ -61,3 +62,5 @@
 * [操作系统](System/README.md )
   - [Linux](System/Linux/README.md)
     + [archLinux使用手册](System/Linux/archlinux.md)
+  - [Windows](System/Windows/README.md)
+    + [termail 命令](System/Windows/termail.md)

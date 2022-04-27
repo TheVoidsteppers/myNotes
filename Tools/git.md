@@ -1,19 +1,3 @@
-本地与远程的差集 :（显示远程有而本地没有的commit信息）
-
-```shell
-git log master..origin/master
-```
-
-## 统计文件的改动
-
-```shell
-# git diff <local branch> <remote>/<remote branch>
-git diff --stat master origin/master
-git diff --cached  # 查看要提交的内容； 查看 git add 的内容
-git diff # 会显示已做出但未添加到索引的任何更改；查看未 git add 的内容
-git status # 获得情况的简要摘要
-```
-
 ## commit 规范
 
 ```json
@@ -61,3 +45,61 @@ git merge origin/develop
 git clone -b dev_jk http://10.1.1.11/service/tmall-service.git # 选择分支下载
 ```
 
+本地与远程的差集 :（显示远程有而本地没有的commit信息）
+
+```shell
+git log master..origin/master
+```
+
+## 统计文件的改动
+
+```shell
+# git diff <local branch> <remote>/<remote branch>
+git diff --stat master origin/master
+git diff --cached  # 查看要提交的内容； 查看 git add 的内容
+git diff # 会显示已做出但未添加到索引的任何更改；查看未 git add 的内容
+git status # 获得情况的简要摘要
+```
+
+## git reset 回退 commit
+
+```
+git reset --hard head^ #回滚到上一个commit
+git push origin feature-xx --force #命令强制提交到远程仓库
+git reset --soft HEAD^ # 撤销上一个commit
+git stash show -p # 查看某个stash具体内容
+```
+
+## cherry-pick 
+
+```shell
+git cherry-pick <HashA> <HashB> # Cherry pick 支持一次转移多个提交。
+```
+
+## 同步远程分支
+
+```shell
+git fetch origin temp:temp # 拉取远程库temp分支的代码到本地的temp分支，如果不存在temp分支，将自动创建temp分支
+```
+
+## worktree 工作树
+
+```shell
+git worktree add ../the_project_2 <branch> # 创建一个新的工作树
+```
+
+## update-index 忽略文件更改
+
+```shell
+git update-index --skip-worktree /path/to/file # 忽略这些文件的本地修改
+git update-index --no-skip-worktree /path/to/file # 把已经忽略掉的文件再恢复回来
+git ls-files -v | grep -i ^S # 查看被忽略的文件项目
+```
+
+## 强制替换本地文件 
+
+```shell
+git fetch --all # git fetch从远程下载最新的，而不尝试合并或rebase任何东西
+git reset --hard origin/master  #将主分支重置为您刚刚获取的内容
+git pull
+```

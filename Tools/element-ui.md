@@ -17,3 +17,11 @@ npm i element-ui -S
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 ```
 
+# bugs
+
+- form
+  - validate-on-rule-change 只会校验 rules 的变化，不会监听 form-item 写的 rule 的变化
+  - validateField 执行后不会清空报错状态
+- table
+  - 自定义表头
+    - 如果没有写 slot-scope="scope"，表头里数据变化，不会重新渲染
