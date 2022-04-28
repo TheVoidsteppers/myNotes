@@ -1,0 +1,40 @@
+{
+  "name": "mynotes",
+  "version": "1.0.0",
+  "description": "我的笔记",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-back-to-top-button": "^0.1.0",
+    "gitbook-plugin-chapter-fold": "^0.0.4",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-copy-code-button": "^0.0.2",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-splitter": "^0.0.8"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3",
+    "gitbook-cli": "^2.1.2"
+  },
+  "scripts": {
+    "bootstrap": "gitbook fetch 3.0.0 && gitbook install",
+    "dev": "gitbook serve",
+    "build": "gitbook build",
+    "prd": "gitbook build && gh-pages -d _book",
+    "deploy": "gh-pages -d _book",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheVoidsteppers/myNotes.git"
+  },
+  "keywords": [
+    "note"
+  ],
+  "author": "TheVoidsteppers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheVoidsteppers/myNotes/issues"
+  },
+  "homepage": "https://github.com/TheVoidsteppers/myNotes#readme"
+}
