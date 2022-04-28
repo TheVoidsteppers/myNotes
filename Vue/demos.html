@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="zh-hans" >
     <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>Vue 样例 · 我的学习笔记</title>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.0.0">
         <meta name="author" content="TheVoidsteppers">
         
         
@@ -26,6 +26,18 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
                 
             
                 
@@ -79,7 +91,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+    <input type="text" placeholder="Type to search" />
 </div>
 
             
@@ -678,7 +690,20 @@
             
         </li>
     
-        <li class="chapter " data-level="7.1.10" data-path="../Tools/tools.html">
+        <li class="chapter " data-level="7.1.10" data-path="../Tools/autoHotKey.html">
+            
+                <a href="../Tools/autoHotKey.html">
+            
+                    
+                    autoHotKey
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.11" data-path="../Tools/tools.html">
             
                 <a href="../Tools/tools.html">
             
@@ -749,6 +774,38 @@
             
         </li>
     
+        <li class="chapter " data-level="8.1.2" data-path="../System/Windows/">
+            
+                <a href="../System/Windows/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.2.1" data-path="../System/Windows/termail.html">
+            
+                <a href="../System/Windows/termail.html">
+            
+                    
+                    termail 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -761,7 +818,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            本书使用 GitBook 发布
+            Published with GitBook
         </a>
     </li>
 </ul>
@@ -800,9 +857,10 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x9012;&#x5F52;&#x6E32;&#x67D3;">&#x9012;&#x5F52;&#x6E32;&#x67D3;</h2>
-<pre><code class="lang-javascript"><span class="hljs-comment">// &#x9012;&#x5F52;&#x7EC4;&#x4EF6;</span>
+<pre><code class="lang-javascript">{% raw %}
+<span class="hljs-comment">// &#x9012;&#x5F52;&#x7EC4;&#x4EF6;</span>
 ;(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> template= <span class="hljs-string">`
+  <span class="hljs-keyword">const</span> template= <span class="hljs-string">`{% endraw %}
   &lt;li class=&quot;tree-menu&quot;&gt;
     &lt;div&gt;
       &lt;span @click=&quot;selectCate(id)&quot;&gt;{{title}}&lt;/span&gt;
@@ -815,10 +873,10 @@
         :id=&quot;tre.id&quot;
         :title=&quot;tre.title&quot;
         :tree=&quot;tre.tree&quot;
-      &gt;
+{% raw %}      &gt;
       &lt;/tree-menu&gt;
     &lt;/ul&gt;
-  &lt;/li&gt;
+{% endraw %}  &lt;/li&gt;
  `</span>
   <span class="hljs-built_in">window</span>.TreeMenu = {
     name: <span class="hljs-string">&apos;tree-menu&apos;</span>,
@@ -834,240 +892,271 @@
         <span class="hljs-keyword">this</span>.showChildren = !<span class="hljs-keyword">this</span>.showChildren;
       },
       selectCate(id){
-        <span class="hljs-built_in">console</span>.log(id)
+            <span class="hljs-built_in">console</span>.log(id)
       }
     }
   }
 })()
 </code></pre>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cateList&quot;</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isshow&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tree-menu</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;cate in cateList&quot;</span> <span class="hljs-attr">:id</span>=<span class="hljs-string">&quot;cate.id&quot;</span> <span class="hljs-attr">:title</span>=<span class="hljs-string">&quot;cate.title&quot;</span> <span class="hljs-attr">:tree</span>=<span class="hljs-string">&quot;cate.tree&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tree-menu</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tree-menu</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;cate in cateList&quot;</span>
+    <span class="hljs-attr">:id</span>=<span class="hljs-string">&quot;cate.id&quot;</span>
+    <span class="hljs-attr">:title</span>=<span class="hljs-string">&quot;cate.title&quot;</span>
+    <span class="hljs-attr">:tree</span>=<span class="hljs-string">&quot;cate.tree&quot;</span>
+  &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tree-menu</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
-new Vue({
-    data:{
-       cateList:[{
-            id: &quot;221&quot;,
-            pid: &quot;0&quot;,
-            title: &quot;&#x670D;&#x9970;&#x7BB1;&#x5305;&quot;,
-             tree: {
-                id: &quot;207&quot;,
-                pid: &quot;221&quot;,
-                title: &quot;&#x7BB1;&#x5305;
-             }
-            }]
-    },
-    components: {
-    TreeMenu
-  }
-})
+  new Vue({
+      data:{
+         cateList:[{
+              id: &quot;221&quot;,
+              pid: &quot;0&quot;,
+              title: &quot;&#x670D;&#x9970;&#x7BB1;&#x5305;&quot;,
+               tree: {
+                  id: &quot;207&quot;,
+                  pid: &quot;221&quot;,
+                  title: &quot;&#x7BB1;&#x5305;
+               }
+              }]
+      },
+      components: {
+      TreeMenu
+    }
+  })
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <h2 id="&#x4E0A;&#x4F20;-&#x591A;&#x5F20;&#x56FE;&#x7247;">&#x4E0A;&#x4F20; &#x591A;&#x5F20;&#x56FE;&#x7247;</h2>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 20px&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;kcUPNr&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: inline-block;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>&#x80CC;&#x666F;&#x56FE;&#x7247;<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tips&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tips2&quot;</span>&gt;</span>&#x672A;&#x9009;&#x62E9;&#x6587;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>&#x4EC5;&#x652F;&#x6301;jpg&#x3001;jpeg&#x3001;png&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;
-    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bgImgList&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;clearfix&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(image,index) in bgPreImg&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;65&quot;</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> @<span class="hljs-attr">click.prevent</span>=<span class="hljs-string">&apos;delImage(index)&apos;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;glyphicon glyphicon-remove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;?=ZT_ADMIN_IMG?&gt;ADDbTN.png&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;65&quot;</span> @<span class="hljs-attr">click.prevent</span>=<span class="hljs-string">&quot;addPic&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;onFileChange&quot;</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;required&quot;</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: inline-block;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>&#x80CC;&#x666F;&#x56FE;&#x7247;<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tips&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tips2&quot;</span>&gt;</span>&#x672A;&#x9009;&#x62E9;&#x6587;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>&#x4EC5;&#x652F;&#x6301;jpg&#x3001;jpeg&#x3001;png&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bgImgList&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;clearfix&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(image,index) in bgPreImg&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;65&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;65&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> @<span class="hljs-attr">click.prevent</span>=<span class="hljs-string">&quot;delImage(index)&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;glyphicon glyphicon-remove&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
+          <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;?=ZT_ADMIN_IMG?&gt;ADDbTN.png&quot;</span>
+          <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;65&quot;</span>
+          <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;65&quot;</span>
+          @<span class="hljs-attr">click.prevent</span>=<span class="hljs-string">&quot;addPic&quot;</span>
+        /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+          <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span>
+          @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;onFileChange&quot;</span>
+          <span class="hljs-attr">multiple</span>
+          <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>
+        /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;bgPreImg.length &gt; 0&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-danger&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;removeImage&quot;</span>&gt;</span>&#x79FB;&#x9664;&#x5168;&#x90E8;&#x56FE;&#x7247;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;uploadImage&apos;</span>&gt;</span>&#x4E0A;&#x4F20;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-danger&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;removeImage&quot;</span>&gt;</span>&#x79FB;&#x9664;&#x5168;&#x90E8;&#x56FE;&#x7247;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;uploadImage&quot;</span>&gt;</span>&#x4E0A;&#x4F20;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<pre><code class="lang-css"><span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">ul</span>{<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;}
-<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span>{<span class="hljs-attribute">float</span>: left;<span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;<span class="hljs-attribute">position</span>: relative;<span class="hljs-attribute">padding</span>:<span class="hljs-number">5px</span>;<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;}
-<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>{<span class="hljs-attribute">padding</span>: initial;<span class="hljs-attribute">background-color</span>:initial;}
-<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span>{<span class="hljs-attribute">position</span>: absolute;<span class="hljs-attribute">top</span>: -<span class="hljs-number">8px</span>;<span class="hljs-attribute">right</span>: -<span class="hljs-number">8px</span>;}
+<pre><code class="lang-css"><span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">ul</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span> {
+  <span class="hljs-attribute">padding</span>: initial;
+  <span class="hljs-attribute">background-color</span>: initial;
+}
+<span class="hljs-selector-class">.bgImgList</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: -<span class="hljs-number">8px</span>;
+  <span class="hljs-attribute">right</span>: -<span class="hljs-number">8px</span>;
+}
 </code></pre>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> activityEdit = <span class="hljs-keyword">new</span> Vue({
-  el: <span class="hljs-string">&apos;#activityEdit&apos;</span>,
+  el: <span class="hljs-string">&quot;#activityEdit&quot;</span>,
   data: {
-    id:<span class="hljs-string">&apos;&apos;</span>,
-    bgPreImg:[],
-    bgImgFiles:[],
-    bg_pic:[]
+    id: <span class="hljs-string">&quot;&quot;</span>,
+    bgPreImg: [],
+    bgImgFiles: [],
+    bg_pic: [],
   },
-  methods:{
-    init(){
+  methods: {
+    init() {
       <span class="hljs-comment">// &#x83B7;&#x53D6; &#x6D3B;&#x52A8;&#x5206;&#x7C7B;</span>
-      sendPostAxios(activityTypeUrl,{},(response)=&gt;{
-        <span class="hljs-keyword">const</span> res = response.data
-        <span class="hljs-keyword">this</span>.activityType = res.data
-      })
+      sendPostAxios(activityTypeUrl, {}, (response) =&gt; {
+        <span class="hljs-keyword">const</span> res = response.data;
+        <span class="hljs-keyword">this</span>.activityType = res.data;
+      });
     },
-    addPic(event){
-      $(event.currentTarget).next(<span class="hljs-string">&apos;input[type=file]&apos;</span>).trigger(<span class="hljs-string">&apos;click&apos;</span>)
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    addPic(event) {
+      $(event.currentTarget).next(<span class="hljs-string">&quot;input[type=file]&quot;</span>).trigger(<span class="hljs-string">&quot;click&quot;</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
     },
     onFileChange(e) {
-      <span class="hljs-keyword">let</span> files = e.target.files || e.dataTransfer.files
-      <span class="hljs-keyword">if</span> (!files.length)<span class="hljs-keyword">return</span>
-      <span class="hljs-keyword">this</span>.bgImgFiles = files
-      <span class="hljs-keyword">this</span>.createImage(files)
+      <span class="hljs-keyword">let</span> files = e.target.files || e.dataTransfer.files;
+      <span class="hljs-keyword">if</span> (!files.length) <span class="hljs-keyword">return</span>;
+      <span class="hljs-keyword">this</span>.bgImgFiles = files;
+      <span class="hljs-keyword">this</span>.createImage(files);
     },
     createImage(file) {
-      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> FileReader===<span class="hljs-string">&apos;undefined&apos;</span>){
-          layer.msg(<span class="hljs-string">&apos;&#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#xFF0C;&#x8BF7;&#x5347;&#x7EA7;&#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&apos;</span>)
-          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> FileReader === <span class="hljs-string">&quot;undefined&quot;</span>) {
+        layer.msg(<span class="hljs-string">&quot;&#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#xFF0C;&#x8BF7;&#x5347;&#x7EA7;&#x60A8;&#x7684;&#x6D4F;&#x89C8;&#x5668;&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
       }
-      <span class="hljs-keyword">const</span> leng = file.length
-      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;leng;i++){
-        <span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> FileReader()
-        reader.readAsDataURL(file[i])
-        reader.onload =(e) =&gt; {
-          <span class="hljs-keyword">this</span>.bgPreImg.push(e.target.result)
-        }
+      <span class="hljs-keyword">const</span> leng = file.length;
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; leng; i++) {
+        <span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> FileReader();
+        reader.readAsDataURL(file[i]);
+        reader.onload = (e) =&gt; {
+          <span class="hljs-keyword">this</span>.bgPreImg.push(e.target.result);
+        };
       }
     },
-    delImage:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">index</span>)</span>{
+    delImage: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index</span>) </span>{
       <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.bg_pic.length &gt; <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">this</span>.bg_pic.splice(index,<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">this</span>.bg_pic.splice(index, <span class="hljs-number">1</span>);
       }
-      <span class="hljs-keyword">this</span>.bgPreImg.splice(index,<span class="hljs-number">1</span>)
+      <span class="hljs-keyword">this</span>.bgPreImg.splice(index, <span class="hljs-number">1</span>);
     },
-    removeImage: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-      <span class="hljs-keyword">this</span>.bgPreImg = []
-      <span class="hljs-keyword">this</span>.bg_pic = []
+    removeImage: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+      <span class="hljs-keyword">this</span>.bgPreImg = [];
+      <span class="hljs-keyword">this</span>.bg_pic = [];
     },
-    uploadImage: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-      <span class="hljs-keyword">let</span> sucNum = <span class="hljs-number">0</span>
-      <span class="hljs-keyword">let</span> retNum = <span class="hljs-number">0</span>
+    uploadImage: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">let</span> sucNum = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">let</span> retNum = <span class="hljs-number">0</span>;
       <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.bgImgFiles.length; i++) {
-        <span class="hljs-keyword">let</span> formData = <span class="hljs-keyword">new</span> FormData()
-        formData.append(<span class="hljs-string">&apos;activity_img&apos;</span>,<span class="hljs-keyword">this</span>.bgImgFiles[i])
+        <span class="hljs-keyword">let</span> formData = <span class="hljs-keyword">new</span> FormData();
+        formData.append(<span class="hljs-string">&quot;activity_img&quot;</span>, <span class="hljs-keyword">this</span>.bgImgFiles[i]);
         axios({
-          method: <span class="hljs-string">&apos;post&apos;</span>,
+          method: <span class="hljs-string">&quot;post&quot;</span>,
           url: uploadImgUrl,
           data: formData,
-          headers:{<span class="hljs-string">&apos;Content-Type&apos;</span>:<span class="hljs-string">&apos;multipart/form-data&apos;</span>}
-        }).then((response)=&gt;{
-          <span class="hljs-keyword">const</span> res = response.data
-          <span class="hljs-built_in">console</span>.log(res)
-          retNum ++
+          headers: { <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;multipart/form-data&quot;</span> },
+        }).then((response) =&gt; {
+          <span class="hljs-keyword">const</span> res = response.data;
+          <span class="hljs-built_in">console</span>.log(res);
+          retNum++;
           <span class="hljs-keyword">if</span> (res.status == <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">this</span>.bg_pic.push(res.data)
-            sucNum ++
+            <span class="hljs-keyword">this</span>.bg_pic.push(res.data);
+            sucNum++;
           }
-          <span class="hljs-keyword">if</span> (retNum &lt; <span class="hljs-keyword">this</span>.bgImgFiles.length){
-            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+          <span class="hljs-keyword">if</span> (retNum &lt; <span class="hljs-keyword">this</span>.bgImgFiles.length) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
           }
-          <span class="hljs-keyword">if</span>(sucNum == <span class="hljs-keyword">this</span>.bgImgFiles.length){
-            layer.msg(<span class="hljs-string">&apos;&#x4E0A;&#x4F20;&#x6210;&#x529F;&apos;</span>)
-          }<span class="hljs-keyword">else</span>{
-            <span class="hljs-keyword">this</span>.bg_pic = []
-            layer.msg(<span class="hljs-string">&apos;&#x4E0A;&#x4F20;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x4E0A;&#x4F20;&apos;</span>)
+          <span class="hljs-keyword">if</span> (sucNum == <span class="hljs-keyword">this</span>.bgImgFiles.length) {
+            layer.msg(<span class="hljs-string">&quot;&#x4E0A;&#x4F20;&#x6210;&#x529F;&quot;</span>);
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.bg_pic = [];
+            layer.msg(<span class="hljs-string">&quot;&#x4E0A;&#x4F20;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x4E0A;&#x4F20;&quot;</span>);
           }
-        })
+        });
       }
-    }
+    },
   },
   mounted() {
-    <span class="hljs-keyword">this</span>.init()
-    <span class="hljs-keyword">this</span>.id = location.search.substr(<span class="hljs-number">4</span>)
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.id == <span class="hljs-string">&apos;&apos;</span>) {
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">this</span>.init();
+    <span class="hljs-keyword">this</span>.id = location.search.substr(<span class="hljs-number">4</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.id == <span class="hljs-string">&quot;&quot;</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
     }
-    sendPostAxios(activityInfoUrl,{id:<span class="hljs-keyword">this</span>.id},(response)=&gt; {
-      <span class="hljs-keyword">const</span> res = response.data
+    sendPostAxios(activityInfoUrl, { id: <span class="hljs-keyword">this</span>.id }, (response) =&gt; {
+      <span class="hljs-keyword">const</span> res = response.data;
       <span class="hljs-comment">// &#x80CC;&#x666F;&#x56FE;&#x7247;</span>
-      <span class="hljs-keyword">this</span>.bg_pic = res.data.bg_pic.split(<span class="hljs-string">&apos;,&apos;</span>)
-      <span class="hljs-keyword">this</span>.bgPreImg = res.data.bg_pic.split(<span class="hljs-string">&apos;,&apos;</span>)
-    })
-  }
-})
+      <span class="hljs-keyword">this</span>.bg_pic = res.data.bg_pic.split(<span class="hljs-string">&quot;,&quot;</span>);
+      <span class="hljs-keyword">this</span>.bgPreImg = res.data.bg_pic.split(<span class="hljs-string">&quot;,&quot;</span>);
+    });
+  },
+});
 </code></pre>
-<h2 id="vue-data&#x6062;&#x590D;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;">vue data&#x6062;&#x590D;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;</h2>
-<pre><code class="lang-javascript"><span class="hljs-comment">// &#x91CD;&#x7F6E;&#x8868;&#x5355; </span>
+<h2 id="vue-data-&#x6062;&#x590D;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;">vue data &#x6062;&#x590D;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x91CD;&#x7F6E;&#x8868;&#x5355;</span>
 <span class="hljs-keyword">this</span>.form = <span class="hljs-keyword">this</span>.$options.data().form;
-<span class="hljs-built_in">Object</span>.assign(<span class="hljs-keyword">this</span>.$data, <span class="hljs-keyword">this</span>.$options.data())
+<span class="hljs-built_in">Object</span>.assign(<span class="hljs-keyword">this</span>.$data, <span class="hljs-keyword">this</span>.$options.data());
 </code></pre>
 <h2 id="&#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362;">&#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362;</h2>
 <pre><code class="lang-vue">&lt;script&gt;
-    export default {
-        filters: {
-            timeFilter(time) {
-              const date = new Date(time);
-              const Y = date.getFullYear();
-              const M =
-                date.getMonth() + 1 &lt; 10
-                  ? &quot;0&quot; + (date.getMonth() + 1)
-                  : date.getMonth() + 1;
-              const D = date.getDate();
-              const h = date.getHours();
-              const m = date.getMinutes();
-              const s = date.getSeconds();
-              return `${Y}-${M}-${D} ${h}:${m}:${s}`;
-            }
-          },
-    }
+export default {
+  filters: {
+    timeFilter(time) {
+      const date = new Date(time);
+      const Y = date.getFullYear();
+      const M =
+        date.getMonth() + 1 &lt; 10
+          ? &quot;0&quot; + (date.getMonth() + 1)
+          : date.getMonth() + 1;
+      const D = date.getDate();
+      const h = date.getHours();
+      const m = date.getMinutes();
+      const s = date.getSeconds();
+      return `${Y}-${M}-${D} ${h}:${m}:${s}`;
+    },
+  },
+};
 &lt;/script&gt;
 </code></pre>
 <h2 id="&#x6821;&#x9A8C;">&#x6821;&#x9A8C;</h2>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x9A8C;&#x8BC1;&#x7EAF;&#x82F1;&#x6587;</span>
 <span class="hljs-keyword">const</span> validateEnglish = (rule, value, callback) =&gt; {
-    <span class="hljs-keyword">const</span> reg = <span class="hljs-regexp">/^[a-zA-Z]+$/</span>;
+  <span class="hljs-keyword">const</span> reg = <span class="hljs-regexp">/^[a-zA-Z]+$/</span>;
 
-    <span class="hljs-keyword">if</span> (!reg.test(value)) {
-        callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x4EC5;&#x652F;&#x6301;&#x5B57;&#x6BCD;&#x7EC4;&#x5408;&quot;</span>));
-    } <span class="hljs-keyword">else</span> {
-        callback();
-    }
+  <span class="hljs-keyword">if</span> (!reg.test(value)) {
+    callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x4EC5;&#x652F;&#x6301;&#x5B57;&#x6BCD;&#x7EC4;&#x5408;&quot;</span>));
+  } <span class="hljs-keyword">else</span> {
+    callback();
+  }
 };
 
 <span class="hljs-comment">// &#x9A8C;&#x8BC1;&#x7EAF;&#x4E2D;&#x6587;</span>
 <span class="hljs-keyword">const</span> validateChinese = (rule, value, callback) =&gt; {
-    <span class="hljs-keyword">const</span> reg = <span class="hljs-regexp">/^[\u4e00-\u9fa5]+$/</span>;
+  <span class="hljs-keyword">const</span> reg = <span class="hljs-regexp">/^[\u4e00-\u9fa5]+$/</span>;
 
-    <span class="hljs-keyword">if</span> (!reg.test(value)) {
-        callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x4E2D;&#x6587;&quot;</span>));
-    } <span class="hljs-keyword">else</span> {
-        callback();
-    }
+  <span class="hljs-keyword">if</span> (!reg.test(value)) {
+    callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x4E2D;&#x6587;&quot;</span>));
+  } <span class="hljs-keyword">else</span> {
+    callback();
+  }
 };
 
 <span class="hljs-comment">// &#x6821;&#x9A8C;&#x4E2D;&#x6587;&#x540D;&#x79F0;&#x91CD;&#x590D;</span>
 <span class="hljs-keyword">const</span> validateDuplicate = <span class="hljs-keyword">async</span> (rule, value, callback) =&gt; {
-    <span class="hljs-keyword">const</span> params = {
-        category: <span class="hljs-string">&quot;system&quot;</span>,
-        name: value,
-        parentId: <span class="hljs-keyword">this</span>.parentNode.id,
-        id: <span class="hljs-keyword">this</span>.form.id || <span class="hljs-string">&quot;&quot;</span>
-    };
+  <span class="hljs-keyword">const</span> params = {
+    category: <span class="hljs-string">&quot;system&quot;</span>,
+    name: value,
+    parentId: <span class="hljs-keyword">this</span>.parentNode.id,
+    id: <span class="hljs-keyword">this</span>.form.id || <span class="hljs-string">&quot;&quot;</span>,
+  };
 
-    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> dataCatalogApi.exist(params);
-    <span class="hljs-keyword">const</span> { code, object, msg, errorMsg } = res;
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> dataCatalogApi.exist(params);
+  <span class="hljs-keyword">const</span> { code, object, msg, errorMsg } = res;
 
-    <span class="hljs-keyword">if</span> (code === <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">if</span> (object) {
-            callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x540D;&#x79F0;&#x91CD;&#x590D;&quot;</span>));
-        } <span class="hljs-keyword">else</span> {
-            callback();
-        }
+  <span class="hljs-keyword">if</span> (code === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">if</span> (object) {
+      callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x540D;&#x79F0;&#x91CD;&#x590D;&quot;</span>));
     } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">this</span>.$notify({
-            title: <span class="hljs-string">&quot;&#x9519;&#x8BEF;&quot;</span>,
-            message: errorMsg || msg,
-            type: <span class="hljs-string">&quot;error&quot;</span>
-        });
-        callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x6821;&#x9A8C;&#x5931;&#x8D25;&quot;</span>));
+      callback();
     }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">this</span>.$notify({
+      title: <span class="hljs-string">&quot;&#x9519;&#x8BEF;&quot;</span>,
+      message: errorMsg || msg,
+      type: <span class="hljs-string">&quot;error&quot;</span>,
+    });
+    callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;&#x6821;&#x9A8C;&#x5931;&#x8D25;&quot;</span>));
+  }
 };
 </code></pre>
 
@@ -1113,7 +1202,7 @@ new Vue({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue 样例","level":"5.1.3","depth":2,"next":{"title":"nodejs","level":"6.1","depth":1,"path":"nodejs/README.md","ref":"nodejs/README.md","articles":[{"title":"nodejs 基础","level":"6.1.1","depth":2,"path":"nodejs/base.md","ref":"nodejs/base.md","articles":[]},{"title":"nodejs API","level":"6.1.2","depth":2,"path":"nodejs/API.md","ref":"nodejs/API.md","articles":[]}]},"previous":{"title":"Vuex","level":"5.1.2.3","depth":3,"path":"Vue/advanced/Vuex.md","ref":"Vue/advanced/Vuex.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/demos.md","mtime":"2019-11-19T07:36:51.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T09:04:38.839Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue 样例","level":"5.1.3","depth":2,"next":{"title":"nodejs","level":"6.1","depth":1,"path":"nodejs/README.md","ref":"nodejs/README.md","articles":[{"title":"nodejs 基础","level":"6.1.1","depth":2,"path":"nodejs/base.md","ref":"nodejs/base.md","articles":[]},{"title":"nodejs API","level":"6.1.2","depth":2,"path":"nodejs/API.md","ref":"nodejs/API.md","articles":[]}]},"previous":{"title":"Vuex","level":"5.1.2.3","depth":3,"path":"Vue/advanced/Vuex.md","ref":"Vue/advanced/Vuex.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/demos.md","mtime":"2022-04-28T13:44:47.976Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-04-28T14:55:42.718Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1143,6 +1232,18 @@ new Vue({
         
     
         
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
@@ -1151,7 +1252,7 @@ new Vue({
         
     
         
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
         
     
 

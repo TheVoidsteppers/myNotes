@@ -43,7 +43,7 @@ $('#pagination').unbind('page')
 ```
 
 ## 配置参数
-
+{% raw %}
 |         选项名称         |                  描述                  | 类型 |       默认值        |
 | :----------------------: | :------------------------------------: | :--: | :-----------------: |
 |       `totalPages`       |                  页数                  |  数  |          1          |
@@ -70,6 +70,7 @@ $('#pagination').unbind('page')
 |      `activeClass`       |             活动按钮的类别             |  串  |     `'active'`      |
 |     `disabledClass`      |             禁用按钮的类别             |  串  |    `'disabled'`     |
 |      `anchorClass`       |         CSS类用于按钮内的锚点          |  串  |    `'page-link'`    |
+{% endraw %}
 
 ## 动态总页数
 

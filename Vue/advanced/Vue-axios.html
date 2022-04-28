@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="zh-hans" >
     <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>Vue-axios · 我的学习笔记</title>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.0.0">
         <meta name="author" content="TheVoidsteppers">
         
         
@@ -26,6 +26,18 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
                 
             
                 
@@ -79,7 +91,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+    <input type="text" placeholder="Type to search" />
 </div>
 
             
@@ -678,7 +690,20 @@
             
         </li>
     
-        <li class="chapter " data-level="7.1.10" data-path="../../Tools/tools.html">
+        <li class="chapter " data-level="7.1.10" data-path="../../Tools/autoHotKey.html">
+            
+                <a href="../../Tools/autoHotKey.html">
+            
+                    
+                    autoHotKey
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.11" data-path="../../Tools/tools.html">
             
                 <a href="../../Tools/tools.html">
             
@@ -749,6 +774,38 @@
             
         </li>
     
+        <li class="chapter " data-level="8.1.2" data-path="../../System/Windows/">
+            
+                <a href="../../System/Windows/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.2.1" data-path="../../System/Windows/termail.html">
+            
+                <a href="../../System/Windows/termail.html">
+            
+                    
+                    termail 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -761,7 +818,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            本书使用 GitBook 发布
+            Published with GitBook
         </a>
     </li>
 </ul>
@@ -847,9 +904,9 @@ axios.post(
 });
 </code></pre>
 <h2 id="vue-axios&#x5B66;&#x4E60;&#x7F51;&#x5740;">vue-axios&#x5B66;&#x4E60;&#x7F51;&#x5740;</h2>
-<p><a href="https://blog.csdn.net/qq_41115965/article/details/80780264" target="_blank">https://blog.csdn.net/qq_41115965/article/details/80780264</a></p>
-<p>&#x7F51;&#x5740;1&#xFF1A; <a href="https://github.com/imcvampire/vue-axios" target="_blank">https://github.com/imcvampire/vue-axios</a>
-&#x7F51;&#x5740;2&#xFF1A; <a href="https://www.npmjs.com/packge/axios" target="_blank">https://www.npmjs.com/packge/axios</a></p>
+<p><a href="https://blog.csdn.net/qq_41115965/article/details/80780264" _target="blank">https://blog.csdn.net/qq_41115965/article/details/80780264</a></p>
+<p>&#x7F51;&#x5740;1&#xFF1A; <a href="https://github.com/imcvampire/vue-axios" _target="blank">https://github.com/imcvampire/vue-axios</a>
+&#x7F51;&#x5740;2&#xFF1A; <a href="https://www.npmjs.com/packge/axios" _target="blank">https://www.npmjs.com/packge/axios</a></p>
 <h2 id="&#x672C;&#x5730;&#x8DE8;&#x57DF;">&#x672C;&#x5730;&#x8DE8;&#x57DF;</h2>
 <pre><code class="lang-javascript">devServer: {
     port: <span class="hljs-number">8080</span>,
@@ -912,7 +969,7 @@ axios({
     })
 }
 </code></pre>
-<p>&#x539F;&#x6587;&#xFF1A;<a href="https://blog.csdn.net/csdn_yudong/article/details/79668655" target="_blank">https://blog.csdn.net/csdn_yudong/article/details/79668655</a></p>
+<p>&#x539F;&#x6587;&#xFF1A;<a href="https://blog.csdn.net/csdn_yudong/article/details/79668655" _target="blank">https://blog.csdn.net/csdn_yudong/article/details/79668655</a></p>
 <p><code>jQuery.ajax</code>&#x7684;<code>post</code>&#x63D0;&#x4EA4;&#x9ED8;&#x8BA4;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x7684;<code>Content-Type: application/x-www-form-urlencoded</code>
 &#x800C;<code>axios.post</code>&#x63D0;&#x4EA4;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x662F;<code>Content-Type: application/json</code>&#x3002;</p>
 <p><code>application/json</code>&#x662F;&#x4E00;&#x4E2A;&#x8D8B;&#x52BF;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6539;&#x4E00;&#x4E2A;&#x65E7;&#x9879;&#x76EE;&#xFF0C;&#x628A;<code>jQuery.ajax</code>&#x5168;&#x90E8;&#x6362;&#x6210;<code>axios.post</code>&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8BF7;&#x6C42;&#x505A;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;</p>
@@ -1024,7 +1081,7 @@ axios.post(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue-axios","level":"5.1.2.1","depth":3,"next":{"title":"Vue-router","level":"5.1.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},"previous":{"title":"Vue 高级","level":"5.1.2","depth":2,"path":"Vue/advanced/README.md","ref":"Vue/advanced/README.md","articles":[{"title":"Vue-axios","level":"5.1.2.1","depth":3,"path":"Vue/advanced/Vue-axios.md","ref":"Vue/advanced/Vue-axios.md","articles":[]},{"title":"Vue-router","level":"5.1.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},{"title":"Vuex","level":"5.1.2.3","depth":3,"path":"Vue/advanced/Vuex.md","ref":"Vue/advanced/Vuex.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/advanced/Vue-axios.md","mtime":"2019-09-07T03:16:04.416Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T09:04:38.839Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue-axios","level":"5.1.2.1","depth":3,"next":{"title":"Vue-router","level":"5.1.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},"previous":{"title":"Vue 高级","level":"5.1.2","depth":2,"path":"Vue/advanced/README.md","ref":"Vue/advanced/README.md","articles":[{"title":"Vue-axios","level":"5.1.2.1","depth":3,"path":"Vue/advanced/Vue-axios.md","ref":"Vue/advanced/Vue-axios.md","articles":[]},{"title":"Vue-router","level":"5.1.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},{"title":"Vuex","level":"5.1.2.3","depth":3,"path":"Vue/advanced/Vuex.md","ref":"Vue/advanced/Vuex.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/advanced/Vue-axios.md","mtime":"2022-04-28T14:01:35.173Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-04-28T14:55:42.718Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1054,6 +1111,18 @@ axios.post(
         
     
         
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
@@ -1062,7 +1131,7 @@ axios.post(
         
     
         
-        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
         
     
 

@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="zh-hans" >
     <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>vim · 我的学习笔记</title>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.0.0">
         <meta name="author" content="TheVoidsteppers">
         
         
@@ -26,6 +26,18 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
                 
             
                 
@@ -79,7 +91,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+    <input type="text" placeholder="Type to search" />
 </div>
 
             
@@ -678,7 +690,20 @@
             
         </li>
     
-        <li class="chapter " data-level="7.1.10" data-path="tools.html">
+        <li class="chapter " data-level="7.1.10" data-path="autoHotKey.html">
+            
+                <a href="autoHotKey.html">
+            
+                    
+                    autoHotKey
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.11" data-path="tools.html">
             
                 <a href="tools.html">
             
@@ -749,6 +774,38 @@
             
         </li>
     
+        <li class="chapter " data-level="8.1.2" data-path="../System/Windows/">
+            
+                <a href="../System/Windows/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.2.1" data-path="../System/Windows/termail.html">
+            
+                <a href="../System/Windows/termail.html">
+            
+                    
+                    termail 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -761,7 +818,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            本书使用 GitBook 发布
+            Published with GitBook
         </a>
     </li>
 </ul>
@@ -802,69 +859,83 @@
                                 <h2 id="normal-&#x6A21;&#x5F0F;">Normal &#x6A21;&#x5F0F;</h2>
 <h3 id="&#x79FB;&#x52A8;">&#x79FB;&#x52A8;</h3>
 <ul>
-<li><code>hjkl</code>  &#x2192;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5149;&#x6807;&#x952E; (&#x2190;&#x2193;&#x2191;&#x2192;)</li>
-<li><code>0</code> &#x2192; &#x6570;&#x5B57;&#x96F6;&#xFF0C;&#x5230;&#x884C;&#x5934;</li>
-<li><code>^</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;blank&#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x6240;&#x8C13;blank&#x5B57;&#x7B26;&#x5C31;&#x662F;&#x7A7A;&#x683C;&#xFF0C;tab&#xFF0C;&#x6362;&#x884C;&#xFF0C;&#x56DE;&#x8F66;&#x7B49;&#xFF09;</li>
-<li><code>$</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x884C;&#x5C3E;</li>
-<li><code>g_</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;blank&#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;</li>
-<li><code>fa</code> &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A;a&#x7684;&#x5B57;&#x7B26;&#x5904;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;fs&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A;s&#x7684;&#x5B57;&#x7B26;(F&#x76F8;&#x53CD;&#x65B9;&#x5411;)</li>
-<li><code>t,</code> &#x2192; &#x5230;&#x9017;&#x53F7;&#x524D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;(&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;)(T&#x76F8;&#x53CD;&#x65B9;&#x5411;)</li>
-<li><code>3fa</code> &#x2192; &#x5728;&#x5F53;&#x524D;&#x884C;&#x67E5;&#x627E;&#x7B2C;&#x4E09;&#x4E2A;&#x51FA;&#x73B0;&#x7684;a</li>
-<li><code>/pattern</code> <em>&#x2192; &#x641C;&#x7D22;</em> <code>pattern</code> &#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x5982;&#x679C;&#x641C;&#x7D22;&#x51FA;&#x591A;&#x4E2A;&#x5339;&#x914D;&#xFF0C;&#x53EF;&#x6309;n&#x952E;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#xFF09;</li>
-<li>ngg &#x2192;  &#x8DF3;&#x8F6C;&#x5230;&#x67D0;&#x884C;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5; : N &#x5230;&#x7B2C;N&#x884C;&#xFF0C;&#x5982; :137 &#x5230;&#x7B2C;137&#x884C;&#xFF09;</li>
-<li>n% &#x2192; &#x6309;&#x767E;&#x5206;&#x6BD4;&#x8F6C;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x884C;&#x6570; </li>
-<li>N<code>G</code> &#x2192; &#x5230;&#x7B2C; N &#x884C; &#xFF08;g&#x5927;&#x5C0F;&#x5199;&#x5747;&#x53EF;&#xFF09;</li>
-<li><code>gg</code> &#x2192; &#x5230;&#x7B2C;&#x4E00;&#x884C;</li>
-<li><code>G</code> &#x2192; &#x5230;&#x6700;&#x540E;&#x4E00;&#x884C;</li>
-<li>H  &#x2192; &#x9875;&#x9762;&#x9876;&#x90E8; </li>
-<li>M  &#x2192; &#x9875;&#x9762;&#x4E2D;&#x90E8; </li>
-<li>L  &#x2192; &#x9875;&#x9762;&#x5E95;&#x90E8;</li>
+<li>hjkl &#x2192; &#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5149;&#x6807;&#x952E; (&#x2190;&#x2193;&#x2191;&#x2192;)</li>
+<li>0 &#x2192; &#x6570;&#x5B57;&#x96F6;&#xFF0C;&#x5230;&#x884C;&#x5934;</li>
+<li>^ &#x2192; &#x5230;&#x672C;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x662F; blank &#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x6240;&#x8C13; blank &#x5B57;&#x7B26;&#x5C31;&#x662F;&#x7A7A;&#x683C;&#xFF0C;tab&#xFF0C;&#x6362;&#x884C;&#xFF0C;&#x56DE;&#x8F66;&#x7B49;&#xFF09;</li>
+<li>$ &#x2192; &#x5230;&#x672C;&#x884C;&#x884C;&#x5C3E;</li>
+<li><code>g_</code> &#x2192; &#x5230;&#x672C;&#x884C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E0D;&#x662F; blank &#x5B57;&#x7B26;&#x7684;&#x4F4D;&#x7F6E;</li>
+<li>fa &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A; a &#x7684;&#x5B57;&#x7B26;&#x5904;(F &#x76F8;&#x53CD;&#x65B9;&#x5411;)</li>
+<li>t, &#x2192; &#x5230;&#x9017;&#x53F7;&#x524D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;(&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;)(T &#x76F8;&#x53CD;&#x65B9;&#x5411;)</li>
+<li>ngg &#x2192; &#x8DF3;&#x8F6C;&#x5230;&#x67D0;&#x884C;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5; : N &#x5230;&#x7B2C; N &#x884C;&#xFF0C;&#x5982; :137 &#x5230;&#x7B2C; 137 &#x884C;&#xFF09;</li>
+<li>n% &#x2192; &#x6309;&#x767E;&#x5206;&#x6BD4;&#x8F6C;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x884C;&#x6570;</li>
+<li>NG &#x2192; &#x5230;&#x7B2C; N &#x884C; &#xFF08;g &#x5927;&#x5C0F;&#x5199;&#x5747;&#x53EF;&#xFF09;</li>
+<li>gg &#x2192; &#x5230;&#x7B2C;&#x4E00;&#x884C;</li>
+<li>G &#x2192; &#x5230;&#x6700;&#x540E;&#x4E00;&#x884C;</li>
+<li>H &#x2192; &#x9875;&#x9762;&#x9876;&#x90E8;</li>
+<li>M &#x2192; &#x9875;&#x9762;&#x4E2D;&#x90E8;</li>
+<li>L &#x2192; &#x9875;&#x9762;&#x5E95;&#x90E8;</li>
 <li>zz &#x2192; &#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x8C03;&#x6574;&#x81F3;&#x9875;&#x9762;&#x4E2D;&#x95F4;</li>
 <li>&#x6309;&#x5355;&#x8BCD;&#x79FB;&#x52A8;<ul>
-<li><code>w</code> &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x5F00;&#x5934;&#x3001;</li>
-<li><code>e</code> &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x7ED3;&#x5C3E;</li>
+<li>w &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x5F00;&#x5934;&#x3001;</li>
+<li>e &#x2192; &#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x7ED3;&#x5C3E;</li>
 </ul>
 </li>
-<li>&#x6700;&#x5F3A;&#x7684;&#x5149;&#x6807;&#x79FB;&#x52A8;<ul>
-<li><code>%</code> : &#x5339;&#x914D;&#x62EC;&#x53F7;&#x79FB;&#x52A8;&#xFF0C;&#x5305;&#x62EC;<code>(</code><em>,</em> <code>{</code><em>,</em> <code>[</code>&#xFF08;&#x4F60;&#x9700;&#x8981;&#x628A;&#x5149;&#x6807;&#x5148;&#x79FB;&#x5230;&#x62EC;&#x53F7;&#x4E0A;&#xFF09;</li>
-<li><code>*</code> <em>&#x548C;</em> <code>#</code>:  &#x5339;&#x914D;&#x5149;&#x6807;&#x5F53;&#x524D;&#x6240;&#x5728;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#xFF08;&#x6216;&#x4E0A;&#x4E00;&#x4E2A;&#xFF09;&#x5339;&#x914D;&#x5355;&#x8BCD;&#xFF08;*&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#xFF0C;#&#x662F;&#x4E0A;&#x4E00;&#x4E2A;&#xFF09;</li>
+<li><p>&#x6700;&#x5F3A;&#x7684;&#x5149;&#x6807;&#x79FB;&#x52A8;</p>
+<ul>
+<li>% &#x2192; &#x5339;&#x914D;&#x62EC;&#x53F7;&#x79FB;&#x52A8;</li>
+<li><code>*</code> &#x548C; # &#x2192; &#x5339;&#x914D;&#x5149;&#x6807;&#x5F53;&#x524D;&#x6240;&#x5728;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#xFF08;&#x6216;&#x4E0A;&#x4E00;&#x4E2A;&#xFF09;&#x5339;&#x914D;&#x5355;&#x8BCD;&#xFF08;<code>*</code>&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#xFF0C;#&#x662F;&#x4E0A;&#x4E00;&#x4E2A;&#xFF09;</li>
+<li><code>*</code> &#x2192; &#x641C;&#x7D22;&#x5355;&#x8BCD; n &#x4E0B;&#x4E00;&#x4E2A; N &#x4E0A;&#x4E00;&#x4E2A; ctrl+n === :nohl</li>
 </ul>
 </li>
+<li><p><c-o> &#x2192; &#x56DE;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7F16;&#x8F91;&#x70B9;</c-o></p>
+</li>
+<li><p><c-i> &#x2192; &#x56DE;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7F16;&#x8F91;&#x70B9;</c-i></p>
+</li>
+<li><p>mx &#x2192; &#x5C06;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6807;&#x8BB0;&#x4E3A; x</p>
+</li>
+<li>&apos;x &#x2192; &#x56DE;&#x5230;&#x6807;&#x8BB0;&#x70B9; x</li>
+<li>&apos;&apos; &#x2192; &#x56DE;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x70B9;&#xFF0C;&#x6216;&#x4E0A;&#x4E0B;&#x6587;&#x6240;&#x5728;&#x884C;&#x7684;&#x5F00;&#x5934;</li>
+<li>`` &#x2192; &#x56DE;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x6216;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x786E;&#x5207;&#x4F4D;&#x7F6E;</li>
 </ul>
 <h3 id="&#x5FEB;&#x901F;&#x9009;&#x4E2D;">&#x5FEB;&#x901F;&#x9009;&#x4E2D;</h3>
 <ul>
-<li>ci&apos;  &#x2192; &#x66F4;&#x6539;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
+<li>ci&apos; &#x2192; &#x66F4;&#x6539;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
 <li>di&apos; &#x2192; &#x5220;&#x9664;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
 <li>yi&apos; &#x2192; &#x590D;&#x5236;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
 <li>vi&apos; &#x2192; &#x9009;&#x4E2D;&#x914D;&#x5BF9;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF08;&#x9017;&#x53F7;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
 </ul>
 <h3 id="&#x590D;&#x5236;&#x3001;&#x526A;&#x5207;&#x3001;&#x7C98;&#x8D34;">&#x590D;&#x5236;&#x3001;&#x526A;&#x5207;&#x3001;&#x7C98;&#x8D34;</h3>
 <ul>
-<li><code>p</code> &#x2192; &#x7C98;&#x8D34;&#x526A;&#x8D34;&#x677F;</li>
-<li>yy &#x2192; &#x62F7;&#x8D1D;&#x5F53;&#x524D;&#x884C;&#x5F53;&#x884C;&#x4E8E; ddP</li>
+<li>p &#x2192; &#x7C98;&#x8D34;&#x526A;&#x8D34;&#x677F;</li>
+<li>yy &#x2192; &#x62F7;&#x8D1D;&#x5F53;&#x524D;&#x884C;</li>
+<li>&#x201C;+0 &#x2192; &#x7C98;&#x8D34;&#x4E0A;&#x4E00;&#x4E2A;</li>
 </ul>
+<h3 id="&#x66FF;&#x6362;&#x64CD;&#x4F5C;">&#x66FF;&#x6362;&#x64CD;&#x4F5C;</h3>
+<pre><code class="lang-shell">#  yiw &#x590D;&#x5236;
+# &#x5149;&#x6807;&#x79FB;&#x5230;&#x8981;&#x66FF;&#x6362;&#x7684;&#x5355;&#x8BCD;, viw &#x9009;&#x4E2D;&#xFF0C;&#x518D; p &#x7C98;&#x8D34;
+</code></pre>
 <h3 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h3>
 <ul>
-<li>dt<code>&quot;</code> &#x2192; &#x5220;&#x9664;&#x6240;&#x6709;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x76F4;&#x5230;&#x9047;&#x5230;&#x53CC;&#x5F15;&#x53F7;&#x2014;&#x2014; <code>&quot;</code> &#xFF08;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
-<li><code>cw</code> &#x2192; &#x66FF;&#x6362;&#x4ECE;&#x5149;&#x6807;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x540E;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7ED3;&#x5C3E;&#x7684;&#x5B57;&#x7B26;</li>
+<li>dt&quot; &#x2192; &#x5220;&#x9664;&#x6240;&#x6709;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x76F4;&#x5230;&#x9047;&#x5230;&#x53CC;&#x5F15;&#x53F7;&#x2014;&#x2014; <code>&quot;</code> &#xFF08;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x5176;&#x5B83;&#x5B57;&#x7B26;&#xFF09;</li>
+<li>cw &#x2192; &#x66FF;&#x6362;&#x4ECE;&#x5149;&#x6807;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x540E;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7ED3;&#x5C3E;&#x7684;&#x5B57;&#x7B26;</li>
 <li>dw &#x2192; &#x5220;&#x9664;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x5F00;&#x5934;</li>
 <li>de &#x2192; &#x5220;&#x9664;&#x5230;&#x672C;&#x5355;&#x8BCD;&#x672B;&#x5C3E;</li>
 <li>dE &#x2192; &#x5220;&#x9664;&#x5230;&#x672C;&#x5355;&#x8BCD;&#x672B;&#x5C3E;&#x5305;&#x62EC;&#x6807;&#x70B9;&#x5728;&#x5185;</li>
 <li>db &#x2192; &#x5220;&#x9664;&#x5230;&#x524D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;</li>
 <li>dB &#x2192; &#x5220;&#x9664;&#x5230;&#x524D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x5305;&#x62EC;&#x6807;&#x70B9;&#x5728;&#x5185;</li>
-<li><code>dd</code>  &#x2192; &#x5220;&#x9664;&#x5F53;&#x524D;&#x884C;&#xFF0C;&#x5E76;&#x628A;&#x5220;&#x9664;&#x7684;&#x884C;&#x5B58;&#x5230;&#x526A;&#x8D34;&#x677F;&#x91CC;</li>
+<li>dd &#x2192; &#x5220;&#x9664;&#x5F53;&#x524D;&#x884C;&#xFF0C;&#x5E76;&#x628A;&#x5220;&#x9664;&#x7684;&#x884C;&#x5B58;&#x5230;&#x526A;&#x8D34;&#x677F;&#x91CC;</li>
 <li>D d$ &#x2192; &#x5220;&#x9664;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x5230;&#x672C;&#x884C;&#x7ED3;&#x5C3E;</li>
 <li>d0 &#x2192; &#x5220;&#x9664;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x5230;&#x672C;&#x884C;&#x5F00;&#x5934;</li>
 </ul>
 <h3 id="undoredo">Undo/Redo</h3>
 <ul>
-<li><code>u</code> &#x2192; undo</li>
-<li><code>&lt;C-r&gt;</code> &#x2192; redo</li>
+<li>u &#x2192; undo</li>
+<li><c-r> &#x2192; redo</c-r></li>
 </ul>
 <h3 id="&#x91CD;&#x590D;&#x64CD;&#x4F5C;">&#x91CD;&#x590D;&#x64CD;&#x4F5C;</h3>
 <ul>
-<li><code>.</code> &#x2192; (&#x5C0F;&#x6570;&#x70B9;) &#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x547D;&#x4EE4;</li>
-<li>N<command> &#x2192; &#x91CD;&#x590D;&#x67D0;&#x4E2A;&#x547D;&#x4EE4;N&#x6B21;</li>
+<li>. &#x2192; (&#x5C0F;&#x6570;&#x70B9;) &#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x547D;&#x4EE4;</li>
+<li>N<command> &#x2192; &#x91CD;&#x590D;&#x67D0;&#x4E2A;&#x547D;&#x4EE4; N &#x6B21;</li>
 </ul>
 <h3 id="&#x8054;&#x52A8;">&#x8054;&#x52A8;</h3>
 <p><code>&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</code></p>
@@ -886,19 +957,19 @@ gu (&#x53D8;&#x5C0F;&#x5199;)
 </code></pre>
 <h3 id="&#x526A;&#x5207;&#x677F;">&#x526A;&#x5207;&#x677F;</h3>
 <ul>
-<li><code>&quot;</code>+y &#x2192; &#x590D;&#x5236;&#x5230;&#x526A;&#x5207;&#x677F;</li>
-<li><code>&quot;</code>+p &#x2192; &#x4ECE;&#x526A;&#x5207;&#x677F;&#x7C98;&#x8D34;</li>
+<li>&quot;+y &#x2192; &#x590D;&#x5236;&#x5230;&#x526A;&#x5207;&#x677F;</li>
+<li>&quot;+p &#x2192; &#x4ECE;&#x526A;&#x5207;&#x677F;&#x7C98;&#x8D34;</li>
 </ul>
 <h3 id="&#x6807;&#x8BB0;">&#x6807;&#x8BB0;</h3>
 <ul>
 <li>m&lt;&#x6807;&#x8BB0;&#x540D;&#x79F0;&gt; &#x2192; &#x5B9A;&#x4E49;&#x6807;&#x8BB0;&#x3002;&#x6807;&#x8BB0;&#x540D;&#x79F0;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</li>
-<li>`&lt;&#x6807;&#x8BB0;&#x540D;&#x79F0;&gt;  &#x2192; &#x8FD4;&#x56DE;&#x6807;&#x8BB0;</li>
+<li>`&lt;&#x6807;&#x8BB0;&#x540D;&#x79F0;&gt; &#x2192; &#x8FD4;&#x56DE;&#x6807;&#x8BB0;</li>
 </ul>
 <h3 id="&#x5B8F;&#x5F55;&#x5236;&#xFF1A;-qa-&#x64CD;&#x4F5C;&#x5E8F;&#x5217;-q-a-">&#x5B8F;&#x5F55;&#x5236;&#xFF1A; <code>qa</code> &#x64CD;&#x4F5C;&#x5E8F;&#x5217; <code>q</code>, <code>@a</code>, <code>@@</code></h3>
 <ul>
 <li><code>qa</code> &#x628A;&#x4F60;&#x7684;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x5728;&#x5BC4;&#x5B58;&#x5668; <code>a&#x3002;</code></li>
-<li>&#x4E8E;&#x662F; <code>@a</code> &#x4F1A;replay&#x88AB;&#x5F55;&#x5236;&#x7684;&#x5B8F;&#x3002;</li>
-<li><code>@@</code> &#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x952E;&#x7528;&#x6765;replay&#x6700;&#x65B0;&#x5F55;&#x5236;&#x7684;&#x5B8F;&#x3002;</li>
+<li>&#x4E8E;&#x662F; <code>@a</code> &#x4F1A; replay &#x88AB;&#x5F55;&#x5236;&#x7684;&#x5B8F;&#x3002;</li>
+<li><code>@@</code> &#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x952E;&#x7528;&#x6765; replay &#x6700;&#x65B0;&#x5F55;&#x5236;&#x7684;&#x5B8F;&#x3002;</li>
 </ul>
 <pre><code class="lang-shell"># &#x793A;&#x4F8B;
 
@@ -915,14 +986,14 @@ q &#x505C;&#x6B62;&#x5F55;&#x5236;.
 </code></pre>
 <h2 id="visual-&#x6A21;&#x5F0F;">Visual &#x6A21;&#x5F0F;</h2>
 <ul>
-<li><code>J</code> &#x2192; &#x628A;&#x6240;&#x6709;&#x7684;&#x884C;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF08;&#x53D8;&#x6210;&#x4E00;&#x884C;&#xFF09;</li>
-<li><code>&lt;</code> &#x6216; <code>&gt;</code> &#x2192; &#x5DE6;&#x53F3;&#x7F29;&#x8FDB;</li>
-<li><code>=</code> &#x2192; &#x81EA;&#x52A8;&#x7ED9;&#x7F29;&#x8FDB; </li>
+<li>J &#x2192; &#x628A;&#x6240;&#x6709;&#x7684;&#x884C;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF08;&#x53D8;&#x6210;&#x4E00;&#x884C;&#xFF09;</li>
+<li>&lt;&lt;&gt; &#x6216; &gt;&gt; &#x2192; &#x5DE6;&#x53F3;&#x7F29;&#x8FDB;</li>
+<li>= &#x2192; &#x81EA;&#x52A8;&#x7ED9;&#x7F29;&#x8FDB;</li>
 </ul>
 <h3 id="&#x533A;&#x57DF;&#x9009;&#x62E9;">&#x533A;&#x57DF;&#x9009;&#x62E9;</h3>
 <p>&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;<code>&lt;action&gt;a&lt;object&gt;</code> &#x548C; <code>&lt;action&gt;i&lt;object&gt;</code></p>
 <ul>
-<li>action&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982; <code>d</code> (&#x5220;&#x9664;), <code>y</code> (&#x62F7;&#x8D1D;), <code>v</code> (&#x53EF;&#x4EE5;&#x89C6;&#x6A21;&#x5F0F;&#x9009;&#x62E9;)&#x3002;</li>
+<li>action &#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982; <code>d</code> (&#x5220;&#x9664;), <code>y</code> (&#x62F7;&#x8D1D;), <code>v</code> (&#x53EF;&#x4EE5;&#x89C6;&#x6A21;&#x5F0F;&#x9009;&#x62E9;)&#x3002;</li>
 <li>object &#x53EF;&#x80FD;&#x662F;&#xFF1A; <code>w</code> &#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C; <code>W</code> &#x4E00;&#x4E2A;&#x4EE5;&#x7A7A;&#x683C;&#x4E3A;&#x5206;&#x9694;&#x7684;&#x5355;&#x8BCD;&#xFF0C; <code>s</code> &#x4E00;&#x4E2A;&#x53E5;&#x5B57;&#xFF0C; <code>p</code> &#x4E00;&#x4E2A;&#x6BB5;&#x843D;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x522B;&#x7684;&#x5B57;&#x7B26;&#xFF1A;<code>&quot;&#x3001;</code> <code>&apos;&#x3001;</code> <code>)&#x3001;</code> <code>}&#x3001;</code> <code>]&#x3002;</code></li>
 </ul>
 <pre><code class="lang-shell"># &#x5047;&#x8BBE;&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; `(map (+) (&quot;foo&quot;))`.&#x800C;&#x5149;&#x6807;&#x952E;&#x5728;&#x7B2C;&#x4E00;&#x4E2A; `o `&#x7684;&#x4F4D;&#x7F6E;&#x3002;
@@ -938,8 +1009,8 @@ v2a) &#x2192; &#x4F1A;&#x9009;&#x62E9; (map (+) (&quot;foo&quot;))
 <ul>
 <li><code>^</code> &#x2192; &#x5230;&#x884C;&#x5934;</li>
 <li><code>&lt;C-v&gt;</code> &#x2192; &#x5F00;&#x59CB;&#x5757;&#x64CD;&#x4F5C;</li>
-<li><code>&lt;C-d&gt;</code> &#x2192; &#x5411;&#x4E0B;&#x79FB;&#x52A8; (&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;hjkl&#x6765;&#x79FB;&#x52A8;&#x5149;&#x6807;&#xFF0C;&#x6216;&#x662F;&#x4F7F;&#x7528;%&#xFF0C;&#x6216;&#x662F;&#x522B;&#x7684;)</li>
-<li><code>I-- [ESC]</code> &#x2192; I&#x662F;&#x63D2;&#x5165;&#xFF0C;&#x63D2;&#x5165;&#x201C;<code>--</code>&#x201D;&#xFF0C;&#x6309;ESC&#x952E;&#x6765;&#x4E3A;&#x6BCF;&#x4E00;&#x884C;&#x751F;&#x6548;</li>
+<li><code>&lt;C-d&gt;</code> &#x2192; &#x5411;&#x4E0B;&#x79FB;&#x52A8; (&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; hjkl &#x6765;&#x79FB;&#x52A8;&#x5149;&#x6807;&#xFF0C;&#x6216;&#x662F;&#x4F7F;&#x7528;%&#xFF0C;&#x6216;&#x662F;&#x522B;&#x7684;)</li>
+<li><code>I-- [ESC]</code> &#x2192; I &#x662F;&#x63D2;&#x5165;&#xFF0C;&#x63D2;&#x5165;&#x201C;<code>--</code>&#x201D;&#xFF0C;&#x6309; ESC &#x952E;&#x6765;&#x4E3A;&#x6BCF;&#x4E00;&#x884C;&#x751F;&#x6548;</li>
 </ul>
 <p>&#x5728;&#x6240;&#x6709;&#x88AB;&#x9009;&#x62E9;&#x7684;&#x884C;&#x540E;&#x52A0;&#x4E0A;&#x70B9;&#x4E1C;&#x897F;&#xFF1A;</p>
 <ul>
@@ -954,15 +1025,89 @@ v2a) &#x2192; &#x4F1A;&#x9009;&#x62E9; (map (+) (&quot;foo&quot;))
 <h3 id="&#x63D2;&#x5165;&#x6A21;&#x5F0F;">&#x63D2;&#x5165;&#x6A21;&#x5F0F;</h3>
 <ul>
 <li><code>a</code> &#x2192; &#x5728;&#x5149;&#x6807;&#x540E;&#x63D2;&#x5165;(A &#x884C;&#x5C3E;&#x63D2;&#x5165;)</li>
-<li><code>i</code>  &#x2192;  &#x5149;&#x6807;&#x4E4B;&#x524D;&#x63D2;&#x5165;( I &#x884C;&#x9996;&#x63D2;&#x5165;)</li>
+<li><code>i</code> &#x2192; &#x5149;&#x6807;&#x4E4B;&#x524D;&#x63D2;&#x5165;( I &#x884C;&#x9996;&#x63D2;&#x5165;)</li>
 <li><code>o</code> &#x2192; &#x4E0B;&#x4E00;&#x884C;&#x63D2;&#x5165;(O &#x4E0A;&#x4E00;&#x884C;&#x63D2;&#x5165;)</li>
 </ul>
 <h3 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h3>
 <ul>
-<li><code>&lt;C-h&gt;</code> &#x2192;  &#x5220;&#x9664;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</li>
-<li><code>&lt;C-w&gt;</code> &#x2192;  &#x524D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;</li>
-<li><code>&lt;C-u&gt;</code> &#x2192;  &#x524D;&#x9762;&#x4E00;&#x884C;&#x6240;&#x6709;&#x5B57;&#x7B26;</li>
+<li><code>&lt;C-h&gt;</code> &#x2192; &#x5220;&#x9664;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</li>
+<li><code>&lt;C-w&gt;</code> &#x2192; &#x524D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;</li>
+<li><code>&lt;C-u&gt;</code> &#x2192; &#x524D;&#x9762;&#x4E00;&#x884C;&#x6240;&#x6709;&#x5B57;&#x7B26;</li>
 </ul>
+<h2 id="vscode-&#x63D2;&#x4EF6;-vim-&#x914D;&#x7F6E;">vscode &#x63D2;&#x4EF6; vim &#x914D;&#x7F6E;</h2>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;editor.lineNumbers&quot;</span>: <span class="hljs-string">&quot;relative&quot;</span>,
+  <span class="hljs-string">&quot;vim.easymotion&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;vim.incsearch&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;vim.useSystemClipboard&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;vim.useCtrlKeys&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;vim.hlsearch&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;vim.insertModeKeyBindings&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;j&quot;</span>, <span class="hljs-string">&quot;j&quot;</span>],
+      <span class="hljs-string">&quot;after&quot;</span>: [<span class="hljs-string">&quot;&lt;Esc&gt;&quot;</span>]
+    }
+  ],
+  <span class="hljs-string">&quot;vim.insertModeKeyBindingsNonRecursive&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;&lt;C-c&gt;&quot;</span>],
+      <span class="hljs-string">&quot;commands&quot;</span>: [<span class="hljs-string">&quot;editor.action.clipboardCopyAction&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;&lt;C-v&gt;&quot;</span>],
+      <span class="hljs-string">&quot;commands&quot;</span>: [<span class="hljs-string">&quot;editor.action.clipboardPasteAction&quot;</span>]
+    }
+  ],
+  <span class="hljs-string">&quot;vim.visualModeKeyBindingsNonRecursive&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;L&quot;</span>],
+      <span class="hljs-string">&quot;after&quot;</span>: [<span class="hljs-string">&quot;$&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;H&quot;</span>],
+      <span class="hljs-string">&quot;after&quot;</span>: [<span class="hljs-string">&quot;^&quot;</span>]
+    }
+  ],
+  <span class="hljs-string">&quot;vim.normalModeKeyBindingsNonRecursive&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;&lt;leader&gt;&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>],
+      <span class="hljs-string">&quot;after&quot;</span>: [<span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;&lt;C-n&gt;&quot;</span>],
+      <span class="hljs-string">&quot;commands&quot;</span>: [<span class="hljs-string">&quot;:nohl&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;K&quot;</span>],
+      <span class="hljs-string">&quot;commands&quot;</span>: [<span class="hljs-string">&quot;lineBreakInsert&quot;</span>],
+      <span class="hljs-string">&quot;silent&quot;</span>: <span class="hljs-literal">true</span>
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;L&quot;</span>],
+      <span class="hljs-string">&quot;after&quot;</span>: [<span class="hljs-string">&quot;$&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;H&quot;</span>],
+      <span class="hljs-string">&quot;after&quot;</span>: [<span class="hljs-string">&quot;^&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;&lt;C-h&gt;&quot;</span>],
+      <span class="hljs-string">&quot;commands&quot;</span>: [<span class="hljs-string">&quot;workbench.action.navigateLeft&quot;</span>]
+    },
+    {
+      <span class="hljs-string">&quot;before&quot;</span>: [<span class="hljs-string">&quot;&lt;C-j&gt;&quot;</span>],
+      <span class="hljs-string">&quot;commands&quot;</span>: [<span class="hljs-string">&quot;workbench.action.navigateDown&quot;</span>]
+    }
+  ],
+  <span class="hljs-string">&quot;vim.leader&quot;</span>: <span class="hljs-string">&quot;&lt;space&gt;&quot;</span>,
+  <span class="hljs-string">&quot;vim.handleKeys&quot;</span>: {
+    <span class="hljs-string">&quot;&lt;C-a&gt;&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;&lt;C-f&gt;&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;&lt;C-x&gt;&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;&lt;C-w&gt;&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1006,7 +1151,7 @@ v2a) &#x2192; &#x4F1A;&#x9009;&#x62E9; (map (+) (&quot;foo&quot;))
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vim","level":"7.1.8","depth":2,"next":{"title":"markdown","level":"7.1.9","depth":2,"path":"Tools/markdown.md","ref":"Tools/markdown.md","articles":[]},"previous":{"title":"Bootstrap","level":"7.1.7","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"copy-code-button":{},"search-plus":{},"splitter":{},"expandable-chapters-small":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/vim.md","mtime":"2020-05-29T09:03:26.597Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T09:04:38.839Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vim","level":"7.1.8","depth":2,"next":{"title":"markdown","level":"7.1.9","depth":2,"path":"Tools/markdown.md","ref":"Tools/markdown.md","articles":[]},"previous":{"title":"Bootstrap","level":"7.1.7","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/vim.md","mtime":"2022-04-28T14:11:35.211Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-04-28T14:55:42.718Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1036,6 +1181,18 @@ v2a) &#x2192; &#x4F1A;&#x9009;&#x62E9; (map (+) (&quot;foo&quot;))
         
     
         
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
@@ -1044,7 +1201,7 @@ v2a) &#x2192; &#x4F1A;&#x9009;&#x62E9; (map (+) (&quot;foo&quot;))
         
     
         
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
         
     
 
