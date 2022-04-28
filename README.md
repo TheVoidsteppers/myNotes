@@ -7,7 +7,8 @@
 ### 安装
 
 ```shell
-npm install -g gitbook-cli
+npm install -g gitbook-cli@2.1.2
+gitbook fetch 3.0.0
 ```
 
 ### 本地运行
@@ -21,4 +22,3 @@ gitbook serve
 ```shell
 gitbook build
 ```
-

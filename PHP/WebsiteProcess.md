@@ -165,10 +165,12 @@ loading.awesomes.cn
 ```
 
 ```html
+{% raw %}
 <tr  data-id="{{:id}}">
-<td class="text-center">
-        <a href="javascript:;" class="btn btn-danger btn-xs btn-delete">删除</a>
-</td>
+{% endraw %}
+  <td class="text-center">
+    <a href="javascript:;" class="btn btn-danger btn-xs btn-delete">删除</a>
+  </td>
 </tr>
 <script>
 //事件委托 因为创建元素在元素绑定事件之前

@@ -1,4 +1,4 @@
-CSS3的animation制作的动画效果的CSS集合：https://daneden.github.io/animate.css/
+CSS3 的 animation 制作的动画效果的 CSS 集合：https://daneden.github.io/animate.css/
 
 ## 布局
 
@@ -9,13 +9,12 @@ CSS3的animation制作的动画效果的CSS集合：https://daneden.github.io/an
 ```
 
 ```css
-.box{
+.box {
   display: flex;
   display: inline-flex; /* 行内元素 */
   display: -webkit-flex; /* Safari */
 }
 ```
-
 
 ## 文本
 
@@ -23,18 +22,18 @@ CSS3的animation制作的动画效果的CSS集合：https://daneden.github.io/an
 
 ```css
 /*一行*/
-word-wrap:break-word;
-word-break:break-all;
+word-wrap: break-word;
+word-break: break-all;
 /* 两行 */
-overflow : hidden;
+overflow: hidden;
 text-overflow: ellipsis;
 display: -webkit-box;
 -webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
 /*超出文字 省略号替代*/
-overflow:hidden;
-text-overflow:ellipsis;
-white-space:nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 ```
 
 ### 文字渐变色
@@ -49,24 +48,22 @@ color: transparent;
 
 ```html
 <style>
-    .box1{
-        float: left;
-        width: 100px;
-        height: 100px;
-        background: pink;
-    }
-    .box2{
-        /*让这个元素绝对绝缘  bfc*/
-        /*不让其他浮动元素影响自己*/
-        /*不让自己的浮动去影响别的元素*/
-        overflow: hidden;
-    }
+  .box1 {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: pink;
+  }
+  .box2 {
+    /*让这个元素绝对绝缘  bfc*/
+    /*不让其他浮动元素影响自己*/
+    /*不让自己的浮动去影响别的元素*/
+    overflow: hidden;
+  }
 </style>
 <body>
-    <div class="box1"></div>
-    <div class="box2">
-    	内容内容内容内容内容内容内容内容内容内容内容内容
-    </div>    
+  <div class="box1"></div>
+  <div class="box2">内容内容内容内容内容内容内容内容内容内容内容内容</div>
 </body>
 <!-- 
 |￣￣|内容内容内容
@@ -75,12 +72,11 @@ color: transparent;
 -->
 ```
 
-
 ### 去掉文本选中效果
 
 ```css
 -webkit-touch-callout: none; /* iOS Safari */
--webkit-user-select: none;/* Chrome/Safari/Opera */
+-webkit-user-select: none; /* Chrome/Safari/Opera */
 -khtml-user-select: none; /* Konqueror */
 -moz-user-select: none; /* Firefox */
 -ms-user-select: none; /* Internet Explorer/Edge */
@@ -108,16 +104,16 @@ background-clip: content-box;
 ### 三角形
 
 ```css
-div::before{
-    width: 0;
-    height: 0;
-    content: "";
-    position: absolute;
-    left: 85px;
-    top: -10px;
-    border-left: solid 10px transparent;
-    border-bottom: solid 10px rgba(255,255,255,.9);
-    border-right: solid 10px transparent;
+div::before {
+  width: 0;
+  height: 0;
+  content: "";
+  position: absolute;
+  left: 85px;
+  top: -10px;
+  border-left: solid 10px transparent;
+  border-bottom: solid 10px rgba(255, 255, 255, 0.9);
+  border-right: solid 10px transparent;
 }
 ```
 
@@ -127,60 +123,57 @@ div::before{
 
 ```css
 /* 图片默认是文字，以基线对齐 */
-body{
-    /*font-size: 0px;*/
+body {
+  /*font-size: 0px;*/
 }
-img{
-    /*display: block;*/
-    vertical-align: middle;
+img {
+  /*display: block;*/
+  vertical-align: middle;
 }
 ```
 
 ### 模仿 placeholder
 
 ```html
-<div contenteditable="true" data-placeholder="(untitled)" class="title">
-</div>
+<div contenteditable="true" data-placeholder="(untitled)" class="title"></div>
 ```
 
 ```css
 .title:empty:not(:focus):before {
-  content: attr(data-placeholder)
+  content: attr(data-placeholder);
 }
 ```
 
 ### 去掉已设置的样式
 
 ```javascript
-initial | inherit 
+initial | inherit;
 ```
-
 
 ### 滚动条美化
 
 ```css
 /*滚动条美化*/
 ::-webkit-scrollbar-track-piece {
-    /*滚动条凹槽的颜色，还可以设置边框属性*/
-    background-color:#f8f8f8;
+  /*滚动条凹槽的颜色，还可以设置边框属性*/
+  background-color: #f8f8f8;
 }
 ::-webkit-scrollbar {
-    /*滚动条的宽度*/
-    width:9px;
-    height:9px;
+  /*滚动条的宽度*/
+  width: 9px;
+  height: 9px;
 }
 ::-webkit-scrollbar-thumb {
-    /*滚动条的设置*/
-    background-color:#dddddd;
-    background-clip:padding-box;
-    min-height:28px;
+  /*滚动条的设置*/
+  background-color: #dddddd;
+  background-clip: padding-box;
+  min-height: 28px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color:#bbb;
+  background-color: #bbb;
 }
 /*滚动条美化 end*/
 ```
-
 
 ### 添加字体
 
@@ -188,21 +181,19 @@ initial | inherit
 /*自定义字体图标*/
 /*1.通过@font-face定义自己的字体*/
 @font-face {
-    /*2.申明自己的字体名称*/
-    font-family: 'wjs';
-    /*3.引入字体文件（约束某一段字符代码什么图案）*/
-    src:
-    url(../fonts/MiFie-Web-Font.svg) format('svg'),
-    url(../fonts/MiFie-Web-Font.eot) format('embedded-opentype'),
-    url(../fonts/MiFie-Web-Font.ttf) format('truetype'),
-    url(../fonts/MiFie-Web-Font.woff) format('woff');
+  /*2.申明自己的字体名称*/
+  font-family: "wjs";
+  /*3.引入字体文件（约束某一段字符代码什么图案）*/
+  src: url(../fonts/MiFie-Web-Font.svg) format("svg"), url(../fonts/MiFie-Web-Font.eot)
+      format("embedded-opentype"),
+    url(../fonts/MiFie-Web-Font.ttf) format("truetype"), url(../fonts/MiFie-Web-Font.woff)
+      format("woff");
 }
 /*4.怎么使用维护性更好*/
-.wjs_icon{
-    font-family: wjs;
+.wjs_icon {
+  font-family: wjs;
 }
 ```
-
 
 ### 媒体查询
 
@@ -211,12 +202,10 @@ initial | inherit
 /*怎么使用媒体查询：关于媒体查询 @media */
 /*语法： @media screen and (max-width: 768px) and (min-width: 320px){属性样式}*/
 @media screen and (max-width: 768px) {
-    /*1. 在超小屏设备的时候 768px以下      当前容器的宽度100%     背景蓝色*/
-    .container{
-        width: 100%;
-        background: blue;
-    }
+  /*1. 在超小屏设备的时候 768px以下      当前容器的宽度100%     背景蓝色*/
+  .container {
+    width: 100%;
+    background: blue;
+  }
 }
 ```
-
-

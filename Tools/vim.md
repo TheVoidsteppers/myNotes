@@ -4,33 +4,34 @@
 
 - hjkl → 也可以使用光标键 (←↓↑→)
 - 0 → 数字零，到行头
-- ^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）
+- ^ → 到本行第一个不是 blank 字符的位置（所谓 blank 字符就是空格，tab，换行，回车等）
 - $ → 到本行行尾
-- g_ → 到本行最后一个不是blank字符的位置
-- fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符(F相反方向)
-- t, → 到逗号前的第一个字符(逗号可以变成其它字符)(T相反方向)
-- ngg → 跳转到某行（也可以 : N 到第N行，如 :137 到第137行）
-- n% → 按百分比转到相应的行数 
-- NG → 到第 N 行 （g大小写均可）
+- `g_` → 到本行最后一个不是 blank 字符的位置
+- fa → 到下一个为 a 的字符处(F 相反方向)
+- t, → 到逗号前的第一个字符(逗号可以变成其它字符)(T 相反方向)
+- ngg → 跳转到某行（也可以 : N 到第 N 行，如 :137 到第 137 行）
+- n% → 按百分比转到相应的行数
+- NG → 到第 N 行 （g 大小写均可）
 - gg → 到第一行
 - G → 到最后一行
-- H → 页面顶部 
-- M → 页面中部 
+- H → 页面顶部
+- M → 页面中部
 - L → 页面底部
 - zz → 将光标所在行调整至页面中间
 - 按单词移动
   - w → 到下一个单词的开头、
   - e → 到下一个单词的结尾
 - 最强的光标移动
-  - % →  匹配括号移动，包括`(`*,* `{`*,* `[`（你需要把光标先移到括号上）
-  - * 和 # →  匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）
-  - * → 搜索单词 n下一个 N 上一个 ctrl+n === :nohl
+
+  - % → 匹配括号移动
+  - `*` 和 # → 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（`*`是下一个，#是上一个）
+  - `*` → 搜索单词 n 下一个 N 上一个 ctrl+n === :nohl
 
 - <C-o> → 回到上一个编辑点
 - <C-i> → 回到下一个编辑点
 
-- mx → 将当前位置标记为x
-- 'x → 回到标记点x
+- mx → 将当前位置标记为 x
+- 'x → 回到标记点 x
 - '' → 回到上一个标记点，或上下文所在行的开头
 - `` → 回到上一个标记或上下文的确切位置
 
@@ -75,8 +76,7 @@
 ### 重复操作
 
 - . → (小数点) 可以重复上一次的命令
-- N<command> → 重复某个命令N次
-
+- N<command> → 重复某个命令 N 次
 
 ### 联动
 
@@ -108,13 +108,13 @@ gu (变小写)
 ### 标记
 
 - m<标记名称> → 定义标记。标记名称为一个字符
-- `<标记名称>  → 返回标记
+- `<标记名称> → 返回标记
 
 ### 宏录制： `qa` 操作序列 `q`, `@a`, `@@`
 
 - `qa` 把你的操作记录在寄存器 `a。`
-- 于是 `@a` 会replay被录制的宏。
-- `@@` 是一个快捷键用来replay最新录制的宏。
+- 于是 `@a` 会 replay 被录制的宏。
+- `@@` 是一个快捷键用来 replay 最新录制的宏。
 
 ```shell
 # 示例
@@ -135,13 +135,13 @@ q 停止录制.
 
 - J → 把所有的行连接起来（变成一行）
 - <<> 或 >> → 左右缩进
-- = → 自动给缩进 
+- = → 自动给缩进
 
 ### 区域选择
 
 命令格式为：`<action>a<object>` 和 `<action>i<object>`
 
-- action可以是任何的命令，如 `d` (删除), `y` (拷贝), `v` (可以视模式选择)。
+- action 可以是任何的命令，如 `d` (删除), `y` (拷贝), `v` (可以视模式选择)。
 - object 可能是： `w` 一个单词， `W` 一个以空格为分隔的单词， `s` 一个句字， `p` 一个段落。也可以是一个特别的字符：`"、` `'、` `)、` `}、` `]。`
 
 ```shell
@@ -160,8 +160,8 @@ v2a) → 会选择 (map (+) ("foo"))
 
 - `^` → 到行头
 - `<C-v>` → 开始块操作
-- `<C-d>` → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)
-- `I-- [ESC]` → I是插入，插入“`--`”，按ESC键来为每一行生效
+- `<C-d>` → 向下移动 (你也可以使用 hjkl 来移动光标，或是使用%，或是别的)
+- `I-- [ESC]` → I 是插入，插入“`--`”，按 ESC 键来为每一行生效
 
 在所有被选择的行后加上点东西：
 
@@ -179,13 +179,88 @@ v2a) → 会选择 (map (+) ("foo"))
 ### 插入模式
 
 - `a` → 在光标后插入(A 行尾插入)
-- `i`  →  光标之前插入( I 行首插入)
+- `i` → 光标之前插入( I 行首插入)
 - `o` → 下一行插入(O 上一行插入)
 
 ### 删除
 
-- `<C-h>` →  删除前一个字符
-- `<C-w>` →  前一个单词
-- `<C-u>` →  前面一行所有字符
+- `<C-h>` → 删除前一个字符
+- `<C-w>` → 前一个单词
+- `<C-u>` → 前面一行所有字符
 
- 
+## vscode 插件 vim 配置
+
+```json
+{
+  "editor.lineNumbers": "relative",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-c>"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
+    {
+      "before": ["<C-v>"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-x>": false,
+    "<C-w>": false
+  }
+}
+```

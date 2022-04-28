@@ -1,22 +1,32 @@
 {
-    "author": "TheVoidsteppers",
-    "description": "Notes for Learning front-end",
-    "extension": null,
-    "language":"zh-hans",
-    "root": "./",
-    "generator": "site",
-    "output": null,
-    "plugins": ["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small"],
-    "pluginsConfig": {
-        "theme-default": {
-            "showLevel": false
-        }
-    },
-    "links": {
-        "sidebar": {
-            "github": "https://github.com/TheVoidsteppers"
-        }
-    },
-    "title": "我的学习笔记",
-    "variables": {}
+  "author": "TheVoidsteppers",
+  "description": "Notes for Learning front-end",
+  "extension": null,
+  "language": "zh-hans",
+  "root": "./",
+  "generator": "site",
+  "output": null,
+  "plugins": [
+    "-sharing",
+    "copy-code-button",
+    "-search",
+    "search-plus",
+    "splitter",
+    "expandable-chapters-small",
+    "back-to-top-button",
+    "chapter-fold",
+    "code"
+  ],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": false
+    }
+  },
+  "links": {
+    "sidebar": {
+      "github": "https://github.com/TheVoidsteppers"
+    }
+  },
+  "title": "我的学习笔记",
+  "variables": {}
 }
