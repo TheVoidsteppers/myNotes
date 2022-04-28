@@ -5,6 +5,7 @@
 ### 安装
 
 ```shell
+npm install
 npm run bootstrap
 ```
 
