@@ -1,6 +1,6 @@
 ## 切换桌面
 
-```s
+```powershell
 LWin & PgUp::
 Send {LWin Down}{Ctrl Down}{Left}{Ctrl Up}{LWin Up}
 return

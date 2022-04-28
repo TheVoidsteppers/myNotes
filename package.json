@@ -17,7 +17,7 @@
     "gitbook-cli": "^2.1.2"
   },
   "scripts": {
-    "init": "gitbook fetch 3.0.0 && gitbook install",
+    "bootstrap": "gitbook fetch 3.0.0 && gitbook install",
     "dev": "gitbook serve",
     "build": "gitbook build",
     "prd": "gitbook build && gh-pages -d _book",
