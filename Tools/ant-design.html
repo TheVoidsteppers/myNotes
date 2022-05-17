@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-hans" >
     <head>
-        <title>SVG · 我的学习笔记</title>
+        <title>ant-design-vue · 我的学习笔记</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Bootstrap.html" />
+    <link rel="next" href="D3_v5.html" />
     
     
-    <link rel="prev" href="D3_v5.html" />
+    <link rel="prev" href="element-ui.html" />
     
 
     </head>
@@ -625,7 +625,7 @@
             
         </li>
     
-        <li class="chapter " data-level="7.1.5" data-path="ant-design.html">
+        <li class="chapter active" data-level="7.1.5" data-path="ant-design.html">
             
                 <a href="ant-design.html">
             
@@ -651,7 +651,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="7.1.7" data-path="SVG.html">
+        <li class="chapter " data-level="7.1.7" data-path="SVG.html">
             
                 <a href="SVG.html">
             
@@ -854,7 +854,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >SVG</a>
+        <a href=".." >ant-design-vue</a>
     </h1>
 </div>
 
@@ -869,7 +869,170 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>[SVG&#x7CBE;&#x9AD3;] (<a href="https://github.com/xswei/SVG_Essentials" _target="blank">https://github.com/xswei/SVG_Essentials</a>)</p>
+                                <h2 id="ant-design-17x-bug-&#x6C47;&#x603B;">ant-design 1.7.x bug &#x6C47;&#x603B;</h2>
+<h3 id="tree-select-&#x7684;&#x4E0B;&#x62C9;&#x5DF2;&#x9009;&#x9879;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x805A;&#x7126;">tree-select &#x7684;&#x4E0B;&#x62C9;&#x5DF2;&#x9009;&#x9879;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x805A;&#x7126;</h3>
+<blockquote>
+<p>tree-select &#x5076;&#x5C14;&#x4F1A;&#x51FA;&#x73B0;&#xFF0C;&#x5DF2;&#x9009;&#x9879;&#x7684;&#x503C;&#x6CA1;&#x6CD5;&#x6EDA;&#x52A8;&#x5230;&#x89C6;&#x91CE;&#x4E2D;&#x95F4;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x6392;&#x67E5;&#x6E90;&#x7801;&#xFF0C;&#x81EA;&#x52A8;&#x805A;&#x7126;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5728; Select.jsx &#x7684; watch &apos;$data._open&apos; &#x5B9E;&#x73B0;</p>
+<p>&#x5176;&#x539F;&#x7406;&#x5C31;&#x662F;&#x76D1;&#x542C; _open &#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528; scrollIntoView &#x65B9;&#x6CD5;&#x6EDA;&#x52A8;&#x5230;&#x89C6;&#x91CE;&#x3002;scrollIntoView &#x662F; npm &#x5305; dom-scroll-into-view&#xFF0C;&#x4EA7;&#x751F; bug &#x7684;&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x4E2A;&#x5305;&#x8BA1;&#x7B97;&#x6EDA;&#x52A8;&#x9AD8;&#x5EA6;&#x65F6;&#xFF0C;&#x6709;&#x65F6;&#x504F;&#x5C0F;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x627E;&#x5230; Select.jsx &#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x6A21;&#x62DF; $data._open &#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x6EDA;&#x52A8;</p>
+</blockquote>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a-tree-select</span>
+  <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;treeSelect&quot;</span>
+  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;value&quot;</span>
+  <span class="hljs-attr">show-search</span>
+  <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100%&quot;</span>
+  <span class="hljs-attr">:dropdown-style</span>=<span class="hljs-string">&quot;{ maxHeight: &apos;300px&apos;, overflow: &apos;auto&apos; }&quot;</span>
+  <span class="hljs-attr">allow-clear</span>
+  <span class="hljs-attr">tree-default-expand-all</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-tree-select</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  data () {
+    <span class="hljs-keyword">return</span> {
+      value: <span class="hljs-string">&apos;&apos;</span>,
+      treeSelectDropdownRef: <span class="hljs-literal">null</span>,
+      treeSelectDropdownData: {}
+    }
+  },
+  watch: {
+    <span class="hljs-string">&apos;treeSelectDropdownData._open&apos;</span>: {
+      handler (newVal) {
+        <span class="hljs-keyword">if</span> (!newVal) <span class="hljs-keyword">return</span>
+        setTimeout(() =&gt; {
+          <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x8981; $nextTick &#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x5728;&#x7EC4;&#x4EF6;&#x6EDA;&#x52A8;&#x4E4B;&#x540E;&#x6267;&#x884C;</span>
+          <span class="hljs-keyword">this</span>.$nextTick(() =&gt; {
+            <span class="hljs-keyword">const</span> { domTreeNodes } = <span class="hljs-keyword">this</span>.treeSelectDropdownRef.popup.getTree()
+            <span class="hljs-keyword">const</span> treeNode = domTreeNodes[<span class="hljs-keyword">this</span>.value]
+            <span class="hljs-keyword">const</span> domNode = treeNode.$el
+            <span class="hljs-comment">// &#x8C03;&#x7528; dom &#x539F;&#x751F;&#x65B9;&#x6CD5;&#xFF0C; block: &apos;center&apos; &#x4EE3;&#x8868;&#x6EDA;&#x52A8;&#x5230;&#x89C6;&#x91CE;&#x4E2D;&#x95F4;</span>
+            domNode.scrollIntoView({ block: <span class="hljs-string">&apos;center&apos;</span> })
+          })
+        })
+      }
+    }
+  },
+  mounted () {
+    <span class="hljs-keyword">const</span> treeSelectRef = <span class="hljs-keyword">this</span>.$refs.treeSelect
+    <span class="hljs-keyword">if</span>(!treeSelectRef) <span class="hljs-keyword">return</span>
+    <span class="hljs-keyword">this</span>.treeSelectDropdownRef = treeSelectRef.$children[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">this</span>.treeSelectDropdownData = treeSelectRef.$children[<span class="hljs-number">0</span>].data
+  }
+}
+</code></pre>
+<h3 id="table-&#x96C6;&#x6210;vue-draggable-resizable&#x5B9E;&#x73B0;&#x53EF;&#x4F38;&#x7F29;&#x5217;">table &#x96C6;&#x6210;vue-draggable-resizable&#x5B9E;&#x73B0;&#x53EF;&#x4F38;&#x7F29;&#x5217;</h3>
+<blockquote>
+<p>&#x5982;&#x679C;&#x76F4;&#x63A5;&#x6309;&#x5B98;&#x7F51;&#x7684;&#x4F8B;&#x5B50;&#x5199;&#xFF0C;&#x4F1A;&#x7F16;&#x8BD1;&#x62A5;&#x9519;&#xFF1A;render: function render (h, h, props, children) { ...</p>
+<p>&#x5176;&#x5B9E;&#x628A; ResizeableTitle &#x6539;&#x6210; resizeableTitle &#x5C0F;&#x5199;&#x5C31;&#x53EF;&#x4EE5;</p>
+<p>&#x7531;&#x4E8E;&#x4F8B;&#x5B50;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x5947;&#x5947;&#x602A;&#x602A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x6574;&#x7406;&#x4E86;&#x81EA;&#x5DF1;&#x7684; demo</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * table &#x7684;&#x53EF;&#x4F38;&#x7F29;&#x5217;&#x529F;&#x80FD;&#x62BD;&#x79BB;&#x6210;&#x516C;&#x5171;&#x65B9;&#x6CD5;
+ *
+ */</span>
+
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> VueDraggableResizable <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-draggable-resizable&apos;</span>
+Vue.component(<span class="hljs-string">&apos;vue-draggable-resizable&apos;</span>, VueDraggableResizable)
+
+<span class="hljs-keyword">const</span> numberColWidth = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">col</span>) </span>{
+  <span class="hljs-keyword">const</span> { width } = col
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> width === <span class="hljs-string">&apos;string&apos;</span>) {
+    <span class="hljs-keyword">if</span> (width.endsWith(<span class="hljs-string">&apos;px&apos;</span>)) {
+      col.width = width.slice(<span class="hljs-number">0</span>, <span class="hljs-number">-2</span>) - <span class="hljs-number">0</span>
+      <span class="hljs-keyword">return</span>
+    }
+  }
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> (width - <span class="hljs-number">0</span>) === <span class="hljs-string">&apos;number&apos;</span>) {
+    col.width = width - <span class="hljs-number">0</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> headeRender = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">columns</span>) </span>{
+  <span class="hljs-keyword">const</span> draggingMap = {}
+  <span class="hljs-comment">/**
+   * width &#x4E3A; % &#x4E0D;&#x652F;&#x6301;&#x62D6;&#x62FD;
+   * vue-draggable-resizable &#x7684; x &#x8981;&#x4F20;&#x5165;&#x5177;&#x4F53;&#x6570;&#x5B57;&#xFF0C;&#x6B64;&#x65F6;&#x83B7;&#x53D6;&#x4E0D;&#x5230;table&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x65E0;&#x6CD5;&#x8BA1;&#x7B97;&#x767E;&#x5206;&#x6BD4;
+   * todo &#x5F85;&#x89E3;&#x51B3;
+   */</span>
+  <span class="hljs-keyword">const</span> noDragable = columns.some(col =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> col.width === <span class="hljs-string">&apos;string&apos;</span> &amp;&amp; col.width.endsWith(<span class="hljs-string">&apos;%&apos;</span>)
+  })
+  <span class="hljs-keyword">if</span> (noDragable) {
+    <span class="hljs-keyword">return</span>
+  }
+  columns.forEach(col =&gt; {
+    <span class="hljs-keyword">const</span> k = col.dataIndex || col.key
+    numberColWidth(col)
+    draggingMap[k] = col.width
+  })
+  <span class="hljs-keyword">const</span> draggingState = Vue.observable(draggingMap)
+  <span class="hljs-keyword">const</span> resizeableTitle = (h, props, children) =&gt; {
+    <span class="hljs-keyword">let</span> thDom = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">const</span> { key, ...restProps } = props
+    <span class="hljs-keyword">let</span> col
+    <span class="hljs-keyword">if</span> (key === <span class="hljs-string">&apos;selection-column&apos;</span>) {
+      col = {}
+    } <span class="hljs-keyword">else</span> {
+      col = columns.find((item) =&gt; {
+        <span class="hljs-keyword">const</span> k = item.dataIndex || item.key
+        <span class="hljs-keyword">return</span> k === key
+      })
+    }
+    <span class="hljs-keyword">if</span> (!col.width) {
+      <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">th</span> {<span class="hljs-attr">...restProps</span>}&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>)
+    }
+    <span class="hljs-keyword">const</span> onDrag = x =&gt; {
+      draggingState[key] = <span class="hljs-number">0</span>
+      col.width = <span class="hljs-built_in">Math</span>.max(x, <span class="hljs-number">40</span>)
+    }
+    <span class="hljs-keyword">const</span> onDragstop = () =&gt; {
+      draggingState[key] = thDom.getBoundingClientRect().width
+    }
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">th</span> {<span class="hljs-attr">...restProps</span>} <span class="hljs-attr">v-ant-ref</span>=<span class="hljs-string">{r</span> =&gt;</span> (thDom = r)} width={draggingState[key]} class=&quot;resize-table-th&quot;&gt;
+        {children}
+        <span class="hljs-tag">&lt;<span class="hljs-name">vue-draggable-resizable</span>
+          <span class="hljs-attr">key</span>=<span class="hljs-string">{col.dataIndex</span> || <span class="hljs-attr">col.key</span>}
+          <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;table-draggable-handle&apos;</span>
+          <span class="hljs-attr">w</span>=<span class="hljs-string">{10}</span>
+          <span class="hljs-attr">x</span>=<span class="hljs-string">{col.width</span> || <span class="hljs-attr">draggingState</span>[<span class="hljs-attr">key</span>]}
+          <span class="hljs-attr">z</span>=<span class="hljs-string">{1}</span>
+          <span class="hljs-attr">axis</span>=<span class="hljs-string">&quot;x&quot;</span>
+          <span class="hljs-attr">draggable</span>=<span class="hljs-string">{true}</span>
+          <span class="hljs-attr">resizable</span>=<span class="hljs-string">{false}</span>
+          <span class="hljs-attr">onDragging</span>=<span class="hljs-string">{onDrag}</span>
+          <span class="hljs-attr">onDragstop</span>=<span class="hljs-string">{onDragstop}</span>
+        &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vue-draggable-resizable</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    )
+  }
+
+  return resizeableTitle
+}
+
+export default headeRender
+</span></code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  data () {
+    <span class="hljs-keyword">return</span> {
+      components: {}
+    }
+  },
+  watch: {
+    columns: {
+      handler (newVal, oldVal) {
+        <span class="hljs-keyword">this</span>.components = {
+          header: {
+            cell: resizeableTitle(newVal)
+          }
+        }
+      },
+      immediate: <span class="hljs-literal">true</span>
+    }
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -897,12 +1060,12 @@
 
             
                 
-                <a href="D3_v5.html" class="navigation navigation-prev " aria-label="Previous page: D3_v5">
+                <a href="element-ui.html" class="navigation navigation-prev " aria-label="Previous page: element-ui">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Bootstrap.html" class="navigation navigation-next " aria-label="Next page: Bootstrap">
+                <a href="D3_v5.html" class="navigation navigation-next " aria-label="Next page: D3_v5">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -913,7 +1076,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SVG","level":"7.1.7","depth":2,"next":{"title":"Bootstrap","level":"7.1.8","depth":2,"path":"Tools/Bootstrap.md","ref":"Tools/Bootstrap.md","articles":[]},"previous":{"title":"D3_v5","level":"7.1.6","depth":2,"path":"Tools/D3_v5.md","ref":"Tools/D3_v5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/SVG.md","mtime":"2022-04-27T13:04:15.117Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-05-17T14:59:14.611Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ant-design-vue","level":"7.1.5","depth":2,"next":{"title":"D3_v5","level":"7.1.6","depth":2,"path":"Tools/D3_v5.md","ref":"Tools/D3_v5.md","articles":[]},"previous":{"title":"element-ui","level":"7.1.4","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/ant-design.md","mtime":"2022-05-17T14:57:55.552Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-05-17T14:59:14.611Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
