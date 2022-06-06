@@ -937,6 +937,115 @@
 })
 {% endraw %}
 </code></pre>
+<h2 id="vuex-&#x652F;&#x6301;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;-&#x8BA2;&#x9605;">vuex &#x652F;&#x6301;&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;-&#x8BA2;&#x9605;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">import</span> events <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./events&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">store</span>) </span>{
+  <span class="hljs-comment">// store.prototype = store.prototype || {}</span>
+  events.mixTo(store)
+  store.registerModule(<span class="hljs-string">&apos;myEvents&apos;</span>, {
+    mutations: {
+      setEvent () {
+      }
+    }
+  })
+  store.$emit = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">evt, ...arg</span>) </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.events[evt]) <span class="hljs-keyword">return</span>
+    <span class="hljs-keyword">this</span>.trigger(evt, ...arg)
+    <span class="hljs-keyword">this</span>.commit(<span class="hljs-string">&apos;setEvent&apos;</span>, evt)
+  }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// events.js</span>
+<span class="hljs-comment">/* eslint-disable */</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Events</span> (<span class="hljs-params"></span>) </span>{
+}
+
+Events.prototype.events = {}
+Events.prototype.on = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">evt, callback</span>) </span>{
+  <span class="hljs-keyword">if</span> (!callback || !evt) <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  <span class="hljs-keyword">this</span>.events[evt] = <span class="hljs-keyword">this</span>.events[evt] || []
+  <span class="hljs-keyword">this</span>.events[evt].push(callback)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+}
+
+Events.prototype.once = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">evt, callback</span>) </span>{
+  <span class="hljs-keyword">let</span> that = <span class="hljs-keyword">this</span>
+  <span class="hljs-keyword">let</span> cb = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    that.off(evt, cb)
+    callback(<span class="hljs-built_in">arguments</span>)
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.on(evt, cb)
+}
+
+Events.prototype.off = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">evt, callback</span>) </span>{
+  <span class="hljs-keyword">if</span> (!evt) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  }
+  <span class="hljs-keyword">let</span> events = <span class="hljs-keyword">this</span>.events[evt]
+  <span class="hljs-keyword">if</span> (!callback) {
+    <span class="hljs-keyword">delete</span> <span class="hljs-keyword">this</span>[evt]
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = events.length; i--;) {
+      <span class="hljs-keyword">if</span> (events[i] === callback) {
+        events.splice(i, <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+      }
+    }
+  }
+}
+
+Events.prototype.trigger = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">evt, ...arg</span>) </span>{
+  <span class="hljs-keyword">let</span> events = <span class="hljs-keyword">this</span>.events[evt]
+  <span class="hljs-keyword">if</span> (!evt || !events) <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  <span class="hljs-keyword">let</span> len = events.length
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    events[i](...arg)
+  }
+}
+
+Events.prototype.emit = Events.prototype.trigger
+
+Events.mixTo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">receiver</span>) </span>{
+  <span class="hljs-keyword">var</span> proto = Events.prototype
+
+  <span class="hljs-keyword">if</span> (isFunction(receiver)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> proto) {
+      <span class="hljs-keyword">if</span> (proto.hasOwnProperty(key)) {
+        receiver.prototype[key] = proto[key]
+      }
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> proto) {
+      <span class="hljs-keyword">if</span> (proto.hasOwnProperty(key)) {
+        receiver[key] = proto[key]
+      }
+    }
+  }
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isFunction</span> (<span class="hljs-params">func</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.prototype.toString.call(func) === <span class="hljs-string">&apos;[object Function]&apos;</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Events
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// store.js</span>
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vuex.Store({
+})
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;store.js&apos;</span>
+<span class="hljs-keyword">import</span> vueEvent <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;store/events/index.js&apos;</span>
+
+vueEvent(store)
+</code></pre>
 
                                 
                                 </section>
@@ -980,7 +1089,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vuex","level":"5.1.2.3","depth":3,"next":{"title":"Vue 样例","level":"5.1.3","depth":2,"path":"Vue/demos.md","ref":"Vue/demos.md","articles":[]},"previous":{"title":"Vue-router","level":"5.1.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/advanced/Vuex.md","mtime":"2022-04-28T13:44:01.576Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-05-17T14:59:14.611Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vuex","level":"5.1.2.3","depth":3,"next":{"title":"Vue 样例","level":"5.1.3","depth":2,"path":"Vue/demos.md","ref":"Vue/demos.md","articles":[]},"previous":{"title":"Vue-router","level":"5.1.2.2","depth":3,"path":"Vue/advanced/Vue-router.md","ref":"Vue/advanced/Vue-router.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Vue/advanced/Vuex.md","mtime":"2022-06-06T12:11:01.592Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-06-06T12:12:03.255Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

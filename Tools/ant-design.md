@@ -40,6 +40,7 @@ export default {
           this.$nextTick(() => {
             const { domTreeNodes } = this.treeSelectDropdownRef.popup.getTree()
             const treeNode = domTreeNodes[this.value]
+            if (!treeNode) return
             const domNode = treeNode.$el
             // 调用 dom 原生方法， block: 'center' 代表滚动到视野中间
             domNode.scrollIntoView({ block: 'center' })
