@@ -78,6 +78,11 @@
 - . → (小数点) 可以重复上一次的命令
 - N<command> → 重复某个命令 N 次
 
+### 折叠/展开
+
+- zc → 折叠 
+- zo → 展开 
+
 ### 联动
 
 `<start position><command><end position>`
