@@ -76,6 +76,10 @@ import Vue from 'vue'
 import VueDraggableResizable from 'vue-draggable-resizable'
 Vue.component('vue-draggable-resizable', VueDraggableResizable)
 
+const JS_FIT_FIXED_COLUMN_WIDTH_CLASS = 'js-fit-table_fixed-column-width' // 如果有滚定列空白，在 table 添加此 class 可修复列宽度和固定列宽度不一致的bug
+const TABLE_FIXED_LEFT_COLUMN_CLASS = 'ant-design-vue-table__fixed-left-column'
+const TABLE_FIXED_RIGHT_COLUMN_CLASS = 'ant-design-vue-table__fixed-right-column'
+
 const numberColWidth = function (col) {
   const { width } = col
   if (typeof width === 'string') {
@@ -91,6 +95,7 @@ const numberColWidth = function (col) {
 
 const headeRender = function (columns) {
   const draggingMap = {}
+  let existFixedCol = false // 是由存在固定列
   /**
    * width 为 % 不支持拖拽
    * vue-draggable-resizable 的 x 要传入具体数字，此时获取不到table的宽度，无法计算百分比
@@ -105,6 +110,16 @@ const headeRender = function (columns) {
   columns.forEach(col => {
     const k = col.dataIndex || col.key
     numberColWidth(col)
+    if ('fixed' in col) {
+      if (!existFixedCol) existFixedCol = true
+      if (col.fixed === true || col.fixed === 'left') {
+        if (col.className && col.className.includes(TABLE_FIXED_LEFT_COLUMN_CLASS)) return
+        col.className = col.className ? `${col.className} ${TABLE_FIXED_LEFT_COLUMN_CLASS}` : TABLE_FIXED_LEFT_COLUMN_CLASS
+      } else if (col.fixed === 'right') {
+        if (col.className && col.className.includes(TABLE_FIXED_RIGHT_COLUMN_CLASS)) return
+        col.className = col.className ? `${col.className} ${TABLE_FIXED_RIGHT_COLUMN_CLASS}` : TABLE_FIXED_RIGHT_COLUMN_CLASS
+      }
+    }
     draggingMap[k] = col.width
   })
   const draggingState = Vue.observable(draggingMap)
@@ -122,6 +137,9 @@ const headeRender = function (columns) {
     }
     if (!col.width) {
       return (<th {...restProps}>{children}</th>)
+    }
+    if (existFixedCol) {
+      fitFixColumnsWidth()
     }
     const onDrag = x => {
       draggingState[key] = 0
@@ -150,6 +168,48 @@ const headeRender = function (columns) {
   }
 
   return resizeableTitle
+}
+
+// js 手动调整固定列的宽度
+const fitFixColumnsWidth = function () {
+  const crudTable = document.getElementsByClassName(JS_FIT_FIXED_COLUMN_WIDTH_CLASS)
+  for (let i = 0; i < crudTable.length; i++) {
+    const ct = crudTable[i]
+    // 左侧固定列
+    const lf = ct.getElementsByClassName('ant-table-fixed-left')
+    if (lf.length > 0) {
+      const fixTable = lf[0].getElementsByClassName('ant-table-fixed')
+      const lfColumn = lf[0].getElementsByClassName(TABLE_FIXED_LEFT_COLUMN_CLASS)
+      const fixedLfCol = ct.getElementsByClassName(`ant-table-fixed-columns-in-body ${TABLE_FIXED_LEFT_COLUMN_CLASS}`)
+      let totalWidth = 0
+      for (let j = 0; j < lfColumn.length; j++) {
+        lfColumn[j].style.width = fixedLfCol[j].offsetWidth + 'px'
+        if (fixedLfCol[j].nodeName === 'TH') {
+          totalWidth += fixedLfCol[j].offsetWidth
+        }
+      }
+      if (fixTable.length > 0) {
+        fixTable[0].style.width = totalWidth + 'px'
+      }
+    }
+    // 右侧固定列
+    const rg = ct.getElementsByClassName('ant-table-fixed-right')
+    if (rg.length > 0) {
+      const fixTable = rg[0].getElementsByClassName('ant-table-fixed')
+      const rgColumn = rg[0].getElementsByClassName(TABLE_FIXED_RIGHT_COLUMN_CLASS)
+      const fixedRgCol = ct.getElementsByClassName(`ant-table-fixed-columns-in-body ${TABLE_FIXED_RIGHT_COLUMN_CLASS}`)
+      let totalWidth = 0
+      for (let j = 0; j < rgColumn.length; j++) {
+        rgColumn[j].style.width = fixedRgCol[j].offsetWidth + 'px'
+        if (fixedRgCol[j].nodeName === 'TH') {
+          totalWidth += fixedRgCol[j].offsetWidth
+        }
+      }
+      if (fixTable.length > 0) {
+        fixTable[0].style.width = totalWidth + 'px'
+      }
+    }
+  }
 }
 
 export default headeRender
