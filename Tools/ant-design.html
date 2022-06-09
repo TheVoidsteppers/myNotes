@@ -936,6 +936,10 @@
 <span class="hljs-keyword">import</span> VueDraggableResizable <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-draggable-resizable&apos;</span>
 Vue.component(<span class="hljs-string">&apos;vue-draggable-resizable&apos;</span>, VueDraggableResizable)
 
+<span class="hljs-keyword">const</span> JS_FIT_FIXED_COLUMN_WIDTH_CLASS = <span class="hljs-string">&apos;js-fit-table_fixed-column-width&apos;</span> <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x6EDA;&#x5B9A;&#x5217;&#x7A7A;&#x767D;&#xFF0C;&#x5728; table &#x6DFB;&#x52A0;&#x6B64; class &#x53EF;&#x4FEE;&#x590D;&#x5217;&#x5BBD;&#x5EA6;&#x548C;&#x56FA;&#x5B9A;&#x5217;&#x5BBD;&#x5EA6;&#x4E0D;&#x4E00;&#x81F4;&#x7684;bug</span>
+<span class="hljs-keyword">const</span> TABLE_FIXED_LEFT_COLUMN_CLASS = <span class="hljs-string">&apos;ant-design-vue-table__fixed-left-column&apos;</span>
+<span class="hljs-keyword">const</span> TABLE_FIXED_RIGHT_COLUMN_CLASS = <span class="hljs-string">&apos;ant-design-vue-table__fixed-right-column&apos;</span>
+
 <span class="hljs-keyword">const</span> numberColWidth = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">col</span>) </span>{
   <span class="hljs-keyword">const</span> { width } = col
   <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> width === <span class="hljs-string">&apos;string&apos;</span>) {
@@ -951,6 +955,7 @@ Vue.component(<span class="hljs-string">&apos;vue-draggable-resizable&apos;</spa
 
 <span class="hljs-keyword">const</span> headeRender = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">columns</span>) </span>{
   <span class="hljs-keyword">const</span> draggingMap = {}
+  <span class="hljs-keyword">let</span> existFixedCol = <span class="hljs-literal">false</span> <span class="hljs-comment">// &#x662F;&#x7531;&#x5B58;&#x5728;&#x56FA;&#x5B9A;&#x5217;</span>
   <span class="hljs-comment">/**
    * width &#x4E3A; % &#x4E0D;&#x652F;&#x6301;&#x62D6;&#x62FD;
    * vue-draggable-resizable &#x7684; x &#x8981;&#x4F20;&#x5165;&#x5177;&#x4F53;&#x6570;&#x5B57;&#xFF0C;&#x6B64;&#x65F6;&#x83B7;&#x53D6;&#x4E0D;&#x5230;table&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x65E0;&#x6CD5;&#x8BA1;&#x7B97;&#x767E;&#x5206;&#x6BD4;
@@ -965,6 +970,16 @@ Vue.component(<span class="hljs-string">&apos;vue-draggable-resizable&apos;</spa
   columns.forEach(col =&gt; {
     <span class="hljs-keyword">const</span> k = col.dataIndex || col.key
     numberColWidth(col)
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;fixed&apos;</span> <span class="hljs-keyword">in</span> col) {
+      <span class="hljs-keyword">if</span> (!existFixedCol) existFixedCol = <span class="hljs-literal">true</span>
+      <span class="hljs-keyword">if</span> (col.fixed === <span class="hljs-literal">true</span> || col.fixed === <span class="hljs-string">&apos;left&apos;</span>) {
+        <span class="hljs-keyword">if</span> (col.className &amp;&amp; col.className.includes(TABLE_FIXED_LEFT_COLUMN_CLASS)) <span class="hljs-keyword">return</span>
+        col.className = col.className ? <span class="hljs-string">`<span class="hljs-subst">${col.className}</span> <span class="hljs-subst">${TABLE_FIXED_LEFT_COLUMN_CLASS}</span>`</span> : TABLE_FIXED_LEFT_COLUMN_CLASS
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (col.fixed === <span class="hljs-string">&apos;right&apos;</span>) {
+        <span class="hljs-keyword">if</span> (col.className &amp;&amp; col.className.includes(TABLE_FIXED_RIGHT_COLUMN_CLASS)) <span class="hljs-keyword">return</span>
+        col.className = col.className ? <span class="hljs-string">`<span class="hljs-subst">${col.className}</span> <span class="hljs-subst">${TABLE_FIXED_RIGHT_COLUMN_CLASS}</span>`</span> : TABLE_FIXED_RIGHT_COLUMN_CLASS
+      }
+    }
     draggingMap[k] = col.width
   })
   <span class="hljs-keyword">const</span> draggingState = Vue.observable(draggingMap)
@@ -982,6 +997,9 @@ Vue.component(<span class="hljs-string">&apos;vue-draggable-resizable&apos;</spa
     }
     <span class="hljs-keyword">if</span> (!col.width) {
       <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">th</span> {<span class="hljs-attr">...restProps</span>}&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>)
+    }
+    <span class="hljs-keyword">if</span> (existFixedCol) {
+      fitFixColumnsWidth()
     }
     <span class="hljs-keyword">const</span> onDrag = x =&gt; {
       draggingState[key] = <span class="hljs-number">0</span>
@@ -1010,6 +1028,48 @@ Vue.component(<span class="hljs-string">&apos;vue-draggable-resizable&apos;</spa
   }
 
   return resizeableTitle
+}
+
+// js &#x624B;&#x52A8;&#x8C03;&#x6574;&#x56FA;&#x5B9A;&#x5217;&#x7684;&#x5BBD;&#x5EA6;
+const fitFixColumnsWidth = function () {
+  const crudTable = document.getElementsByClassName(JS_FIT_FIXED_COLUMN_WIDTH_CLASS)
+  for (let i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">crudTable.length</span>; <span class="hljs-attr">i</span>++) {
+    <span class="hljs-attr">const</span> <span class="hljs-attr">ct</span> = <span class="hljs-attr">crudTable</span>[<span class="hljs-attr">i</span>]
+    // &#x5DE6;&#x4FA7;&#x56FA;&#x5B9A;&#x5217;
+    <span class="hljs-attr">const</span> <span class="hljs-attr">lf</span> = <span class="hljs-attr">ct.getElementsByClassName</span>(&apos;<span class="hljs-attr">ant-table-fixed-left</span>&apos;)
+    <span class="hljs-attr">if</span> (<span class="hljs-attr">lf.length</span> &gt;</span> 0) {
+      const fixTable = lf[0].getElementsByClassName(&apos;ant-table-fixed&apos;)
+      const lfColumn = lf[0].getElementsByClassName(TABLE_FIXED_LEFT_COLUMN_CLASS)
+      const fixedLfCol = ct.getElementsByClassName(`ant-table-fixed-columns-in-body ${TABLE_FIXED_LEFT_COLUMN_CLASS}`)
+      let totalWidth = 0
+      for (let j = 0; j <span class="hljs-tag">&lt; <span class="hljs-attr">lfColumn.length</span>; <span class="hljs-attr">j</span>++) {
+        <span class="hljs-attr">lfColumn</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.style.width</span> = <span class="hljs-attr">fixedLfCol</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.offsetWidth</span> + &apos;<span class="hljs-attr">px</span>&apos;
+        <span class="hljs-attr">if</span> (<span class="hljs-attr">fixedLfCol</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.nodeName</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">TH</span>&apos;) {
+          <span class="hljs-attr">totalWidth</span> += <span class="hljs-attr">fixedLfCol</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.offsetWidth</span>
+        }
+      }
+      <span class="hljs-attr">if</span> (<span class="hljs-attr">fixTable.length</span> &gt;</span> 0) {
+        fixTable[0].style.width = totalWidth + &apos;px&apos;
+      }
+    }
+    // &#x53F3;&#x4FA7;&#x56FA;&#x5B9A;&#x5217;
+    const rg = ct.getElementsByClassName(&apos;ant-table-fixed-right&apos;)
+    if (rg.length &gt; 0) {
+      const fixTable = rg[0].getElementsByClassName(&apos;ant-table-fixed&apos;)
+      const rgColumn = rg[0].getElementsByClassName(TABLE_FIXED_RIGHT_COLUMN_CLASS)
+      const fixedRgCol = ct.getElementsByClassName(`ant-table-fixed-columns-in-body ${TABLE_FIXED_RIGHT_COLUMN_CLASS}`)
+      let totalWidth = 0
+      for (let j = 0; j <span class="hljs-tag">&lt; <span class="hljs-attr">rgColumn.length</span>; <span class="hljs-attr">j</span>++) {
+        <span class="hljs-attr">rgColumn</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.style.width</span> = <span class="hljs-attr">fixedRgCol</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.offsetWidth</span> + &apos;<span class="hljs-attr">px</span>&apos;
+        <span class="hljs-attr">if</span> (<span class="hljs-attr">fixedRgCol</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.nodeName</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">TH</span>&apos;) {
+          <span class="hljs-attr">totalWidth</span> += <span class="hljs-attr">fixedRgCol</span>[<span class="hljs-attr">j</span>]<span class="hljs-attr">.offsetWidth</span>
+        }
+      }
+      <span class="hljs-attr">if</span> (<span class="hljs-attr">fixTable.length</span> &gt;</span> 0) {
+        fixTable[0].style.width = totalWidth + &apos;px&apos;
+      }
+    }
+  }
 }
 
 export default headeRender
@@ -1077,7 +1137,7 @@ export default headeRender
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ant-design-vue","level":"7.1.5","depth":2,"next":{"title":"D3_v5","level":"7.1.6","depth":2,"path":"Tools/D3_v5.md","ref":"Tools/D3_v5.md","articles":[]},"previous":{"title":"element-ui","level":"7.1.4","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/ant-design.md","mtime":"2022-05-23T12:08:32.397Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-06-06T12:12:03.255Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ant-design-vue","level":"7.1.5","depth":2,"next":{"title":"D3_v5","level":"7.1.6","depth":2,"path":"Tools/D3_v5.md","ref":"Tools/D3_v5.md","articles":[]},"previous":{"title":"element-ui","level":"7.1.4","depth":2,"path":"Tools/element-ui.md","ref":"Tools/element-ui.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"Tools/ant-design.md","mtime":"2022-06-09T11:48:35.900Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2022-06-09T11:51:18.188Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
