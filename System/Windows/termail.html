@@ -897,6 +897,26 @@ LWin &amp; PgDn::
 Send {LWin Down}{Ctrl Down}{Right}{Ctrl Up}{LWin Up}
 <span class="hljs-keyword">return</span>
 </code></pre>
+<h2 id="navicate">Navicate</h2>
+<p>Navicate MongoDB V16 &#x65E0;&#x9650;&#x8BD5;&#x7528;&#x671F;</p>
+<pre><code class="lang-powershell">@echo off
+
+echo Delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatMONGODB\Registration16XCS
+<span class="hljs-keyword">for</span> /f %%i <span class="hljs-keyword">in</span> (<span class="hljs-string">&apos;&quot;REG QUERY &quot;HKEY_CURRENT_USER\Software\PremiumSoft\NavicatMONGODB&quot; /s | findstr /L Registration&quot;&apos;</span>) <span class="hljs-keyword">do</span> (
+    reg delete %%i /va /f
+)
+echo.
+
+echo Delete Info folder under HKEY_CURRENT_USER\Software\Classes\CLSID
+<span class="hljs-keyword">for</span> /f %%i <span class="hljs-keyword">in</span> (<span class="hljs-string">&apos;&quot;REG QUERY &quot;HKEY_CURRENT_USER\Software\Classes\CLSID&quot; /s | findstr /E Info&quot;&apos;</span>) <span class="hljs-keyword">do</span> (
+    reg delete %%i /va /f
+)
+echo.
+
+echo Finish
+
+pause
+</code></pre>
 
                                 
                                 </section>
@@ -940,7 +960,7 @@ Send {LWin Down}{Ctrl Down}{Right}{Ctrl Up}{LWin Up}
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"termail 命令","level":"8.1.2.1","depth":3,"next":{"title":"Tools 工具","level":"8.1.2.2","depth":3,"path":"System/Windows/tools.md","ref":"System/Windows/tools.md","articles":[]},"previous":{"title":"Windows","level":"8.1.2","depth":2,"path":"System/Windows/README.md","ref":"System/Windows/README.md","articles":[{"title":"termail 命令","level":"8.1.2.1","depth":3,"path":"System/Windows/termail.md","ref":"System/Windows/termail.md","articles":[]},{"title":"Tools 工具","level":"8.1.2.2","depth":3,"path":"System/Windows/tools.md","ref":"System/Windows/tools.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"System/Windows/termail.md","mtime":"2023-05-10T15:20:37.750Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2023-05-10T15:25:00.130Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"termail 命令","level":"8.1.2.1","depth":3,"next":{"title":"Tools 工具","level":"8.1.2.2","depth":3,"path":"System/Windows/tools.md","ref":"System/Windows/tools.md","articles":[]},"previous":{"title":"Windows","level":"8.1.2","depth":2,"path":"System/Windows/README.md","ref":"System/Windows/README.md","articles":[{"title":"termail 命令","level":"8.1.2.1","depth":3,"path":"System/Windows/termail.md","ref":"System/Windows/termail.md","articles":[]},{"title":"Tools 工具","level":"8.1.2.2","depth":3,"path":"System/Windows/tools.md","ref":"System/Windows/tools.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","copy-code-button","-search","search-plus","splitter","expandable-chapters-small","back-to-top-button","chapter-fold","code"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"theme-default":{"showLevel":false,"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"search-plus":{}},"theme":"default","author":"TheVoidsteppers","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的学习笔记","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/TheVoidsteppers"}},"gitbook":"*","description":"Notes for Learning front-end","extension":null},"file":{"path":"System/Windows/termail.md","mtime":"2023-06-13T15:13:16.535Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2023-06-13T15:39:21.025Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
