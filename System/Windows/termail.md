@@ -18,3 +18,27 @@ LWin & PgDn::
 Send {LWin Down}{Ctrl Down}{Right}{Ctrl Up}{LWin Up}
 return
 ```
+
+## Navicate
+
+Navicate MongoDB V16 无限试用期
+
+```powershell
+@echo off
+
+echo Delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatMONGODB\Registration16XCS
+for /f %%i in ('"REG QUERY "HKEY_CURRENT_USER\Software\PremiumSoft\NavicatMONGODB" /s | findstr /L Registration"') do (
+    reg delete %%i /va /f
+)
+echo.
+
+echo Delete Info folder under HKEY_CURRENT_USER\Software\Classes\CLSID
+for /f %%i in ('"REG QUERY "HKEY_CURRENT_USER\Software\Classes\CLSID" /s | findstr /E Info"') do (
+    reg delete %%i /va /f
+)
+echo.
+
+echo Finish
+
+pause
+```
